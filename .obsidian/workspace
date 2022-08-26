@@ -1,0 +1,129 @@
+{
+  "main": {
+    "id": "d420ce62c0cf8d48",
+    "type": "split",
+    "children": [
+      {
+        "id": "eb2c3353bf580e1f",
+        "type": "leaf",
+        "state": {
+          "type": "empty",
+          "state": {}
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "80d458347ae07bd5",
+    "type": "split",
+    "children": [
+      {
+        "id": "b8390137291b3a82",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4a56c5329a7d4076",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "369cd6dbd51883a6",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "65096cacba630c54",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "a9211ddbaae0610e",
+    "type": "split",
+    "children": [
+      {
+        "id": "3809fe60525a3e4b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "15a413188b832789",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": true,
+                "unlinkedCollapsed": false
+              }
+            }
+          },
+          {
+            "id": "f64ee4558ca3b782",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "4d0aecfd53fa8e8d",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "03706a0b7709701a",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "active": "eb2c3353bf580e1f",
+  "lastOpenFiles": [
+    "General/2. How to hack without Metasploit.md",
+    "1. Nmap Scanning.md",
+    "General/1. Learning tips.md"
+  ]
+}
