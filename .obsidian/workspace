@@ -4,12 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "e6cf2a5a9ac75b23",
+        "id": "eb2c3353bf580e1f",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Cheatsheet/Redis Cheatsheet.md",
+            "file": "Hackthebox/Redpanda/Readme.md",
             "mode": "source",
             "source": false
           }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Cheatsheet/Redis Cheatsheet.md",
+                "file": "Hackthebox/Redpanda/Readme.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Cheatsheet/Redis Cheatsheet.md",
+                "file": "Hackthebox/Redpanda/Readme.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -117,7 +117,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Cheatsheet/Redis Cheatsheet.md"
+                "file": "Hackthebox/Redpanda/Readme.md"
               }
             }
           }
@@ -128,13 +128,17 @@
     "direction": "horizontal",
     "width": 300
   },
-  "active": "4a56c5329a7d4076",
+  "active": "eb2c3353bf580e1f",
   "lastOpenFiles": [
-    "Untitled.md",
-    "Cheatsheet/Redis Cheatsheet.md",
+    "Hackthebox/Redpanda/img/etc.passwd.png",
+    "Hackthebox/Redpanda/img/java_env.png",
+    "Hackthebox/Redpanda/Readme.md",
+    "Hackthebox/Redpanda/img/ssti_injection.png",
+    "Hackthebox/Redpanda/img/injection.png",
+    "Hackthebox/Redpanda/img/export.png",
     "Port Scanning/1. Nmap Scanning.md",
-    "README.md",
-    "General/2. How to hack without Metasploit.md",
-    "General/1. Learning tips.md"
+    "Hackthebox/Redpanda/img/stats.png",
+    "Cheatsheet/Redis Cheatsheet.md",
+    "General/2. How to hack without Metasploit.md"
   ]
 }
