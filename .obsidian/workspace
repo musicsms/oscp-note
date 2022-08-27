@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "eb2c3353bf580e1f",
+        "id": "e6cf2a5a9ac75b23",
         "type": "leaf",
         "state": {
           "type": "markdown",
@@ -128,17 +128,13 @@
     "direction": "horizontal",
     "width": 300
   },
-  "active": "eb2c3353bf580e1f",
+  "active": "e6cf2a5a9ac75b23",
   "lastOpenFiles": [
-    "Hackthebox/Redpanda/img/etc.passwd.png",
-    "Hackthebox/Redpanda/img/java_env.png",
-    "Hackthebox/Redpanda/Readme.md",
-    "Hackthebox/Redpanda/img/ssti_injection.png",
-    "Hackthebox/Redpanda/img/injection.png",
-    "Hackthebox/Redpanda/img/export.png",
-    "Port Scanning/1. Nmap Scanning.md",
-    "Hackthebox/Redpanda/img/stats.png",
+    "README.md",
     "Cheatsheet/Redis Cheatsheet.md",
-    "General/2. How to hack without Metasploit.md"
+    "Untitled.md",
+    "Port Scanning/1. Nmap Scanning.md",
+    "General/2. How to hack without Metasploit.md",
+    "General/1. Learning tips.md"
   ]
 }
