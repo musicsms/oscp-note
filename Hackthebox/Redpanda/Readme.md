@@ -137,7 +137,7 @@ OS and Service detection performed. Please report any incorrect results at https
 
 ```
 We check detail web service on port 8080, which is running with Java Spring Boot:
-```
+```sh
 |_http-title: Red Panda Search | Made with Spring Boot
 ```
 
@@ -151,7 +151,7 @@ http://10.10.11.170:8080 [200 OK] Content-Language[en-US], Country[RESERVED][ZZ]
 [Red Panda Search | Made with Spring Boot]
 ```
 ## Gobuster
-```
+```sh
 gobuster dir -u http://$IP:8080 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x php,txt
 ```
 
@@ -319,7 +319,7 @@ for c in command:
 
 open 2 new tab with `http.server 8088` and `rlwrap nc -nvlp 1234`. At the 3 tabs run `python3 auto_exploit.py`
 The `user.txt` flag:
-```
+```txt
 efaa8f33e98ff3993b20c6bade76a83a
 ```
 
@@ -357,7 +357,7 @@ Check the process with `pspy64`
 
 Check `linpeas.sh` scripts
 
-There some process
+There some process might to be run using `root` via cron job.
 ```bash
 root         884  0.0  0.0   2608   532 ?        Ss   Aug27   0:00      _ /bin/sh -c sudo -u woodenk -g logs java -jar /opt/panda_search/target/panda_search-0.0.1-SNAPSHOT.j
 ar
