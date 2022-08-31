@@ -9,7 +9,11 @@
         "state": {
           "type": "markdown",
           "state": {
+<<<<<<< HEAD
             "file": "OWASP/CSRF/CSRF-4/Readme.md",
+=======
+            "file": "Hackthebox/OpenSource/Readme.md",
+>>>>>>> 795d0506e776652711b130c5e7061cc68d0064a5
             "mode": "source",
             "source": false
           }
@@ -77,7 +81,11 @@
             "state": {
               "type": "backlink",
               "state": {
+<<<<<<< HEAD
                 "file": "OWASP/CSRF/CSRF-4/Readme.md",
+=======
+                "file": "Hackthebox/OpenSource/Readme.md",
+>>>>>>> 795d0506e776652711b130c5e7061cc68d0064a5
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +102,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+<<<<<<< HEAD
                 "file": "OWASP/CSRF/CSRF-4/Readme.md",
+=======
+                "file": "Hackthebox/OpenSource/Readme.md",
+>>>>>>> 795d0506e776652711b130c5e7061cc68d0064a5
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -117,7 +129,11 @@
             "state": {
               "type": "outline",
               "state": {
+<<<<<<< HEAD
                 "file": "OWASP/CSRF/CSRF-4/Readme.md"
+=======
+                "file": "Hackthebox/OpenSource/Readme.md"
+>>>>>>> 795d0506e776652711b130c5e7061cc68d0064a5
               }
             }
           }
@@ -129,6 +145,7 @@
     "width": 300,
     "collapsed": true
   },
+<<<<<<< HEAD
   "active": "e6cf2a5a9ac75b23",
   "lastOpenFiles": [
     "OWASP/CSRF/CSRF-3/Readme.md",
@@ -141,5 +158,19 @@
     "OWASP/CSRF/CSRF-1/img/csrf1-2.png",
     "README.md",
     "Hackthebox/Redpanda/Readme.md"
+=======
+  "active": "eb2c3353bf580e1f",
+  "lastOpenFiles": [
+    "Pasted image 20220830235501.png",
+    "Pasted image 20220830235459.png",
+    "Hackthebox/OpenSource/Readme.md",
+    "Hackthebox/Redpanda/Readme.md",
+    "General/2. How to hack without Metasploit.md",
+    "General/1. Learning tips.md",
+    "Cheatsheet/Redis Cheatsheet.md",
+    "Port Scanning/2. Nmap Scripts.md",
+    "Port Scanning/1. Nmap Scanning.md",
+    "README.md"
+>>>>>>> 795d0506e776652711b130c5e7061cc68d0064a5
   ]
 }
