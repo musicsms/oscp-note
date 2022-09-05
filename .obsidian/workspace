@@ -1,21 +1,15 @@
 {
   "main": {
-    "id": "d420ce62c0cf8d48",
+    "id": "4bd2f44f6edbd71b",
     "type": "split",
     "children": [
       {
-        "id": "e6cf2a5a9ac75b23",
+        "id": "096e3626e81bb2f6",
         "type": "leaf",
         "state": {
-          "type": "markdown",
+          "type": "image",
           "state": {
-<<<<<<< HEAD
-            "file": "OWASP/CSRF/CSRF-4/Readme.md",
-=======
-            "file": "Hackthebox/OpenSource/Readme.md",
->>>>>>> 795d0506e776652711b130c5e7061cc68d0064a5
-            "mode": "source",
-            "source": false
+            "file": "Hackthebox/Redpanda/img/step1_burp_repeater.png"
           }
         }
       }
@@ -23,15 +17,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "80d458347ae07bd5",
+    "id": "8985f58fda8e0286",
     "type": "split",
     "children": [
       {
-        "id": "b8390137291b3a82",
+        "id": "d9849bfc9990a68d",
         "type": "tabs",
         "children": [
           {
-            "id": "4a56c5329a7d4076",
+            "id": "26787304a6ceac24",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -39,7 +33,7 @@
             }
           },
           {
-            "id": "369cd6dbd51883a6",
+            "id": "51b57d89ed314bfa",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -54,7 +48,7 @@
             }
           },
           {
-            "id": "65096cacba630c54",
+            "id": "86342d99d5571e95",
             "type": "leaf",
             "state": {
               "type": "starred",
@@ -68,52 +62,44 @@
     "width": 300
   },
   "right": {
-    "id": "a9211ddbaae0610e",
+    "id": "c76fccc5e628043b",
     "type": "split",
     "children": [
       {
-        "id": "3809fe60525a3e4b",
+        "id": "3c4817643f65c34e",
         "type": "tabs",
         "children": [
           {
-            "id": "15a413188b832789",
+            "id": "d5046ab438d70cc8",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-<<<<<<< HEAD
-                "file": "OWASP/CSRF/CSRF-4/Readme.md",
-=======
-                "file": "Hackthebox/OpenSource/Readme.md",
->>>>>>> 795d0506e776652711b130c5e7061cc68d0064a5
+                "file": "Hackthebox/Redpanda/img/step1_burp_repeater.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
-                "backlinkCollapsed": true,
-                "unlinkedCollapsed": false
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "f64ee4558ca3b782",
+            "id": "9c5dccf785a982f6",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-<<<<<<< HEAD
-                "file": "OWASP/CSRF/CSRF-4/Readme.md",
-=======
-                "file": "Hackthebox/OpenSource/Readme.md",
->>>>>>> 795d0506e776652711b130c5e7061cc68d0064a5
+                "file": "Hackthebox/Redpanda/img/step1_burp_repeater.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "4d0aecfd53fa8e8d",
+            "id": "d0deb7c5301764b6",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -124,53 +110,33 @@
             }
           },
           {
-            "id": "03706a0b7709701a",
+            "id": "74485ae37753e94c",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-<<<<<<< HEAD
-                "file": "OWASP/CSRF/CSRF-4/Readme.md"
-=======
-                "file": "Hackthebox/OpenSource/Readme.md"
->>>>>>> 795d0506e776652711b130c5e7061cc68d0064a5
+                "file": "Hackthebox/Redpanda/img/step1_burp_repeater.png"
               }
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
     "width": 300,
     "collapsed": true
   },
-<<<<<<< HEAD
-  "active": "e6cf2a5a9ac75b23",
+  "active": "26787304a6ceac24",
   "lastOpenFiles": [
-    "OWASP/CSRF/CSRF-3/Readme.md",
-    "OWASP/CSRF/CSRF-4/Readme.md",
-    "OWASP/CSRF/CSRF-3/img/csrf3.png",
-    "OWASP/CSRF/CSRF-2/Readme.md",
-    "OWASP/CSRF/CSRF-2/img/csrf2.png",
-    "OWASP/CSRF/CSRF-1/Readme.md",
-    "OWASP/CSRF/CSRF-1/img/csrf1-1.png",
-    "OWASP/CSRF/CSRF-1/img/csrf1-2.png",
-    "README.md",
-    "Hackthebox/Redpanda/Readme.md"
-=======
-  "active": "eb2c3353bf580e1f",
-  "lastOpenFiles": [
-    "Pasted image 20220830235501.png",
-    "Pasted image 20220830235459.png",
-    "Hackthebox/OpenSource/Readme.md",
-    "Hackthebox/Redpanda/Readme.md",
-    "General/2. How to hack without Metasploit.md",
-    "General/1. Learning tips.md",
-    "Cheatsheet/Redis Cheatsheet.md",
-    "Port Scanning/2. Nmap Scripts.md",
-    "Port Scanning/1. Nmap Scanning.md",
-    "README.md"
->>>>>>> 795d0506e776652711b130c5e7061cc68d0064a5
+    "Hackthebox/Redpanda/img/step2_burp_repeater.png",
+    "Hackthebox/Redpanda/img/step1_burp_repeater.png",
+    "Hackthebox/Redpanda/img/stats.png",
+    "Hackthebox/Redpanda/img/ssti_injection.png",
+    "Hackthebox/Redpanda/img/redpanda.webp",
+    "Hackthebox/Redpanda/img/pspy64_2.png",
+    "Hackthebox/Redpanda/img/pspy64_1.png",
+    "Hackthebox/Redpanda/img/pspy64.png",
+    "Hackthebox/Redpanda/img/pe.jpg",
+    "Hackthebox/Redpanda/img/java_env.png"
   ]
 }
