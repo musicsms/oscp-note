@@ -7,11 +7,29 @@
         "id": "096e3626e81bb2f6",
         "type": "leaf",
         "state": {
-          "type": "image",
+          "type": "markdown",
           "state": {
-            "file": "Hackthebox/Redpanda/img/step1_burp_repeater.png"
+            "file": "AWS/ALB/ALB.md",
+            "mode": "source",
+            "backlinks": false,
+            "source": false
           }
-        }
+        },
+        "group": "e5e64c5327214f5a"
+      },
+      {
+        "id": "76adfa27b2cf0bc3",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "AWS/ALB/ALB.md",
+            "mode": "preview",
+            "backlinks": false,
+            "source": false
+          }
+        },
+        "group": "e5e64c5327214f5a"
       }
     ],
     "direction": "vertical"
@@ -59,7 +77,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "c76fccc5e628043b",
@@ -75,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Hackthebox/Redpanda/img/step1_burp_repeater.png",
+                "file": "AWS/ALB/ALB.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -92,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Hackthebox/Redpanda/img/step1_burp_repeater.png",
+                "file": "AWS/ALB/ALB.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -115,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Hackthebox/Redpanda/img/step1_burp_repeater.png"
+                "file": "AWS/ALB/ALB.md"
               }
             }
           }
@@ -126,17 +145,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "26787304a6ceac24",
+  "active": "096e3626e81bb2f6",
   "lastOpenFiles": [
-    "Hackthebox/Redpanda/img/step2_burp_repeater.png",
+    "AWS/API Gateway/API-Gateway.md",
+    "AWS/Auto Scaling/Auto Scaling.md",
+    "Password-Generator/node_modules/nanoid/README.md",
+    "AWS/ALB/ALB.md",
+    "AWS/ALB/img/alb.png",
+    "Cheatsheet/Redis Cheatsheet.md",
     "Hackthebox/Redpanda/img/step1_burp_repeater.png",
+    "Hackthebox/Redpanda/img/step2_burp_repeater.png",
     "Hackthebox/Redpanda/img/stats.png",
-    "Hackthebox/Redpanda/img/ssti_injection.png",
-    "Hackthebox/Redpanda/img/redpanda.webp",
-    "Hackthebox/Redpanda/img/pspy64_2.png",
-    "Hackthebox/Redpanda/img/pspy64_1.png",
-    "Hackthebox/Redpanda/img/pspy64.png",
-    "Hackthebox/Redpanda/img/pe.jpg",
-    "Hackthebox/Redpanda/img/java_env.png"
+    "Hackthebox/Redpanda/img/ssti_injection.png"
   ]
 }
