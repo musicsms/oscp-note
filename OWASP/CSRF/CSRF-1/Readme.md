@@ -1,5 +1,5 @@
 # Challenge
-To complete this challenge, you must get your CSRF counter above 0. Once The request to increment your counter is as follows;
+To complete this challenge, you must get your CSRF counter above 0. Once the request to increment your counter is as follows;
 
 ```http
 GET /user/csrfchallengeone/plusplus?userid=exampleId 
@@ -19,7 +19,7 @@ Prepare the link:
 ```http
 https://10.63.253.66/user/csrfchallengeone/plusplus?userid=47887913a0f9573d479fbd600fa02ac6ef0575bd
 ```
-Put this in in post mesage.
+Put this in post mesage.
 
 Go to another account, and click on the image:
 ![csrf-2](csrf1-2.png)

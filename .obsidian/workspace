@@ -9,27 +9,12 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "AWS/ALB/ALB.md",
+            "file": "OWASP/CSRF/CSRF-3/Readme.md",
             "mode": "source",
             "backlinks": false,
             "source": false
           }
-        },
-        "group": "e5e64c5327214f5a"
-      },
-      {
-        "id": "76adfa27b2cf0bc3",
-        "type": "leaf",
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "AWS/ALB/ALB.md",
-            "mode": "preview",
-            "backlinks": false,
-            "source": false
-          }
-        },
-        "group": "e5e64c5327214f5a"
+        }
       }
     ],
     "direction": "vertical"
@@ -77,8 +62,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "c76fccc5e628043b",
@@ -94,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "AWS/ALB/ALB.md",
+                "file": "OWASP/CSRF/CSRF-3/Readme.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +95,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "AWS/ALB/ALB.md",
+                "file": "OWASP/CSRF/CSRF-3/Readme.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +118,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "AWS/ALB/ALB.md"
+                "file": "OWASP/CSRF/CSRF-3/Readme.md"
               }
             }
           }
@@ -147,15 +131,15 @@
   },
   "active": "096e3626e81bb2f6",
   "lastOpenFiles": [
-    "AWS/API Gateway/API-Gateway.md",
-    "AWS/Auto Scaling/Auto Scaling.md",
-    "Password-Generator/node_modules/nanoid/README.md",
+    "OWASP/CSRF/CSRF-4/Readme.md",
+    "OWASP/CSRF/CSRF-1/Readme.md",
+    "General/1. Learning tips.md",
+    "Tryhackme/Red Team Fundamentals/Readme.md",
+    "Vulnerability.md",
+    "Tryhackme/Red Team Fundamentals/Vulnerability_Assessments.png",
+    "874afa4988ed4199de9365dcfb0833be.png",
     "AWS/ALB/ALB.md",
-    "AWS/ALB/img/alb.png",
-    "Cheatsheet/Redis Cheatsheet.md",
-    "Hackthebox/Redpanda/img/step1_burp_repeater.png",
-    "Hackthebox/Redpanda/img/step2_burp_repeater.png",
-    "Hackthebox/Redpanda/img/stats.png",
-    "Hackthebox/Redpanda/img/ssti_injection.png"
+    "AWS/API Gateway/API-Gateway.md",
+    "AWS/Auto Scaling/Auto Scaling.md"
   ]
 }

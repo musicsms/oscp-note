@@ -43,7 +43,11 @@ Connection: close
 userid=47887913a0f9573d479fbd600fa02ac6ef0575bd&csrfToken=-54564521548659734870751374363061853652
 
 ```
-Final, we create a HTML file, start web server so other user can interactive.
+We create a HTML file, start web server so other user can interactive.
+Start web server:
+```python
+python -m http.server 80
+```
 
 And create the html file `csrf3.html` will be like this:
 
