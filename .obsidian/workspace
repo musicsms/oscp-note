@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "OWASP/CSRF/CSRF-3/Readme.md",
+            "file": "Cheatsheet/Redis Cheatsheet.md",
             "mode": "source",
             "backlinks": false,
             "source": false
@@ -78,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "OWASP/CSRF/CSRF-3/Readme.md",
+                "file": "Cheatsheet/Redis Cheatsheet.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +95,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "OWASP/CSRF/CSRF-3/Readme.md",
+                "file": "Cheatsheet/Redis Cheatsheet.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +118,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "OWASP/CSRF/CSRF-3/Readme.md"
+                "file": "Cheatsheet/Redis Cheatsheet.md"
               }
             }
           }
@@ -131,15 +131,15 @@
   },
   "active": "096e3626e81bb2f6",
   "lastOpenFiles": [
+    "Cheatsheet/LXD Cheatsheet.md",
+    "Cheatsheet/Hash Cheatsheet.md",
+    "Tryhackme/adventofcyber2/Readme.md",
+    "Cheatsheet/Redis Cheatsheet.md",
+    "OWASP/CSRF/CSRF-3/Readme.md",
     "OWASP/CSRF/CSRF-4/Readme.md",
     "OWASP/CSRF/CSRF-1/Readme.md",
     "General/1. Learning tips.md",
     "Tryhackme/Red Team Fundamentals/Readme.md",
-    "Vulnerability.md",
-    "Tryhackme/Red Team Fundamentals/Vulnerability_Assessments.png",
-    "874afa4988ed4199de9365dcfb0833be.png",
-    "AWS/ALB/ALB.md",
-    "AWS/API Gateway/API-Gateway.md",
-    "AWS/Auto Scaling/Auto Scaling.md"
+    "Vulnerability.md"
   ]
 }
