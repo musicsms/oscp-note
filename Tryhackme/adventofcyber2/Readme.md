@@ -91,9 +91,6 @@ edc621628f6d19a13a00fd683f5e3ff7:@computer@
 ```
 
 ```sh
-cat user.txt
-THM{IDENTITY_DISC_RECOGNISED}
-id
 id
 uid=1000(flynn) gid=1000(flynn) groups=1000(flynn),109(lxd)
 
