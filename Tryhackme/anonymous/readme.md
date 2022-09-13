@@ -332,4 +332,5 @@ ls
 root.txt
 ```
 2.  `lxd` group
+
 Follow the LXD Cheatsheet at [Cheatsheet\LXD Cheatsheet.md](Cheatsheet\LXD Cheatsheet.md)
