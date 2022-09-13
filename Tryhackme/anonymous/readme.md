@@ -275,7 +275,7 @@ sshd:x:110:65534::/run/sshd:/usr/sbin/nologin
 ftp:x:111:113:ftp daemon,,,:/srv/ftp:/usr/sbin/nologin
 ```
 
-`id`
+- `id`
 
 ```bash
 id
@@ -284,7 +284,7 @@ namelessone@anonymous:~$
 ```
 There so much group.
 
-`find` `SUID`
+- `find` `SUID`
 
 ```bash
 find / -type f -perm -u=s 2>/dev/null | grep -v "snap"
