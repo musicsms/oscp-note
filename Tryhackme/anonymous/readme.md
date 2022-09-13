@@ -333,4 +333,4 @@ root.txt
 ```
 2.  `lxd` group
 
-Follow the LXD Cheatsheet at [Cheatsheet/LXD-Cheatsheet.md](blob/master/Cheatsheet/LXD-Cheatsheet.md)
+Follow the LXD Cheatsheet at [Cheatsheet/LXD-Cheatsheet.md](../../Cheatsheet/LXD-Cheatsheet.md)
