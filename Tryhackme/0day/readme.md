@@ -184,3 +184,42 @@ HOME_URL="http://www.ubuntu.com/"
 SUPPORT_URL="http://help.ubuntu.com/"
 BUG_REPORT_URL="http://bugs.launchpad.net/ubuntu/"
 ```
+- linux_kernel version
+
+```bash
+uname -r
+3.13.0-32-generic
+```
+
+The OS is too old. Lets search for local privilege escalation
+```bash
+searchsploit ubuntu 14.04 Privilege
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --------------------------------- Exploit Title                                                                                                                                                                 |  Path
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------Apport (Ubuntu 14.04/14.10/15.04) - Race Condition Privilege Escalation                                                                                                        | linux/local/37088.c
+Apport 2.14.1 (Ubuntu 14.04.2) - Local Privilege Escalation                                                                                                                    | linux/local/36782.sh
+Linux Kernel (Debian 7.7/8.5/9.0 / Ubuntu 14.04.2/16.04.2/17.04 / Fedora 22/25 / CentOS 7.3.1611) - 'ldso_hwcap_64 Stack Clash' Local Privilege Escalation                     | linux_x86-64/local/42275.c
+Linux Kernel (Debian 9/10 / Ubuntu 14.04.5/16.04.2/17.04 / Fedora 23/24/25) - 'ldso_dynamic Stack Clash' Local Privilege Escalation                                            | linux_x86/local/42276.c
+Linux Kernel 3.13.0 < 3.19 (Ubuntu 12.04/14.04/14.10/15.04) - 'overlayfs' Local Privilege Escalation                                                                           | linux/local/37292.c
+Linux Kernel 3.13.0 < 3.19 (Ubuntu 12.04/14.04/14.10/15.04) - 'overlayfs' Local Privilege Escalation (Access /etc/shadow)                                                      | linux/local/37293.txt
+Linux Kernel 3.x (Ubuntu 14.04 / Mint 17.3 / Fedora 22) - Double-free usb-midi SMEP Privilege Escalation                                                                       | linux/local/41999.txt
+Linux Kernel 4.3.3 (Ubuntu 14.04/15.10) - 'overlayfs' Local Privilege Escalation (1)                                                                                           | linux/local/39166.c
+Linux Kernel 4.4.0 (Ubuntu 14.04/16.04 x86-64) - 'AF_PACKET' Race Condition Privilege Escalation                                                                               | linux_x86-64/local/40871.c
+Linux Kernel 4.4.0-21 < 4.4.0-51 (Ubuntu 14.04/16.04 x64) - 'AF_PACKET' Race Condition Privilege Escalation                                                                    | windows_x86-64/local/47170.c
+Linux Kernel < 4.4.0-83 / < 4.8.0-58 (Ubuntu 14.04/16.04) - Local Privilege Escalation (KASLR / SMEP)                                                                          | linux/local/43418.c
+Linux Kernel < 4.4.0/ < 4.8.0 (Ubuntu 14.04/16.04 / Linux Mint 17/18 / Zorin) - Local Privilege Escalation (KASLR / SMEP)                                                      | linux/local/47169.c
+Ubuntu 14.04/15.10 - User Namespace Overlayfs Xattr SetGID Privilege Escalation                                                                                                | linux/local/41762.txt
+Ubuntu < 15.10 - PT Chown Arbitrary PTs Access Via User Namespace Privilege Escalation                                                                                         | linux/local/41760.txt
+usb-creator 0.2.x (Ubuntu 12.04/14.04/14.10) - Local Privilege Escalation                                                                                                      | linux/local/36820.txt
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------Shellcodes: No Results
+Papers: No Results
+```
+> When compile on target machine, there will be error `gcc` will not found the `cc1` package. So we need to set the environment PATH
+
+```bash
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+```
+
+- Using `dos2unix` to make sure character is convert to Unix formated.
+```bash
+dos2unix
+```
