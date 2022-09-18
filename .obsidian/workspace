@@ -1,0 +1,135 @@
+{
+  "main": {
+    "id": "5524cc7183b2156c",
+    "type": "split",
+    "children": [
+      {
+        "id": "9d85bee57af82ae6",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Cheatsheet/Decode-Cheatsheet.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "6b31e81812c4b3cb",
+    "type": "split",
+    "children": [
+      {
+        "id": "b8aa20c3a13ea844",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2cf3859e5ed2a705",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "51bb5a30eb61d930",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "641ba40cf98bb33e",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "80402f65288e9258",
+    "type": "split",
+    "children": [
+      {
+        "id": "0c87ee0953b3939b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b75e0ed8e508b478",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Cheatsheet/Decode-Cheatsheet.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "b4d7e82fdfa70f30",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Cheatsheet/Decode-Cheatsheet.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "2c9ba86aea365fed",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "98def1e5e7774e22",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Cheatsheet/Decode-Cheatsheet.md"
+              }
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "active": "9d85bee57af82ae6",
+  "lastOpenFiles": [
+    "Cheatsheet/Javascripts-Cheatsheet.md"
+  ]
+}
