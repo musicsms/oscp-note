@@ -1,0 +1,15 @@
+POST /login HTTP/1.1
+Host: shoppy.htb
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101 Firefox/102.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 21
+Origin: http://shoppy.htb
+Connection: close
+Referer: http://shoppy.htb/login
+Cookie: rl_user_id=RudderEncrypt%3AU2FsdGVkX19qzWrskt5HNcW3pB1N%2FnILxEDv95VMVWxjsLXl1GFRMCHa5yWVyQMU; rl_anonymous_id=RudderEncrypt%3AU2FsdGVkX1%2Bg8lro0iULpsCfSeE3IekGJNUTyl%2FO%2BcvGSPwOm6NIX%2B8WglSUqLON7jW3wrL1ZBVtb5zYrmhDTg%3D%3D; rl_group_id=RudderEncrypt%3AU2FsdGVkX1%2FA7BVsnA49w2kVpTstuBCIw7oGBJ497AY%3D; rl_trait=RudderEncrypt%3AU2FsdGVkX19sk4t6y%2BguOR%2F2Z7pCjOze6put2mmYxHs%3D; rl_group_trait=RudderEncrypt%3AU2FsdGVkX1%2BdkhKFzO73os%2F1xHtZk3vul4ALm%2FvwFv0%3D
+Upgrade-Insecure-Requests: 1
+
+username=a&password=a
