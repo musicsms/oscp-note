@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Hackthebox/Box/Redpanda/Readme.md",
+            "file": "Hackthebox/Box/Shoppy/Readme.md",
             "mode": "source",
             "source": false
           }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Hackthebox/Box/Redpanda/Readme.md",
+                "file": "Hackthebox/Box/Shoppy/Readme.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Hackthebox/Box/Redpanda/Readme.md",
+                "file": "Hackthebox/Box/Shoppy/Readme.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -117,7 +117,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Hackthebox/Box/Redpanda/Readme.md"
+                "file": "Hackthebox/Box/Shoppy/Readme.md"
               }
             }
           }
@@ -130,15 +130,15 @@
   },
   "active": "a6eb187a1faf50c1",
   "lastOpenFiles": [
+    "PortSwigger/SQL injection/img/SQLi-1.png",
+    "link.md",
+    "README.md",
     "PortSwigger/SQL injection/SQL injection.md",
-    "Cheatsheet/SQLi-Cheatsheet.md",
-    "Cheatsheet/SQL-Bypass-Login-Cheatsheet.md",
-    "SQL-Bypass-Login-Cheatsheet.md",
-    "Cheatsheet/Gobuster-Cheatsheet.md",
+    "Pasted image 20220926224946.png",
+    "Cheatsheet/Tmux-Cheatsheet.md",
     "Hackthebox/Box/Shoppy/Readme.md",
-    "Cheatsheet/Port-Scanning/1.Nmap-Scanning.md",
-    "Hackthebox/Box/OpenSource/Readme.md",
-    "Hackthebox/Box/Redpanda/Readme.md",
-    "Tryhackme/anonymous/readme.md"
+    "Hackthebox/Box/Shoppy/img/mattermost-2.png",
+    "Hackthebox/Box/Shoppy/img/mattermost-1.png",
+    "Hackthebox/Box/Shoppy/img/crackstation.png"
   ]
 }

