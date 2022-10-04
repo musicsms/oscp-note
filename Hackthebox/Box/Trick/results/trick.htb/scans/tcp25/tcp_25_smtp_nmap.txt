@@ -1,0 +1,15 @@
+# Nmap 7.92 scan initiated Tue Oct  4 20:03:40 2022 as: nmap -vv --reason -Pn -T4 -sV -p 25 "--script=banner,(smtp* or ssl*) and not (brute or broadcast or dos or external or fuzzer)" -oN /mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp25/tcp_25_smtp_nmap.txt -oX /mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp25/xml/tcp_25_smtp_nmap.xml trick.htb
+Nmap scan report for trick.htb (10.10.11.166)
+Host is up, received user-set (0.11s latency).
+Scanned at 2022-10-04 20:03:42 +07 for 162s
+
+PORT   STATE SERVICE REASON         VERSION
+25/tcp open  smtp    syn-ack ttl 63 Postfix smtpd
+| smtp-vuln-cve2010-4344: 
+|_  The SMTP server is not Exim: NOT VULNERABLE
+|_smtp-commands: debian.localdomain, PIPELINING, SIZE 10240000, VRFY, ETRN, STARTTLS, ENHANCEDSTATUSCODES, 8BITMIME, DSN, SMTPUTF8, CHUNKING
+Service Info: Host:  debian.localdomain
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Oct  4 20:06:24 2022 -- 1 IP address (1 host up) scanned in 163.92 seconds

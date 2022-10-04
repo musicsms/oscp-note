@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.92 scan initiated Tue Oct  4 20:03:40 2022 as: nmap -vv -&#45;reason -Pn -T4 -sV -p 25 &quot;-&#45;script=banner,(smtp* or ssl*) and not (brute or broadcast or dos or external or fuzzer)&quot; -oN /mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp25/tcp_25_smtp_nmap.txt -oX /mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp25/xml/tcp_25_smtp_nmap.xml trick.htb -->
+<nmaprun scanner="nmap" args="nmap -vv -&#45;reason -Pn -T4 -sV -p 25 &quot;-&#45;script=banner,(smtp* or ssl*) and not (brute or broadcast or dos or external or fuzzer)&quot; -oN /mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp25/tcp_25_smtp_nmap.txt -oX /mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp25/xml/tcp_25_smtp_nmap.xml trick.htb" start="1664888620" startstr="Tue Oct  4 20:03:40 2022" version="7.92" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="1" services="25"/>
+<verbose level="2"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1664888621"/>
+<taskend task="NSE" time="1664888621"/>
+<taskbegin task="NSE" time="1664888621"/>
+<taskend task="NSE" time="1664888621"/>
+<taskbegin task="NSE" time="1664888621"/>
+<taskend task="NSE" time="1664888621"/>
+<taskbegin task="SYN Stealth Scan" time="1664888622"/>
+<taskend task="SYN Stealth Scan" time="1664888622" extrainfo="1 total ports"/>
+<taskbegin task="Service scan" time="1664888622"/>
+<taskend task="Service scan" time="1664888632" extrainfo="1 service on 1 host"/>
+<taskbegin task="NSE" time="1664888632"/>
+<taskend task="NSE" time="1664888647"/>
+<taskbegin task="NSE" time="1664888647"/>
+<taskprogress task="NSE" time="1664888678" percent="50.00" remaining="32" etc="1664888709"/>
+<taskprogress task="NSE" time="1664888708" percent="68.75" remaining="28" etc="1664888736"/>
+<taskprogress task="NSE" time="1664888738" percent="87.50" remaining="14" etc="1664888751"/>
+<taskend task="NSE" time="1664888756"/>
+<taskbegin task="NSE" time="1664888756"/>
+<taskend task="NSE" time="1664888784"/>
+<host starttime="1664888622" endtime="1664888784"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="10.10.11.166" addrtype="ipv4"/>
+<hostnames>
+<hostname name="trick.htb" type="user"/>
+<hostname name="trick.htb" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="25"><state state="open" reason="syn-ack" reason_ttl="63"/><service name="smtp" product="Postfix smtpd" hostname=" debian.localdomain" method="probed" conf="10"><cpe>cpe:/a:postfix:postfix</cpe></service><script id="smtp-vuln-cve2010-4344" output="&#xa;  The SMTP server is not Exim: NOT VULNERABLE&#xa;"/><script id="smtp-commands" output="debian.localdomain, PIPELINING, SIZE 10240000, VRFY, ETRN, STARTTLS, ENHANCEDSTATUSCODES, 8BITMIME, DSN, SMTPUTF8, CHUNKING"/></port>
+</ports>
+<times srtt="109000" rttvar="109000" to="545000"/>
+</host>
+<taskbegin task="NSE" time="1664888784"/>
+<taskend task="NSE" time="1664888784"/>
+<taskbegin task="NSE" time="1664888784"/>
+<taskend task="NSE" time="1664888784"/>
+<taskbegin task="NSE" time="1664888784"/>
+<taskend task="NSE" time="1664888784"/>
+<runstats><finished time="1664888784" timestr="Tue Oct  4 20:06:24 2022" summary="Nmap done at Tue Oct  4 20:06:24 2022; 1 IP address (1 host up) scanned in 163.92 seconds" elapsed="163.92" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

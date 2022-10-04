@@ -1,0 +1,36 @@
+[*] ssh found on tcp/22.
+
+
+
+[*] smtp found on tcp/25.
+
+
+
+[*] domain found on tcp/53.
+
+
+
+[*] http found on tcp/80.
+
+
+
+[*] ssh found on tcp/22.
+
+
+
+[*] smtp found on tcp/25.
+
+
+
+[*] domain found on tcp/53.
+
+
+
+[*] http found on tcp/80.
+
+
+
+[*] domain found on udp/53.
+
+
+

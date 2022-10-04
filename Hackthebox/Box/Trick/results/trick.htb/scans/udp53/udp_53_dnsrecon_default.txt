@@ -1,0 +1,3 @@
+[*] std: Performing General Enumeration against: trick.htb...
+[-] Could not resolve domain: trick.htb
+

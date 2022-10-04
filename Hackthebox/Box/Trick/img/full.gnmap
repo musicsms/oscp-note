@@ -1,0 +1,4 @@
+# Nmap 7.92 scan initiated Tue Oct  4 18:47:12 2022 as: nmap -sC -sV -p22,25,53,80 -oA enum/full 10.10.11.166
+Host: 10.10.11.166 ()	Status: Up
+Host: 10.10.11.166 ()	Ports: 22/open/tcp//ssh//OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)/, 25/open/tcp//smtp//Postfix smtpd/, 53/open/tcp//domain//ISC BIND 9.11.5-P4-5.1+deb10u7 (Debian Linux)/, 80/open/tcp//http//nginx 1.14.2/
+# Nmap done at Tue Oct  4 18:48:03 2022 -- 1 IP address (1 host up) scanned in 50.93 seconds

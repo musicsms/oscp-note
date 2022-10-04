@@ -120,3 +120,9 @@ Found: mattermost.shoppy.htb (Status: 200) [Size: 3122]
 ```
 
 In the example we are trying to find subdomains of `shoppy.htb` using the `bitquark-subdomains-top100000.txt`. We can see that it found the `mattermost.shoppy.htb`.
+
+Gobuster vhost same as this command `ffuf`
+```bash
+┌──(bop㉿BOP-PC)-[/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick]
+└─$ ffuf -u http://trick.htb -w subdomains-top1million-5000.txt -H "Host: FUZZ.trick.htb" -fw 1697
+```

@@ -1,0 +1,10 @@
+
+; <<>> DiG 9.18.7-1-Debian <<>> AXFR -p 53 @trick.htb
+; (1 server found)
+;; global options: +cmd
+;; Query time: 89 msec
+;; SERVER: 10.10.11.166#53(trick.htb) (UDP)
+;; WHEN: Tue Oct 04 20:03:43 +07 2022
+;; MSG SIZE  rcvd: 56
+
+

@@ -1,0 +1,121 @@
+[*] Port scan Top TCP Ports (top-tcp-ports) ran a command which returned a non-zero exit code (139).
+[-] Command: nmap -vv --reason -Pn -T4 -sV -sC --version-all -A --osscan-guess -oN "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/_quick_tcp_nmap.txt" -oX "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/xml/_quick_tcp_nmap.xml" trick.htb
+[-] Error Output:
+Host discovery disabled (-Pn). All addresses will be marked 'up' and scan times may be slower.
+Segmentation fault
+
+
+[*] Service scan Nmap SSH (tcp/22/ssh/nmap-ssh) ran a command which returned a non-zero exit code (139).
+[-] Command: nmap -vv --reason -Pn -T4 -sV -p 22 --script="banner,ssh2-enum-algos,ssh-hostkey,ssh-auth-methods" -oN "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp22/tcp_22_ssh_nmap.txt" -oX "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp22/xml/tcp_22_ssh_nmap.xml" trick.htb
+[-] Error Output:
+Host discovery disabled (-Pn). All addresses will be marked 'up' and scan times may be slower.
+Segmentation fault
+
+
+[*] Port scan Top TCP Ports (top-tcp-ports) ran a command which returned a non-zero exit code (139).
+[-] Command: nmap -vv --reason -Pn -T4 -sV -sC --version-all -A --osscan-guess -oN "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/_quick_tcp_nmap.txt" -oX "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/xml/_quick_tcp_nmap.xml" trick.htb
+[-] Error Output:
+Host discovery disabled (-Pn). All addresses will be marked 'up' and scan times may be slower.
+Segmentation fault
+
+
+[*] Service scan DnsRecon Default Scan (tcp/53/domain/dnsrecon) ran a command which returned a non-zero exit code (1).
+[-] Command: dnsrecon -n trick.htb -d trick.htb 2>&1
+[-] Error Output:
+
+
+[*] Service scan Nmap SSH (tcp/22/ssh/nmap-ssh) ran a command which returned a non-zero exit code (139).
+[-] Command: nmap -vv --reason -Pn -T4 -sV -p 22 --script="banner,ssh2-enum-algos,ssh-hostkey,ssh-auth-methods" -oN "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp22/tcp_22_ssh_nmap.txt" -oX "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp22/xml/tcp_22_ssh_nmap.xml" trick.htb
+[-] Error Output:
+Host discovery disabled (-Pn). All addresses will be marked 'up' and scan times may be slower.
+Segmentation fault
+
+
+[*] Service scan Nmap DNS (tcp/53/domain/nmap-dns) ran a command which returned a non-zero exit code (139).
+[-] Command: nmap -vv --reason -Pn -T4 -sV -p 53 --script="banner,(dns* or ssl*) and not (brute or broadcast or dos or external or fuzzer)" -oN "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp53/tcp_53_dns_nmap.txt" -oX "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp53/xml/tcp_53_dns_nmap.xml" trick.htb
+[-] Error Output:
+Host discovery disabled (-Pn). All addresses will be marked 'up' and scan times may be slower.
+Segmentation fault
+
+
+[*] Service scan Nmap SMTP (tcp/25/smtp/nmap-smtp) ran a command which returned a non-zero exit code (139).
+[-] Command: nmap -vv --reason -Pn -T4 -sV -p 25 --script="banner,(smtp* or ssl*) and not (brute or broadcast or dos or external or fuzzer)" -oN "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp25/tcp_25_smtp_nmap.txt" -oX "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp25/xml/tcp_25_smtp_nmap.xml" trick.htb
+[-] Error Output:
+Host discovery disabled (-Pn). All addresses will be marked 'up' and scan times may be slower.
+Segmentation fault
+
+
+[*] Port scan Top 100 UDP Ports (top-100-udp-ports) ran a command which returned a non-zero exit code (139).
+[-] Command: nmap -vv --reason -Pn -T4 -sU -A --top-ports 100 -oN "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/_top_100_udp_nmap.txt" -oX "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/xml/_top_100_udp_nmap.xml" trick.htb
+[-] Error Output:
+Host discovery disabled (-Pn). All addresses will be marked 'up' and scan times may be slower.
+adjust_timeouts2: packet supposedly had rtt of -346542 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -346542 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -370245 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -370245 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -353772 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -353772 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -386874 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -386874 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -377843 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -377843 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -362881 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -362881 microseconds.  Ignoring time.
+Segmentation fault
+
+
+[*] Service scan DnsRecon Default Scan (udp/53/domain/dnsrecon) ran a command which returned a non-zero exit code (1).
+[-] Command: dnsrecon -n trick.htb -d trick.htb 2>&1
+[-] Error Output:
+
+
+[*] Service scan Nmap DNS (udp/53/domain/nmap-dns) ran a command which returned a non-zero exit code (139).
+[-] Command: nmap -vv --reason -Pn -T4 -sU -sV -p 53 --script="banner,(dns* or ssl*) and not (brute or broadcast or dos or external or fuzzer)" -oN "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/udp53/udp_53_dns_nmap.txt" -oX "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/udp53/xml/udp_53_dns_nmap.xml" trick.htb
+[-] Error Output:
+Host discovery disabled (-Pn). All addresses will be marked 'up' and scan times may be slower.
+Segmentation fault
+
+
+[*] Service scan Nmap HTTP (tcp/80/http/nmap-http) ran a command which returned a non-zero exit code (139).
+[-] Command: nmap -vv --reason -Pn -T4 -sV -p 80 --script="banner,(http* or ssl*) and not (brute or broadcast or dos or external or http-slowloris* or fuzzer)" -oN "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp80/tcp_80_http_nmap.txt" -oX "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp80/xml/tcp_80_http_nmap.xml" trick.htb
+[-] Error Output:
+Host discovery disabled (-Pn). All addresses will be marked 'up' and scan times may be slower.
+Bug in http-security-headers: no string output.
+Segmentation fault
+
+
+[*] Port scan All TCP Ports (all-tcp-ports) ran a command which returned a non-zero exit code (139).
+[-] Command: nmap -vv --reason -Pn -T4 -sV -sC --version-all -A --osscan-guess -p- -oN "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/_full_tcp_nmap.txt" -oX "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/xml/_full_tcp_nmap.xml" trick.htb
+[-] Error Output:
+Host discovery disabled (-Pn). All addresses will be marked 'up' and scan times may be slower.
+adjust_timeouts2: packet supposedly had rtt of -220122 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -220122 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -245208 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -245208 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -267737 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -267737 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -812226 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -812226 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -823287 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -823287 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -831992 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -831992 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -515187 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -515187 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -194284 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -194284 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -164204 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -164204 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -160927 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -160927 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -198873 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -198873 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -223870 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -223870 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -431057 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -431057 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -1604910 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -1604910 microseconds.  Ignoring time.
+Segmentation fault
+
+

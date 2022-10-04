@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.92 scan initiated Tue Oct  4 20:06:34 2022 as: nmap -vv -&#45;reason -Pn -T4 -sU -sV -p 53 &quot;-&#45;script=banner,(dns* or ssl*) and not (brute or broadcast or dos or external or fuzzer)&quot; -oN /mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/udp53/udp_53_dns_nmap.txt -oX /mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/udp53/xml/udp_53_dns_nmap.xml trick.htb -->
+<nmaprun scanner="nmap" args="nmap -vv -&#45;reason -Pn -T4 -sU -sV -p 53 &quot;-&#45;script=banner,(dns* or ssl*) and not (brute or broadcast or dos or external or fuzzer)&quot; -oN /mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/udp53/udp_53_dns_nmap.txt -oX /mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/udp53/xml/udp_53_dns_nmap.xml trick.htb" start="1664888794" startstr="Tue Oct  4 20:06:34 2022" version="7.92" xmloutputversion="1.05">
+<scaninfo type="udp" protocol="udp" numservices="1" services="53"/>
+<verbose level="2"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1664888794"/>
+<taskend task="NSE" time="1664888794"/>
+<taskbegin task="NSE" time="1664888794"/>
+<taskend task="NSE" time="1664888794"/>
+<taskbegin task="NSE" time="1664888794"/>
+<taskend task="NSE" time="1664888794"/>
+<taskbegin task="UDP Scan" time="1664888795"/>
+<taskend task="UDP Scan" time="1664888795" extrainfo="1 total ports"/>
+<taskbegin task="Service scan" time="1664888795"/>
+<taskend task="Service scan" time="1664888795" extrainfo="1 service on 1 host"/>
+<taskbegin task="NSE" time="1664888795"/>
+<taskend task="NSE" time="1664888807"/>
+<taskbegin task="NSE" time="1664888807"/>
+<taskend task="NSE" time="1664888807"/>
+<taskbegin task="NSE" time="1664888807"/>
+<taskend task="NSE" time="1664888807"/>
+<host starttime="1664888795" endtime="1664888807"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="10.10.11.166" addrtype="ipv4"/>
+<hostnames>
+<hostname name="trick.htb" type="user"/>
+<hostname name="trick.htb" type="PTR"/>
+</hostnames>
+<ports><port protocol="udp" portid="53"><state state="open" reason="udp-response" reason_ttl="63"/><service name="domain" product="ISC BIND" version="9.11.5-P4-5.1+deb10u7" extrainfo="Debian Linux" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:isc:bind:9.11.5-p4-5.1%2Bdeb10u7</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service><script id="dns-cache-snoop" output="0 of 100 tested domains are cached.&#xa;"/><script id="dns-nsec-enum" output="&#xa;  No NSEC records found&#xa;"/><script id="dns-nsec3-enum" output="&#xa;  DNSSEC NSEC3 not supported&#xa;"/><script id="dns-nsid" output="&#xa;  bind.version: 9.11.5-P4-5.1+deb10u7-Debian"><elem key="bind.version">9.11.5-P4-5.1+deb10u7-Debian</elem>
+</script></port>
+</ports>
+<hostscript><script id="dns-brute" output="&#xa;  DNS Brute-force hostnames: No results."><table key="DNS Brute-force hostnames">
+</table>
+</script></hostscript><times srtt="111243" rttvar="111243" to="556215"/>
+</host>
+<taskbegin task="NSE" time="1664888807"/>
+<taskend task="NSE" time="1664888807"/>
+<taskbegin task="NSE" time="1664888807"/>
+<taskend task="NSE" time="1664888807"/>
+<taskbegin task="NSE" time="1664888807"/>
+<taskend task="NSE" time="1664888807"/>
+<runstats><finished time="1664888807" timestr="Tue Oct  4 20:06:47 2022" summary="Nmap done at Tue Oct  4 20:06:47 2022; 1 IP address (1 host up) scanned in 12.77 seconds" elapsed="12.77" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

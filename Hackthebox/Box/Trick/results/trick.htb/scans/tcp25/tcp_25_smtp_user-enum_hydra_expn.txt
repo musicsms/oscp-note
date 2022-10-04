@@ -1,0 +1,10 @@
+Hydra v9.3 (c) 2022 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).
+
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2022-10-04 20:04:02
+[DATA] max 16 tasks per 1 server, overall 16 tasks, 17 login tries (l:17/p:1), ~2 tries per task
+[DATA] attacking smtp-enum://trick.htb:25/expn
+[ERROR] command is disabled on the server (choose different method): 502 5.5.2 Error: command not recognized
+[ERROR] command is disabled on the server (choose different method): 502 5.5.2 Error: command not recognized
+1 of 1 target completed, 0 valid password found
+Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2022-10-04 20:04:13
+

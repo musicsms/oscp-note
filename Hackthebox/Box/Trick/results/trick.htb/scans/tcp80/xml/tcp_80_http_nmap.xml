@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.92 scan initiated Tue Oct  4 20:03:41 2022 as: nmap -vv -&#45;reason -Pn -T4 -sV -p 80 &quot;-&#45;script=banner,(http* or ssl*) and not (brute or broadcast or dos or external or http-slowloris* or fuzzer)&quot; -oN /mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp80/tcp_80_http_nmap.txt -oX /mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp80/xml/tcp_80_http_nmap.xml trick.htb -->
+<nmaprun scanner="nmap" args="nmap -vv -&#45;reason -Pn -T4 -sV -p 80 &quot;-&#45;script=banner,(http* or ssl*) and not (brute or broadcast or dos or external or http-slowloris* or fuzzer)&quot; -oN /mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp80/tcp_80_http_nmap.txt -oX /mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp80/xml/tcp_80_http_nmap.xml trick.htb" start="1664888621" startstr="Tue Oct  4 20:03:41 2022" version="7.92" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="1" services="80"/>
+<verbose level="2"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1664888622"/>
+<taskend task="NSE" time="1664888622"/>
+<taskbegin task="NSE" time="1664888622"/>
+<taskend task="NSE" time="1664888622"/>
+<taskbegin task="NSE" time="1664888622"/>
+<taskend task="NSE" time="1664888622"/>
+<taskbegin task="SYN Stealth Scan" time="1664888622"/>
+<taskend task="SYN Stealth Scan" time="1664888622" extrainfo="1 total ports"/>
+<taskbegin task="Service scan" time="1664888623"/>
+<taskend task="Service scan" time="1664888629" extrainfo="1 service on 1 host"/>
+<taskbegin task="NSE" time="1664888629"/>
+<taskprogress task="NSE" time="1664888660" percent="99.68" remaining="1" etc="1664888660"/>
+<taskprogress task="NSE" time="1664888690" percent="99.68" remaining="1" etc="1664888690"/>
+<taskprogress task="NSE" time="1664888720" percent="99.68" remaining="1" etc="1664888720"/>
+<taskprogress task="NSE" time="1664888750" percent="99.68" remaining="1" etc="1664888750"/>
+<taskprogress task="NSE" time="1664888780" percent="99.68" remaining="1" etc="1664888780"/>
+<taskprogress task="NSE" time="1664888810" percent="99.68" remaining="1" etc="1664888811"/>
+<taskend task="NSE" time="1664888829"/>
+<taskbegin task="NSE" time="1664888829"/>
+<taskend task="NSE" time="1664888829"/>
+<taskbegin task="NSE" time="1664888829"/>
+<taskend task="NSE" time="1664888829"/>
+<host starttime="1664888622" endtime="1664888829"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="10.10.11.166" addrtype="ipv4"/>
+<hostnames>
+<hostname name="trick.htb" type="user"/>
+<hostname name="trick.htb" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="63"/><service name="http" product="nginx" version="1.14.2" method="probed" conf="10"><cpe>cpe:/a:igor_sysoev:nginx:1.14.2</cpe></service><script id="http-title" output="Coming Soon - Start Bootstrap Theme"><elem key="title">Coming Soon - Start Bootstrap Theme</elem>
+</script><script id="http-useragent-tester" output="&#xa;  Status for browser useragent: 200&#xa;  Allowed User Agents: &#xa;    Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)&#xa;    libwww&#xa;    lwp-trivial&#xa;    libcurl-agent/1.0&#xa;    PHP/&#xa;    Python-urllib/2.5&#xa;    GT::WWW&#xa;    Snoopy&#xa;    MFC_Tear_Sample&#xa;    HTTP::Lite&#xa;    PHPCrawl&#xa;    URI::Fetch&#xa;    Zend_Http_Client&#xa;    http client&#xa;    PECL::HTTP&#xa;    Wget/1.13.4 (linux-gnu)&#xa;    WWW-Mechanize/1.34"><elem key="Status for browser useragent">200</elem>
+<table key="Allowed User Agents">
+<elem>Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)</elem>
+<elem>libwww</elem>
+<elem>lwp-trivial</elem>
+<elem>libcurl-agent/1.0</elem>
+<elem>PHP/</elem>
+<elem>Python-urllib/2.5</elem>
+<elem>GT::WWW</elem>
+<elem>Snoopy</elem>
+<elem>MFC_Tear_Sample</elem>
+<elem>HTTP::Lite</elem>
+<elem>PHPCrawl</elem>
+<elem>URI::Fetch</elem>
+<elem>Zend_Http_Client</elem>
+<elem>http client</elem>
+<elem>PECL::HTTP</elem>
+<elem>Wget/1.13.4 (linux-gnu)</elem>
+<elem>WWW-Mechanize/1.34</elem>
+</table>
+</script><script id="http-referer-checker" output="&#xa;Spidering limited to: maxpagecount=30&#xa;  https://use.fontawesome.com:443/releases/v6.1.0/js/all.js&#xa;  https://cdn.startbootstrap.com:443/sb-forms-0.4.1.js&#xa;  https://cdn.jsdelivr.net:443/npm/bootstrap15.1.3/dist/js/bootstrap.bundle.min.js&#xa;"/><script id="http-feed" output="Couldn&apos;t find any feeds."/><script id="http-server-header" output="nginx/1.14.2"><elem>nginx/1.14.2</elem>
+</script><script id="http-drupal-enum" output="Nothing found amongst the top 100 resources,use -&#45;script-args number=&lt;number|all&gt; for deeper analysis)"/><script id="http-vhosts" output="&#xa;128 names had status 200"/><script id="http-chrono" output="Request times for /; avg: 329.89ms; min: 260.71ms; max: 418.55ms"/><script id="http-devframework" output="Couldn&apos;t determine the underlying framework or CMS. Try increasing &apos;httpspider.maxpagecount&apos; value to spider more pages."/><script id="http-fileupload-exploiter" output="&#xa;  &#xa;    Couldn&apos;t find a file-type field."><table>
+<elem>Couldn&apos;t find a file-type field.</elem>
+</table>
+</script><script id="http-mobileversion-checker" output="No mobile version detected."/><script id="http-jsonp-detection" output="Couldn&apos;t find any JSONP endpoints."/><script id="http-stored-xss" output="Couldn&apos;t find any stored XSS vulnerabilities."/><script id="http-sitemap-generator" output="&#xa;  Directory structure:&#xa;    /&#xa;      Other: 1&#xa;    /assets/&#xa;      ico: 1&#xa;    /assets/mp4/&#xa;      mp4: 1&#xa;    /css/&#xa;      css: 1&#xa;    /js/&#xa;      js: 1&#xa;  Longest directory structure:&#xa;    Depth: 2&#xa;    Dir: /assets/mp4/&#xa;  Total files found (by extension):&#xa;    Other: 1; css: 1; ico: 1; js: 1; mp4: 1&#xa;"/><script id="http-php-version" output="Logo query returned unknown hash e716b8bf5e0fdacb3997e7f14f599386&#xa;Credits query returned unknown hash e716b8bf5e0fdacb3997e7f14f599386"/><script id="http-csrf" output="Couldn&apos;t find any CSRF vulnerabilities."/><script id="http-errors" output="Couldn&apos;t find any error pages."/><script id="http-fetch" output="Please enter the complete path of the directory to save data in."><elem key="ERROR">Please enter the complete path of the directory to save data in.</elem>
+</script><script id="http-security-headers" output=""></script><script id="http-date" output="Tue, 04 Oct 2022 13:03:49 GMT; -1s from local time."><elem key="date">2022-10-04T13:03:49+00:00</elem>
+<elem key="delta">-1.0</elem>
+</script><script id="http-headers" output="&#xa;  Server: nginx/1.14.2&#xa;  Date: Tue, 04 Oct 2022 13:03:50 GMT&#xa;  Content-Type: text/html&#xa;  Content-Length: 5480&#xa;  Last-Modified: Wed, 23 Mar 2022 16:34:04 GMT&#xa;  Connection: close&#xa;  ETag: &quot;623b4bfc-1568&quot;&#xa;  Accept-Ranges: bytes&#xa;  &#xa;  (Request type: HEAD)&#xa;"/><script id="http-malware-host" output="Host appears to be clean"/><script id="http-vuln-cve2011-3192" output="&#xa;  VULNERABLE:&#xa;  Apache byterange filter DoS&#xa;    State: VULNERABLE&#xa;    IDs:  CVE:CVE-2011-3192  BID:49303&#xa;      The Apache web server is vulnerable to a denial of service attack when numerous&#xa;      overlapping byte ranges are requested.&#xa;    Disclosure date: 2011-08-19&#xa;    References:&#xa;      https://www.securityfocus.com/bid/49303&#xa;      https://www.tenable.com/plugins/nessus/55976&#xa;      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-3192&#xa;      https://seclists.org/fulldisclosure/2011/Aug/175&#xa;"><table key="CVE-2011-3192">
+<elem key="title">Apache byterange filter DoS</elem>
+<elem key="state">VULNERABLE</elem>
+<table key="ids">
+<elem>CVE:CVE-2011-3192</elem>
+<elem>BID:49303</elem>
+</table>
+<table key="description">
+<elem>The Apache web server is vulnerable to a denial of service attack when numerous&#xa;overlapping byte ranges are requested.</elem>
+</table>
+<table key="dates">
+<table key="disclosure">
+<elem key="day">19</elem>
+<elem key="month">08</elem>
+<elem key="year">2011</elem>
+</table>
+</table>
+<elem key="disclosure">2011-08-19</elem>
+<table key="refs">
+<elem>https://www.securityfocus.com/bid/49303</elem>
+<elem>https://www.tenable.com/plugins/nessus/55976</elem>
+<elem>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-3192</elem>
+<elem>https://seclists.org/fulldisclosure/2011/Aug/175</elem>
+</table>
+</table>
+</script><script id="http-methods" output="&#xa;  Supported Methods: GET HEAD"><table key="Supported Methods">
+<elem>GET</elem>
+<elem>HEAD</elem>
+</table>
+</script><script id="http-wordpress-users" output="[Error] Wordpress installation was not found. We couldn&apos;t find wp-login.php"/><script id="http-config-backup" output="ERROR: Script execution failed (use -d to debug)"/><script id="http-litespeed-sourcecode-download" output="Request with null byte did not work. This web server might not be vulnerable"/><script id="http-favicon" output="Unknown favicon MD5: 556F31ACD686989B1AFCF382C05846AA"/><script id="http-comments-displayer" output="&#xa;Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=trick.htb&#xa;    &#xa;    Path: http://trick.htb:80/&#xa;    Line number: 22&#xa;    Comment: &#xa;        &lt;!-&#45; Masthead-&#45;&gt;&#xa;    &#xa;    Path: http://trick.htb:80/js/scripts.js&#xa;    Line number: 1&#xa;    Comment: &#xa;        /*!&#xa;        * Start Bootstrap - Coming Soon v6.0.6 (https://startbootstrap.com/theme/coming-soon)&#xa;        * Copyright 2013-2022 Start Bootstrap&#xa;        * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-coming-soon/blob/master/LICENSE)&#xa;        */&#xa;    &#xa;    Path: http://trick.htb:80/&#xa;    Line number: 55&#xa;    Comment: &#xa;        &lt;!-&#45; Submit error message-&#45;&gt;&#xa;    &#xa;    Path: http://trick.htb:80/css/styles.css&#xa;    Line number: 6031&#xa;    Comment: &#xa;        /* rtl:begin:ignore */&#xa;    &#xa;    Path: http://trick.htb:80/css/styles.css&#xa;    Line number: 7717&#xa;    Comment: &#xa;        /* rtl:end:remove */&#xa;    &#xa;    Path: http://trick.htb:80/&#xa;    Line number: 29&#xa;    Comment: &#xa;        &lt;!-&#45; * * SB Forms Contact Form * *-&#45;&gt;&#xa;    &#xa;    Path: http://trick.htb:80/&#xa;    Line number: 10&#xa;    Comment: &#xa;        &lt;!-&#45; Font Awesome icons (free version)-&#45;&gt;&#xa;    &#xa;    Path: http://trick.htb:80/&#xa;    Line number: 45&#xa;    Comment: &#xa;        &lt;!-&#45; This is what your users will see when the form-&#45;&gt;&#xa;    &#xa;    Path: http://trick.htb:80/&#xa;    Line number: 75&#xa;    Comment: &#xa;        &lt;!-&#45; Core theme JS-&#45;&gt;&#xa;    &#xa;    Path: http://trick.htb:80/&#xa;    Line number: 64&#xa;    Comment: &#xa;        &lt;!-&#45; Social Icons-&#45;&gt;&#xa;    &#xa;    Path: http://trick.htb:80/css/styles.css&#xa;    Line number: 6118&#xa;    Comment: &#xa;        /* rtl:options: {&#xa;          &quot;autoRename&quot;: true,&#xa;          &quot;stringMap&quot;:[ {&#xa;            &quot;name&quot;    : &quot;prev-next&quot;,&#xa;            &quot;search&quot;  : &quot;prev&quot;,&#xa;            &quot;replace&quot; : &quot;next&quot;&#xa;          } ]&#xa;        } */&#xa;    &#xa;    Path: http://trick.htb:80/&#xa;    Line number: 58&#xa;    Comment: &#xa;        &lt;!-&#45; an error submitting the form-&#45;&gt;&#xa;    &#xa;    Path: http://trick.htb:80/css/styles.css&#xa;    Line number: 257&#xa;    Comment: &#xa;        /* rtl:ignore */&#xa;    &#xa;    Path: http://trick.htb:80/&#xa;    Line number: 78&#xa;    Comment: &#xa;        &lt;!-&#45; * *                               SB Forms JS                               * *-&#45;&gt;&#xa;    &#xa;    Path: http://trick.htb:80/js/scripts.js&#xa;    Line number: 6&#xa;    Comment: &#xa;        &#xa;        // This file is intentionally blank&#xa;    &#xa;    Path: http://trick.htb:80/css/styles.css&#xa;    Line number: 4792&#xa;    Comment: &#xa;        /* rtl: var(-&#45;bs-breadcrumb-divider, &quot;/&quot;) */&#xa;    &#xa;    Path: http://trick.htb:80/&#xa;    Line number: 33&#xa;    Comment: &#xa;        &lt;!-&#45; https://startbootstrap.com/solution/contact-forms-&#45;&gt;&#xa;    &#xa;    Path: http://trick.htb:80/&#xa;    Line number: 46&#xa;    Comment: &#xa;        &lt;!-&#45; has successfully submitted-&#45;&gt;&#xa;    &#xa;    Path: http://trick.htb:80/&#xa;    Line number: 28&#xa;    Comment: &#xa;        &lt;!-&#45; * * * * * * * * * * * * * * *-&#45;&gt;&#xa;    &#xa;    Path: http://trick.htb:80/css/styles.css&#xa;    Line number: 7711&#xa;    Comment: &#xa;        /* rtl:begin:remove */&#xa;    &#xa;    Path: http://trick.htb:80/css/styles.css&#xa;    Line number: 6042&#xa;    Comment: &#xa;        /* rtl:end:ignore */&#xa;    &#xa;    Path: http://trick.htb:80/&#xa;    Line number: 57&#xa;    Comment: &#xa;        &lt;!-&#45; This is what your users will see when there is-&#45;&gt;&#xa;    &#xa;    Path: http://trick.htb:80/&#xa;    Line number: 12&#xa;    Comment: &#xa;        &lt;!-&#45; Google fonts-&#45;&gt;&#xa;    &#xa;    Path: http://trick.htb:80/&#xa;    Line number: 44&#xa;    Comment: &#xa;        &lt;!-&#45;&#45;&#45;&gt;&#xa;    &#xa;    Path: http://trick.htb:80/css/styles.css&#xa;    Line number: 441&#xa;    Comment: &#xa;        /* rtl:raw:&#xa;        [type=&quot;tel&quot;],&#xa;        [type=&quot;url&quot;],&#xa;        [type=&quot;email&quot;],&#xa;        [type=&quot;number&quot;] {&#xa;          direction: ltr;&#xa;        }&#xa;        */&#xa;    &#xa;    Path: http://trick.htb:80/&#xa;    Line number: 43&#xa;    Comment: &#xa;        &lt;!-&#45; Submit success message-&#45;&gt;&#xa;    &#xa;    Path: http://trick.htb:80/&#xa;    Line number: 31&#xa;    Comment: &#xa;        &lt;!-&#45; This form is pre-integrated with SB Forms.-&#45;&gt;&#xa;    &#xa;    Path: http://trick.htb:80/&#xa;    Line number: 16&#xa;    Comment: &#xa;        &lt;!-&#45; Core theme CSS (includes Bootstrap)-&#45;&gt;&#xa;    &#xa;    Path: http://trick.htb:80/&#xa;    Line number: 77&#xa;    Comment: &#xa;        &lt;!-&#45; * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-&#45;&gt;&#xa;    &#xa;    Path: http://trick.htb:80/css/styles.css&#xa;    Line number: 7&#xa;    Comment: &#xa;        /*!&#xa;         * Bootstrap v5.1.3 (https://getbootstrap.com/)&#xa;         * Copyright 2011-2021 The Bootstrap Authors&#xa;         * Copyright 2011-2021 Twitter, Inc.&#xa;         * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)&#xa;         */&#xa;    &#xa;    Path: http://trick.htb:80/&#xa;    Line number: 20&#xa;    Comment: &#xa;        &lt;!-&#45; Background Video-&#45;&gt;&#xa;    &#xa;    Path: http://trick.htb:80/&#xa;    Line number: 79&#xa;    Comment: &#xa;        &lt;!-&#45; * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-&#45;&gt;&#xa;    &#xa;    Path: http://trick.htb:80/&#xa;    Line number: 32&#xa;    Comment: &#xa;        &lt;!-&#45; To make this form functional, sign up at-&#45;&gt;&#xa;    &#xa;    Path: http://trick.htb:80/&#xa;    Line number: 36&#xa;    Comment: &#xa;        &lt;!-&#45; Email address input-&#45;&gt;&#xa;    &#xa;    Path: http://trick.htb:80/&#xa;    Line number: 65&#xa;    Comment: &#xa;        &lt;!-&#45; For more icon options, visit https://fontawesome.com/icons?d=gallery&amp;p=2&amp;s=brands-&#45;&gt;&#xa;    &#xa;    Path: http://trick.htb:80/&#xa;    Line number: 73&#xa;    Comment: &#xa;        &lt;!-&#45; Bootstrap core JS-&#45;&gt;&#xa;    &#xa;    Path: http://trick.htb:80/&#xa;    Line number: 34&#xa;    Comment: &#xa;        &lt;!-&#45; to get an API token!-&#45;&gt;&#xa;"/><script id="http-dombased-xss" output="Couldn&apos;t find any DOM based XSS."/><script id="http-custom-title" output="Coming Soon - Start Bootstrap Theme"></script><script id="http-wordpress-enum" output="Nothing found amongst the top 100 resources,use -&#45;script-args search-limit=&lt;number|all&gt; for deeper analysis)"/></port>
+</ports>
+<times srtt="87805" rttvar="87805" to="439025"/>
+</host>
+<taskbegin task="NSE" time="1664888829"/>
+<taskend task="NSE" time="1664888829"/>
+<taskbegin task="NSE" time="1664888829"/>
+<taskend task="NSE" time="1664888829"/>
+<taskbegin task="NSE" time="1664888829"/>
+<taskend task="NSE" time="1664888829"/>
+<runstats><finished time="1664888829" timestr="Tue Oct  4 20:07:09 2022" summary="Nmap done at Tue Oct  4 20:07:09 2022; 1 IP address (1 host up) scanned in 208.07 seconds" elapsed="208.07" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

@@ -1,0 +1,19 @@
+
+; <<>> DiG 9.18.7-1-Debian <<>> -p 53 -x trick.htb @trick.htb
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: REFUSED, id: 14881
+;; flags: qr rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+;; WARNING: recursion requested but not available
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+; COOKIE: ce081c0a57701c5c3402b1d7633c2f2dbaf40c3de7be9a34 (good)
+;; QUESTION SECTION:
+;htb.trick.in-addr.arpa.		IN	PTR
+
+;; Query time: 179 msec
+;; SERVER: 10.10.11.166#53(trick.htb) (UDP)
+;; WHEN: Tue Oct 04 20:03:41 +07 2022
+;; MSG SIZE  rcvd: 79
+

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.92 scan initiated Tue Oct  4 20:02:31 2022 as: nmap -vv -&#45;reason -Pn -T4 -sU -A -&#45;top-ports 100 -oN /mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/_top_100_udp_nmap.txt -oX /mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/xml/_top_100_udp_nmap.xml trick.htb -->
+<nmaprun scanner="nmap" args="nmap -vv -&#45;reason -Pn -T4 -sU -A -&#45;top-ports 100 -oN /mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/_top_100_udp_nmap.txt -oX /mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/xml/_top_100_udp_nmap.xml trick.htb" start="1664888551" startstr="Tue Oct  4 20:02:31 2022" version="7.92" xmloutputversion="1.05">
+<scaninfo type="udp" protocol="udp" numservices="100" services="7,9,17,19,49,53,67-69,80,88,111,120,123,135-139,158,161-162,177,427,443,445,497,500,514-515,518,520,593,623,626,631,996-999,1022-1023,1025-1030,1433-1434,1645-1646,1701,1718-1719,1812-1813,1900,2000,2048-2049,2222-2223,3283,3456,3703,4444,4500,5000,5060,5353,5632,9200,10000,17185,20031,30718,31337,32768-32769,32771,32815,33281,49152-49154,49156,49181-49182,49185-49186,49188,49190-49194,49200-49201,65024"/>
+<verbose level="2"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1664888551"/>
+<taskend task="NSE" time="1664888551"/>
+<taskbegin task="NSE" time="1664888551"/>
+<taskend task="NSE" time="1664888551"/>
+<taskbegin task="NSE" time="1664888551"/>
+<taskend task="NSE" time="1664888551"/>
+<taskbegin task="UDP Scan" time="1664888551"/>
+<taskend task="UDP Scan" time="1664888648" extrainfo="100 total ports"/>
+<taskbegin task="Service scan" time="1664888648"/>
+<taskprogress task="Service scan" time="1664888694" percent="25.00" remaining="138" etc="1664888832"/>
+<taskprogress task="Service scan" time="1664888746" percent="75.00" remaining="33" etc="1664888779"/>
+<taskend task="Service scan" time="1664888746" extrainfo="8 services on 1 host"/>
+<taskbegin task="Traceroute" time="1664888748"/>
+<taskend task="Traceroute" time="1664888748"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1664888748"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1664888749"/>
+<taskbegin task="NSE" time="1664888749"/>
+<taskprogress task="NSE" time="1664888780" percent="99.19" remaining="1" etc="1664888780"/>
+<taskend task="NSE" time="1664888792"/>
+<taskbegin task="NSE" time="1664888792"/>
+<taskend task="NSE" time="1664888793"/>
+<taskbegin task="NSE" time="1664888793"/>
+<taskend task="NSE" time="1664888793"/>
+<host starttime="1664888552" endtime="1664888793"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="10.10.11.166" addrtype="ipv4"/>
+<hostnames>
+<hostname name="trick.htb" type="user"/>
+<hostname name="trick.htb" type="PTR"/>
+</hostnames>
+<ports><extraports state="closed" count="92">
+<extrareasons reason="port-unreach" count="92" proto="udp" ports="7,9,17,19,49,67,69,80,88,111,120,123,135-139,158,161-162,177,443,445,497,500,514-515,518,520,593,623,996-999,1022-1023,1025-1030,1433-1434,1646,1701,1718-1719,1812-1813,1900,2000,2048,2222-2223,3283,3456,3703,4444,4500,5000,5060,5632,9200,10000,17185,20031,30718,31337,32768-32769,32771,32815,33281,49152-49154,49156,49181-49182,49185-49186,49188,49190-49194,49200-49201,65024"/>
+</extraports>
+<port protocol="udp" portid="53"><state state="open" reason="udp-response" reason_ttl="63"/><service name="domain" product="ISC BIND" version="9.11.5-P4-5.1+deb10u7" extrainfo="Debian Linux" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:isc:bind:9.11.5-p4-5.1%2Bdeb10u7</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service><script id="cve-2020-1350" output="&#xa;  bind.version: 9.11.5-P4-5.1+deb10u7-Debian"><elem key="bind.version">9.11.5-P4-5.1+deb10u7-Debian</elem>
+</script><script id="dns-nsid" output="&#xa;  bind.version: 9.11.5-P4-5.1+deb10u7-Debian"><elem key="bind.version">9.11.5-P4-5.1+deb10u7-Debian</elem>
+</script></port>
+<port protocol="udp" portid="68"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="dhcpc" method="table" conf="3"/></port>
+<port protocol="udp" portid="427"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="svrloc" method="table" conf="3"/></port>
+<port protocol="udp" portid="626"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="serialnumberd" method="table" conf="3"/></port>
+<port protocol="udp" portid="631"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="ipp" method="table" conf="3"/></port>
+<port protocol="udp" portid="1645"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="radius" method="table" conf="3"/></port>
+<port protocol="udp" portid="2049"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="nfs" method="table" conf="3"/></port>
+<port protocol="udp" portid="5353"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="zeroconf" method="table" conf="3"/></port>
+</ports>
+<os><portused state="closed" proto="udp" portid="7"/>
+<osfingerprint fingerprint="SCAN(V=7.92%E=4%D=10/4%OT=%CT=%CU=7%PV=Y%DS=2%DC=T%G=N%TM=633C2FD9%P=x86_64-pc-linux-gnu)&#xa;SEQ(CI=Z%II=I)&#xa;SEQ(CI=Z)&#xa;T5(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)&#xa;T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)&#xa;T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)&#xa;U1(R=Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)&#xa;IE(R=Y%DFI=N%T=40%CD=S)&#xa;"/>
+</os>
+<distance value="2"/>
+<trace port="49" proto="udp">
+<hop ttl="1" ipaddr="10.10.16.1" rtt="81.45"/>
+<hop ttl="2" ipaddr="10.10.11.166" rtt="81.57" host="trick.htb"/>
+</trace>
+<times srtt="96760" rttvar="12472" to="146648"/>
+</host>
+<taskbegin task="NSE" time="1664888793"/>
+<taskend task="NSE" time="1664888793"/>
+<taskbegin task="NSE" time="1664888793"/>
+<taskend task="NSE" time="1664888793"/>
+<taskbegin task="NSE" time="1664888793"/>
+<taskend task="NSE" time="1664888793"/>
+<runstats><finished time="1664888793" timestr="Tue Oct  4 20:06:33 2022" summary="Nmap done at Tue Oct  4 20:06:33 2022; 1 IP address (1 host up) scanned in 242.94 seconds" elapsed="242.94" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

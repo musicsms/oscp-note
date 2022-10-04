@@ -1,0 +1,102 @@
+nmap -vv --reason -Pn -T4 -sV -sC --version-all -A --osscan-guess -oN "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/_quick_tcp_nmap.txt" -oX "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/xml/_quick_tcp_nmap.xml" trick.htb
+
+nmap -vv --reason -Pn -T4 -sV -sC --version-all -A --osscan-guess -p- -oN "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/_full_tcp_nmap.txt" -oX "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/xml/_full_tcp_nmap.xml" trick.htb
+
+nmap -vv --reason -Pn -T4 -sU -A --top-ports 100 -oN "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/_top_100_udp_nmap.txt" -oX "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/xml/_top_100_udp_nmap.xml" trick.htb
+
+nmap -vv --reason -Pn -T4 -sV -p 22 --script="banner,ssh2-enum-algos,ssh-hostkey,ssh-auth-methods" -oN "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp22/tcp_22_ssh_nmap.txt" -oX "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp22/xml/tcp_22_ssh_nmap.xml" trick.htb
+
+nmap -vv --reason -Pn -T4 -sV -p 25 --script="banner,(smtp* or ssl*) and not (brute or broadcast or dos or external or fuzzer)" -oN "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp25/tcp_25_smtp_nmap.txt" -oX "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp25/xml/tcp_25_smtp_nmap.xml" trick.htb
+
+hydra smtp-enum://trick.htb:25/vrfy -L "/usr/share/seclists/Usernames/top-usernames-shortlist.txt" 2>&1
+
+dig -p 53 -x trick.htb @trick.htb
+
+dig AXFR -p 53 @trick.htb trick.htb
+
+nmap -vv --reason -Pn -T4 -sV -p 53 --script="banner,(dns* or ssl*) and not (brute or broadcast or dos or external or fuzzer)" -oN "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp53/tcp_53_dns_nmap.txt" -oX "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp53/xml/tcp_53_dns_nmap.xml" trick.htb
+
+gobuster dns -d trick.htb -r trick.htb -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt -o "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp53/tcp_53_trick.htb_subdomains_subdomains-top1million-110000.txt"
+
+feroxbuster -u http://trick.htb:80/ -t 10 -w /root/.config/AutoRecon/wordlists/dirbuster.txt -x "txt,html,php,asp,aspx,jsp" -v -k -n -q -e -o "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp80/tcp_80_http_feroxbuster_dirbuster.txt"
+
+curl -sSikf http://trick.htb:80/.well-known/security.txt
+
+curl -sSikf http://trick.htb:80/robots.txt
+
+curl -sSik http://trick.htb:80/
+
+nmap -vv --reason -Pn -T4 -sV -p 80 --script="banner,(http* or ssl*) and not (brute or broadcast or dos or external or http-slowloris* or fuzzer)" -oN "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp80/tcp_80_http_nmap.txt" -oX "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp80/xml/tcp_80_http_nmap.xml" trick.htb
+
+curl -sk -o /dev/null -H "Host: VbqwKADHzpALqnSCFeaH.trick.htb" http://trick.htb:80/ -w "%{size_download}"
+
+whatweb --color=never --no-errors -a 3 -v http://trick.htb:80 2>&1
+
+wkhtmltoimage --format png http://trick.htb:80/ /mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp80/tcp_80_http_screenshot.png
+
+dig AXFR -p 53 @trick.htb
+
+ffuf -u http://trick.htb:80/ -t 10 -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt -H "Host: FUZZ.trick.htb" -fs 5480 -noninteractive -s | tee "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp80/tcp_80_http_trick.htb_vhosts_subdomains-top1million-110000.txt"
+
+hydra smtp-enum://trick.htb:25/expn -L "/usr/share/seclists/Usernames/top-usernames-shortlist.txt" 2>&1
+
+nmap -vv --reason -Pn -T4 -sV -sC --version-all -A --osscan-guess -oN "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/_quick_tcp_nmap.txt" -oX "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/xml/_quick_tcp_nmap.xml" trick.htb
+
+nmap -vv --reason -Pn -T4 -sV -sC --version-all -A --osscan-guess -p- -oN "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/_full_tcp_nmap.txt" -oX "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/xml/_full_tcp_nmap.xml" trick.htb
+
+nmap -vv --reason -Pn -T4 -sU -A --top-ports 100 -oN "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/_top_100_udp_nmap.txt" -oX "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/xml/_top_100_udp_nmap.xml" trick.htb
+
+nmap -vv --reason -Pn -T4 -sV -p 22 --script="banner,ssh2-enum-algos,ssh-hostkey,ssh-auth-methods" -oN "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp22/tcp_22_ssh_nmap.txt" -oX "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp22/xml/tcp_22_ssh_nmap.xml" trick.htb
+
+nmap -vv --reason -Pn -T4 -sV -p 25 --script="banner,(smtp* or ssl*) and not (brute or broadcast or dos or external or fuzzer)" -oN "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp25/tcp_25_smtp_nmap.txt" -oX "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp25/xml/tcp_25_smtp_nmap.xml" trick.htb
+
+hydra smtp-enum://trick.htb:25/vrfy -L "/usr/share/seclists/Usernames/top-usernames-shortlist.txt" 2>&1
+
+dnsrecon -n trick.htb -d trick.htb 2>&1
+
+dig -p 53 -x trick.htb @trick.htb
+
+dig AXFR -p 53 @trick.htb trick.htb
+
+nmap -vv --reason -Pn -T4 -sV -p 53 --script="banner,(dns* or ssl*) and not (brute or broadcast or dos or external or fuzzer)" -oN "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp53/tcp_53_dns_nmap.txt" -oX "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp53/xml/tcp_53_dns_nmap.xml" trick.htb
+
+gobuster dns -d trick.htb -r trick.htb -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt -o "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp53/tcp_53_trick.htb_subdomains_subdomains-top1million-110000.txt"
+
+feroxbuster -u http://trick.htb:80/ -t 10 -w /root/.config/AutoRecon/wordlists/dirbuster.txt -x "txt,html,php,asp,aspx,jsp" -v -k -n -q -e -o "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp80/tcp_80_http_feroxbuster_dirbuster.txt"
+
+curl -sSikf http://trick.htb:80/.well-known/security.txt
+
+curl -sSikf http://trick.htb:80/robots.txt
+
+curl -sSik http://trick.htb:80/
+
+nmap -vv --reason -Pn -T4 -sV -p 80 --script="banner,(http* or ssl*) and not (brute or broadcast or dos or external or http-slowloris* or fuzzer)" -oN "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp80/tcp_80_http_nmap.txt" -oX "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp80/xml/tcp_80_http_nmap.xml" trick.htb
+
+curl -sk -o /dev/null -H "Host: vJbdUpDgHfMzZcWebwCt.trick.htb" http://trick.htb:80/ -w "%{size_download}"
+
+whatweb --color=never --no-errors -a 3 -v http://trick.htb:80 2>&1
+
+wkhtmltoimage --format png http://trick.htb:80/ /mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp80/tcp_80_http_screenshot.png
+
+dig AXFR -p 53 @trick.htb trick.htb
+
+ffuf -u http://trick.htb:80/ -t 10 -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt -H "Host: FUZZ.trick.htb" -fs 5480 -noninteractive -s | tee "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/tcp80/tcp_80_http_trick.htb_vhosts_subdomains-top1million-110000.txt"
+
+dig AXFR -p 53 @trick.htb
+
+hydra smtp-enum://trick.htb:25/expn -L "/usr/share/seclists/Usernames/top-usernames-shortlist.txt" 2>&1
+
+dnsrecon -n trick.htb -d trick.htb 2>&1
+
+dig -p 53 -x trick.htb @trick.htb
+
+dig AXFR -p 53 @trick.htb trick.htb
+
+nmap -vv --reason -Pn -T4 -sU -sV -p 53 --script="banner,(dns* or ssl*) and not (brute or broadcast or dos or external or fuzzer)" -oN "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/udp53/udp_53_dns_nmap.txt" -oX "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/udp53/xml/udp_53_dns_nmap.xml" trick.htb
+
+gobuster dns -d trick.htb -r trick.htb -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt -o "/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick/results/trick.htb/scans/udp53/udp_53_trick.htb_subdomains_subdomains-top1million-110000.txt"
+
+dig AXFR -p 53 @trick.htb trick.htb
+
+dig AXFR -p 53 @trick.htb
+

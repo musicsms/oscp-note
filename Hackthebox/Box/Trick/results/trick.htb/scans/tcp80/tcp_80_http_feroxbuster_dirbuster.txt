@@ -1,0 +1,12 @@
+200      GET    11431l    21730w   209654c http://trick.htb/css/styles.css
+200      GET        7l       36w      321c http://trick.htb/js/scripts.js
+200      GET        8l       29w    23462c http://trick.htb/assets/favicon.ico
+200      GET       83l      475w     5480c http://trick.htb/
+200      GET    11431l    21730w   209654c http://trick.htb/css/styles.css
+200      GET        8l       29w    23462c http://trick.htb/assets/favicon.ico
+200      GET        7l       36w      321c http://trick.htb/js/scripts.js
+200      GET       83l      475w     5480c http://trick.htb/
+301      GET        7l       12w      185c http://trick.htb/assets => http://trick.htb/assets/
+301      GET        7l       12w      185c http://trick.htb/css => http://trick.htb/css/
+200      GET       83l      475w     5480c http://trick.htb/index.html
+301      GET        7l       12w      185c http://trick.htb/js => http://trick.htb/js/
