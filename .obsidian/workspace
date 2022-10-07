@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Hackthebox/Box/Redpanda/Readme.md",
+            "file": "Hackthebox/Box/Trick/Readme.md",
             "mode": "source",
             "source": false
           }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Hackthebox/Box/Redpanda/Readme.md",
+                "file": "Hackthebox/Box/Trick/Readme.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Hackthebox/Box/Redpanda/Readme.md",
+                "file": "Hackthebox/Box/Trick/Readme.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -117,7 +117,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Hackthebox/Box/Redpanda/Readme.md"
+                "file": "Hackthebox/Box/Trick/Readme.md"
               }
             }
           }
@@ -130,8 +130,8 @@
   },
   "active": "a6eb187a1faf50c1",
   "lastOpenFiles": [
-    "Hackthebox/Box/Shoppy/Readme.md",
     "Hackthebox/Box/Redpanda/Readme.md",
+    "Hackthebox/Box/Shoppy/Readme.md",
     "Hackthebox/Box/OpenSource/Readme.md",
     "Cheatsheet/SQL-Bypass-Login-Cheatsheet.md",
     "Hackthebox/Box/Trick/Readme.md",
