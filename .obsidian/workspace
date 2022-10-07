@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Hackthebox/Box/Trick/Readme.md",
+            "file": "Hackthebox/Box/Shoppy/Readme.md",
             "mode": "source",
             "source": false
           }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Hackthebox/Box/Trick/Readme.md",
+                "file": "Hackthebox/Box/Shoppy/Readme.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Hackthebox/Box/Trick/Readme.md",
+                "file": "Hackthebox/Box/Shoppy/Readme.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -117,7 +117,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Hackthebox/Box/Trick/Readme.md"
+                "file": "Hackthebox/Box/Shoppy/Readme.md"
               }
             }
           }
@@ -130,15 +130,15 @@
   },
   "active": "a6eb187a1faf50c1",
   "lastOpenFiles": [
-    "Cheatsheet/Gobuster-Cheatsheet.md",
+    "Hackthebox/Box/OpenSource/Readme.md",
     "Hackthebox/Box/Trick/Readme.md",
+    "Cheatsheet/Gobuster-Cheatsheet.md",
     "How-to/How-to-use-sqlmap.md",
     "How-to/how-to-crack-parralel-macos.md",
     "Hackthebox/Box/Trick/img/burp_intruder.png",
     "Hackthebox/Box/Trick/img/payroll.png",
     "Cheatsheet/SQL-Bypass-Login-Cheatsheet.md",
     "Cheatsheet/Port-Scanning/1.Nmap-Scanning.md",
-    "Hackthebox/Box/Ambassador/Readme.md",
-    "Hackthebox/Box/Shoppy/Readme.md"
+    "Hackthebox/Box/Ambassador/Readme.md"
   ]
 }

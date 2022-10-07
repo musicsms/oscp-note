@@ -1,0 +1,199 @@
+# Nmap 7.92 scan initiated Wed Oct  5 21:30:06 2022 as: nmap -vv --reason -Pn -T4 -sV -p 80 "--script=banner,(http* or ssl*) and not (brute or broadcast or dos or external or http-slowloris* or fuzzer)" -oN /mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/OpenSource/results/10.10.11.164/scans/tcp80/tcp_80_http_nmap.txt -oX /mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/OpenSource/results/10.10.11.164/scans/tcp80/xml/tcp_80_http_nmap.xml 10.10.11.164
+Nmap scan report for 10.10.11.164
+Host is up, received user-set (0.100s latency).
+Scanned at 2022-10-05 21:30:08 +07 for 688s
+
+Bug in http-security-headers: no string output.
+PORT   STATE SERVICE REASON  VERSION
+80/tcp open  http    syn-ack Werkzeug/2.1.2 Python/3.10.3
+|_http-server-header: Werkzeug/2.1.2 Python/3.10.3
+| http-comments-displayer: 
+| Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=10.10.11.164
+|     
+|     Path: http://10.10.11.164:80/
+|     Line number: 95
+|     Comment: 
+|         <!-- /container -->
+|     
+|     Path: http://10.10.11.164:80/static/vendor/font-awesome/all.min.css
+|     Line number: 1
+|     Comment: 
+|         /*!
+|          * Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com
+|          * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+|          */
+|     
+|     Path: http://10.10.11.164:80/
+|     Line number: 67
+|     Comment: 
+|         <!-- Example row of columns -->
+|     
+|     Path: http://10.10.11.164:80/
+|     Line number: 57
+|     Comment: 
+|         <!-- Main jumbotron for a primary marketing message or call to action -->
+|     
+|     Path: http://10.10.11.164:80/static/vendor/popper/popper.min.js
+|     Line number: 5
+|     Comment: 
+|         
+|         //# sourceMappingURL=popper.min.js.map
+|     
+|     Path: http://10.10.11.164:80/static/vendor/popper/popper.min.js
+|     Line number: 1
+|     Comment: 
+|         /*
+|          Copyright (C) Federico Zivolo 2019
+|          Distributed under the MIT License (license terms are at http://opensource.org/licenses/MIT).
+|_         */
+|_http-referer-checker: Couldn't find any cross-domain scripts.
+|_http-feed: Couldn't find any feeds.
+|_http-wordpress-enum: Nothing found amongst the top 100 resources,use --script-args search-limit=<number|all> for deeper analysis)
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-errors: ERROR: Script execution failed (use -d to debug)
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+| fingerprint-strings: 
+|   GetRequest: 
+|     HTTP/1.1 200 OK
+|     Server: Werkzeug/2.1.2 Python/3.10.3
+|     Date: Wed, 05 Oct 2022 14:30:13 GMT
+|     Content-Type: text/html; charset=utf-8
+|     Content-Length: 5316
+|     Connection: close
+|     <html lang="en">
+|     <head>
+|     <meta charset="UTF-8">
+|     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+|     <title>upcloud - Upload files for Free!</title>
+|     <script src="/static/vendor/jquery/jquery-3.4.1.min.js"></script>
+|     <script src="/static/vendor/popper/popper.min.js"></script>
+|     <script src="/static/vendor/bootstrap/js/bootstrap.min.js"></script>
+|     <script src="/static/js/ie10-viewport-bug-workaround.js"></script>
+|     <link rel="stylesheet" href="/static/vendor/bootstrap/css/bootstrap.css"/>
+|     <link rel="stylesheet" href=" /static/vendor/bootstrap/css/bootstrap-grid.css"/>
+|     <link rel="stylesheet" href=" /static/vendor/bootstrap/css/bootstrap-reboot.css"/>
+|     <link rel=
+|   HTTPOptions: 
+|     HTTP/1.1 200 OK
+|     Server: Werkzeug/2.1.2 Python/3.10.3
+|     Date: Wed, 05 Oct 2022 14:30:13 GMT
+|     Content-Type: text/html; charset=utf-8
+|     Allow: GET, HEAD, OPTIONS
+|     Content-Length: 0
+|     Connection: close
+|   RTSPRequest: 
+|     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+|     "http://www.w3.org/TR/html4/strict.dtd">
+|     <html>
+|     <head>
+|     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+|     <title>Error response</title>
+|     </head>
+|     <body>
+|     <h1>Error response</h1>
+|     <p>Error code: 400</p>
+|     <p>Message: Bad request version ('RTSP/1.0').</p>
+|     <p>Error code explanation: HTTPStatus.BAD_REQUEST - Bad request syntax or unsupported method.</p>
+|     </body>
+|_    </html>
+|_http-drupal-enum: Nothing found amongst the top 100 resources,use --script-args number=<number|all> for deeper analysis)
+|_http-jsonp-detection: Couldn't find any JSONP endpoints.
+|_http-fetch: Please enter the complete path of the directory to save data in.
+| http-methods: 
+|_  Supported Methods: GET HEAD OPTIONS
+| http-sitemap-generator: 
+|   Directory structure:
+|     /
+|       Other: 1
+|     /static/vendor/font-awesome/
+|       css: 1
+|     /static/vendor/popper/
+|       js: 1
+|   Longest directory structure:
+|     Depth: 3
+|     Dir: /static/vendor/popper/
+|   Total files found (by extension):
+|_    Other: 1; css: 1; js: 1
+|_http-date: Wed, 05 Oct 2022 14:31:47 GMT; -2s from local time.
+|_http-litespeed-sourcecode-download: Page: /index.php was not found. Try with an existing file.
+|_http-wordpress-users: [Error] Wordpress installation was not found. We couldn't find wp-login.php
+|_http-devframework: Couldn't determine the underlying framework or CMS. Try increasing 'httpspider.maxpagecount' value to spider more pages.
+| http-vhosts: 
+|_128 names had status 200
+|_http-chrono: Request times for /; avg: 359.58ms; min: 250.14ms; max: 562.51ms
+|_http-malware-host: Host appears to be clean
+|_http-custom-title: upcloud - Upload files for Free!
+| http-php-version: Logo query returned unknown hash 29d49d811ecc01bb34af7b5a5f73408f
+|_Credits query returned unknown hash 29d49d811ecc01bb34af7b5a5f73408f
+| http-headers: 
+|   Server: Werkzeug/2.1.2 Python/3.10.3
+|   Date: Wed, 05 Oct 2022 14:31:53 GMT
+|   Content-Type: text/html; charset=utf-8
+|   Content-Length: 5316
+|   Connection: close
+|   
+|_  (Request type: HEAD)
+| http-useragent-tester: 
+|   Status for browser useragent: 200
+|   Allowed User Agents: 
+|     Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)
+|     libwww
+|     lwp-trivial
+|     libcurl-agent/1.0
+|     PHP/
+|     Python-urllib/2.5
+|     GT::WWW
+|     Snoopy
+|     MFC_Tear_Sample
+|     HTTP::Lite
+|     PHPCrawl
+|     URI::Fetch
+|     Zend_Http_Client
+|     http client
+|     PECL::HTTP
+|     Wget/1.13.4 (linux-gnu)
+|_    WWW-Mechanize/1.34
+|_http-config-backup: ERROR: Script execution failed (use -d to debug)
+|_http-mobileversion-checker: No mobile version detected.
+|_http-title: upcloud - Upload files for Free!
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port80-TCP:V=7.92%I=7%D=10/5%Time=633D94F6%P=x86_64-pc-linux-gnu%r(GetR
+SF:equest,1030,"HTTP/1\.1\x20200\x20OK\r\nServer:\x20Werkzeug/2\.1\.2\x20P
+SF:ython/3\.10\.3\r\nDate:\x20Wed,\x2005\x20Oct\x202022\x2014:30:13\x20GMT
+SF:\r\nContent-Type:\x20text/html;\x20charset=utf-8\r\nContent-Length:\x20
+SF:5316\r\nConnection:\x20close\r\n\r\n<html\x20lang=\"en\">\n<head>\n\x20
+SF:\x20\x20\x20<meta\x20charset=\"UTF-8\">\n\x20\x20\x20\x20<meta\x20name=
+SF:\"viewport\"\x20content=\"width=device-width,\x20initial-scale=1\.0\">\
+SF:n\x20\x20\x20\x20<title>upcloud\x20-\x20Upload\x20files\x20for\x20Free!
+SF:</title>\n\n\x20\x20\x20\x20<script\x20src=\"/static/vendor/jquery/jque
+SF:ry-3\.4\.1\.min\.js\"></script>\n\x20\x20\x20\x20<script\x20src=\"/stat
+SF:ic/vendor/popper/popper\.min\.js\"></script>\n\n\x20\x20\x20\x20<script
+SF:\x20src=\"/static/vendor/bootstrap/js/bootstrap\.min\.js\"></script>\n\
+SF:x20\x20\x20\x20<script\x20src=\"/static/js/ie10-viewport-bug-workaround
+SF:\.js\"></script>\n\n\x20\x20\x20\x20<link\x20rel=\"stylesheet\"\x20href
+SF:=\"/static/vendor/bootstrap/css/bootstrap\.css\"/>\n\x20\x20\x20\x20<li
+SF:nk\x20rel=\"stylesheet\"\x20href=\"\x20/static/vendor/bootstrap/css/boo
+SF:tstrap-grid\.css\"/>\n\x20\x20\x20\x20<link\x20rel=\"stylesheet\"\x20hr
+SF:ef=\"\x20/static/vendor/bootstrap/css/bootstrap-reboot\.css\"/>\n\n\x20
+SF:\x20\x20\x20<link\x20rel=")%r(HTTPOptions,C7,"HTTP/1\.1\x20200\x20OK\r\
+SF:nServer:\x20Werkzeug/2\.1\.2\x20Python/3\.10\.3\r\nDate:\x20Wed,\x2005\
+SF:x20Oct\x202022\x2014:30:13\x20GMT\r\nContent-Type:\x20text/html;\x20cha
+SF:rset=utf-8\r\nAllow:\x20GET,\x20HEAD,\x20OPTIONS\r\nContent-Length:\x20
+SF:0\r\nConnection:\x20close\r\n\r\n")%r(RTSPRequest,1F4,"<!DOCTYPE\x20HTM
+SF:L\x20PUBLIC\x20\"-//W3C//DTD\x20HTML\x204\.01//EN\"\n\x20\x20\x20\x20\x
+SF:20\x20\x20\x20\"http://www\.w3\.org/TR/html4/strict\.dtd\">\n<html>\n\x
+SF:20\x20\x20\x20<head>\n\x20\x20\x20\x20\x20\x20\x20\x20<meta\x20http-equ
+SF:iv=\"Content-Type\"\x20content=\"text/html;charset=utf-8\">\n\x20\x20\x
+SF:20\x20\x20\x20\x20\x20<title>Error\x20response</title>\n\x20\x20\x20\x2
+SF:0</head>\n\x20\x20\x20\x20<body>\n\x20\x20\x20\x20\x20\x20\x20\x20<h1>E
+SF:rror\x20response</h1>\n\x20\x20\x20\x20\x20\x20\x20\x20<p>Error\x20code
+SF::\x20400</p>\n\x20\x20\x20\x20\x20\x20\x20\x20<p>Message:\x20Bad\x20req
+SF:uest\x20version\x20\('RTSP/1\.0'\)\.</p>\n\x20\x20\x20\x20\x20\x20\x20\
+SF:x20<p>Error\x20code\x20explanation:\x20HTTPStatus\.BAD_REQUEST\x20-\x20
+SF:Bad\x20request\x20syntax\x20or\x20unsupported\x20method\.</p>\n\x20\x20
+SF:\x20\x20</body>\n</html>\n");
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed Oct  5 21:41:36 2022 -- 1 IP address (1 host up) scanned in 689.86 seconds

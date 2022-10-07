@@ -254,7 +254,7 @@ jaeger@shoppy:~
 ```
 
 # Foothold
-Noticed that in chat, there some programs call password manager running in this server, that could be hint for privilege escalate.
+Noticed that in chat, there some programs call password manager running in this server, that could be hint for privilege escalated.
 
 Check port running:
 
@@ -321,6 +321,7 @@ uid=1001(deploy) gid=1001(deploy) groups=1001(deploy),998(docker)
 $
 ```
 
+# Escalate Privilege
 
 Escalate via `docker`
 [https://gtfobins.github.io/gtfobins/docker/](https://gtfobins.github.io/gtfobins/docker/)

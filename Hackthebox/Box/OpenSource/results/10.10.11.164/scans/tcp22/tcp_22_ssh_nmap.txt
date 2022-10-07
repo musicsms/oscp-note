@@ -1,0 +1,62 @@
+# Nmap 7.92 scan initiated Wed Oct  5 21:30:06 2022 as: nmap -vv --reason -Pn -T4 -sV -p 22 --script=banner,ssh2-enum-algos,ssh-hostkey,ssh-auth-methods -oN /mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/OpenSource/results/10.10.11.164/scans/tcp22/tcp_22_ssh_nmap.txt -oX /mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/OpenSource/results/10.10.11.164/scans/tcp22/xml/tcp_22_ssh_nmap.xml 10.10.11.164
+Nmap scan report for 10.10.11.164
+Host is up, received user-set (0.17s latency).
+Scanned at 2022-10-05 21:30:07 +07 for 4s
+
+PORT   STATE SERVICE REASON  VERSION
+22/tcp open  ssh     syn-ack OpenSSH 7.6p1 Ubuntu 4ubuntu0.7 (Ubuntu Linux; protocol 2.0)
+| ssh2-enum-algos: 
+|   kex_algorithms: (10)
+|       curve25519-sha256
+|       curve25519-sha256@libssh.org
+|       ecdh-sha2-nistp256
+|       ecdh-sha2-nistp384
+|       ecdh-sha2-nistp521
+|       diffie-hellman-group-exchange-sha256
+|       diffie-hellman-group16-sha512
+|       diffie-hellman-group18-sha512
+|       diffie-hellman-group14-sha256
+|       diffie-hellman-group14-sha1
+|   server_host_key_algorithms: (5)
+|       ssh-rsa
+|       rsa-sha2-512
+|       rsa-sha2-256
+|       ecdsa-sha2-nistp256
+|       ssh-ed25519
+|   encryption_algorithms: (6)
+|       chacha20-poly1305@openssh.com
+|       aes128-ctr
+|       aes192-ctr
+|       aes256-ctr
+|       aes128-gcm@openssh.com
+|       aes256-gcm@openssh.com
+|   mac_algorithms: (10)
+|       umac-64-etm@openssh.com
+|       umac-128-etm@openssh.com
+|       hmac-sha2-256-etm@openssh.com
+|       hmac-sha2-512-etm@openssh.com
+|       hmac-sha1-etm@openssh.com
+|       umac-64@openssh.com
+|       umac-128@openssh.com
+|       hmac-sha2-256
+|       hmac-sha2-512
+|       hmac-sha1
+|   compression_algorithms: (2)
+|       none
+|_      zlib@openssh.com
+| ssh-auth-methods: 
+|   Supported authentication methods: 
+|_    publickey
+| ssh-hostkey: 
+|   2048 1e:59:05:7c:a9:58:c9:23:90:0f:75:23:82:3d:05:5f (RSA)
+| ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDOm3Ocn3qQzvKFsAf8u2wdkpi0XryPX5W33bER74CfZxc4QPasF+hGBNSaCanZpccGuPffJ9YenksdoTNdf35cvhamsBUq6TD88Cyv9Qs68kWPJD71MkSDgoyMFIe7NTdzyWJJjmUcNHRvwfo6KQsVXjwC4MN+SkL6dLfAY4UawSNhJZGTiKu0snAV6TZ5ZYnmDpnKIEZzf/dOK6bBu4SCu9DRjPknuZkl7sKp3VCoI9CRIu1tihqs1NPhFa+XnHSRsULWtQqtmxZP5UXbmgwETxmpfw8M9XcMH0QXr8JSAdDkg2NtIapmPX/a3hVFATYg+idaEEQNlZHPUKLbCTyJ
+|   256 48:a8:53:e7:e0:08:aa:1d:96:86:52:bb:88:56:a0:b7 (ECDSA)
+| ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBLA9ak8TUAPl/F77SPc1ut/8B+eOukyC/0lof4IrqJoPJLYusbXk+9u/OgSGp6bJZhotkJUvhC7k0rsA7WX19Y8=
+|   256 02:1f:97:9e:3c:8e:7a:1c:7c:af:9d:5a:25:4b:b8:c8 (ED25519)
+|_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINxEEb33GC5nT5IJ/YY+yDpTKQGLOK1HPsEzM99H4KKA
+|_banner: SSH-2.0-OpenSSH_7.6p1 Ubuntu-4ubuntu0.7
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed Oct  5 21:30:11 2022 -- 1 IP address (1 host up) scanned in 5.38 seconds

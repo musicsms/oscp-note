@@ -1,0 +1,9 @@
+200      GET       24l       58w      668c http://10.10.11.164/static/js/ie10-viewport-bug-workaround.js
+200      GET        7l      683w    60010c http://10.10.11.164/static/vendor/bootstrap/js/bootstrap.min.js
+200      GET    10224l    20240w   197170c http://10.10.11.164/static/vendor/bootstrap/css/bootstrap.css
+200      GET        5l      374w    21257c http://10.10.11.164/static/vendor/popper/popper.min.js
+200      GET       40l       81w     1360c http://10.10.11.164/upcloud
+200      GET        2l     1276w    88145c http://10.10.11.164/static/vendor/jquery/jquery-3.4.1.min.js
+200      GET     9803l    56722w  2489147c http://10.10.11.164/download
+200      GET      131l      420w     5316c http://10.10.11.164/
+200      GET       45l      144w     1563c http://10.10.11.164/console
