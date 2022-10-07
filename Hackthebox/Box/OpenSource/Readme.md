@@ -28,8 +28,7 @@ PORT   STATE SERVICE VERSION
 
 ## Whatweb
 ```sh
-┌──(bop㉿Matrix)-[~/Workspace/hackthebox/OpenSource]
-└─$ whatweb $IP
+whatweb $IP
 http://10.10.11.164 [200 OK] Bootstrap, Country[RESERVED][ZZ], HTTPServer[Werkzeug/2.1.2 Python/3.10.3], IP[10.10.11.164], JQuery[3.4.1], Python[3.10.3], Script, Title[upcloud - Upload files for Free!], Werkzeug[2.1.2]
 ```
 

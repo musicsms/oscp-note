@@ -1,12 +1,17 @@
 # Enum
 
 ## Nmap
+- Command:
 
 ```bash
 mkdir enum
 export IP=10.10.11.180
 ports=$(nmap -p- --min-rate=1000 -T4 $IP | grep ^[0-9] | cut -d '/' -f 1 | tr '\n' ',' | sed s/,$//)
 nmap -sC -sV -p$ports $IP -oA enum/full
+```
+- Output:
+
+```bash
 Starting Nmap 7.92 ( https://nmap.org ) at 2022-09-24 07:34 PDT
 Nmap scan report for 10.10.11.180
 Host is up (0.057s latency).
@@ -89,19 +94,31 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 103.89 seconds
 ```
 
-## Whatweb:
+## Whatweb
+- Command:
+
 ```bash
-┌──(bop㉿Matrix)-[~/Workspace/hackthebox/Box/Shoppy]
-└─$ whatweb shoppy.htb
+whatweb shoppy.htb
+```
+
+- Output:
+
+```bash
 http://shoppy.htb [200 OK] Country[RESERVED][ZZ], HTML5, HTTPServer[nginx/1.23.1], IP[10.10.11.180], JQuery, Script, Title[Shoppy Wait Page][Title element contains newline(s)!], nginx[1.23.1]
 ```
 
 ## Gobuster
 
 ### `Dir`:
+- Command:
+
 ```bash
-┌──(bop㉿Matrix)-[~/Workspace/hackthebox/Box/Shoppy]
-└─$ gobuster dir -u http://shoppy.htb -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -o gobuster.txt -t 30 -e php,html,txt
+gobuster dir -u http://shoppy.htb -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -o gobuster.txt -t 30 -e php,html,txt
+```
+
+- Output:
+
+```bash
 ===============================================================
 Gobuster v3.1.0
 by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
@@ -135,14 +152,24 @@ http://shoppy.htb/LOGIN                (Status: 200) [Size: 1074]
 ===============================================================
 ```
 ### `DNS`:
+- Command:
 ```bash
 ┌──(bop㉿BOP-PC)-[/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Shoppy]
 └─$ gobuster dns -d shoppy.htb -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt -o gobuster_dns.txt -t 30
 ```
+
+Found nothing.
 ### `Vhost`:
+- Command:
+
 ```bash
 ┌──(bop㉿BOP-PC)-[/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Shoppy]
 └─$ gobuster vhost -u http://shoppy.htb -w /usr/share/seclists/Discovery/DNS/bitquark-subdomains-top100000.txt -t 20 -o gobuster_vhost.txt
+```
+
+- Output:
+
+```bash
 ===============================================================
 Gobuster v3.1.0
 by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
@@ -162,7 +189,6 @@ Found: mattermost.shoppy.htb (Status: 200) [Size: 3122]
 2022/09/25 22:32:50 Finished
 ===============================================================
 ```
-
 Try SQL Bypass Login but got nothing [[SQL-Bypass-Login-Cheatsheet]]
 
 Try with NoSQL: [https://book.hacktricks.xyz/pentesting-web/nosql-injection](https://book.hacktricks.xyz/pentesting-web/nosql-injection)
@@ -181,9 +207,13 @@ We have 2 user `admin`, and `josh` and their md5 hash password
 password `josh` :`remembermethisway`
 
 Or you can tried to do it yourself with `hashcat`
-
+- Command:
 ```bash
 hashcat -m 0 -a 0 pass.hash /usr/share/wordlists/rockyou.txt -O
+```
+
+- Output:
+```bash
 ....
 
 Host memory required for this attack: 3 MB
@@ -220,8 +250,6 @@ Candidates.#1....: $HEX[21217265626f756e642121] -> $HEX[042a0337c2a156616d6f7321
 Started: Tue Oct  4 16:46:22 2022
 Stopped: Tue Oct  4 16:47:07 2022
 
-┌──(bop㉿BOP-PC)-[/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Shoppy]
-└─$
 ```
 
 Go tried to login server via SSH but doesn't work.

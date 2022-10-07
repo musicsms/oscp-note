@@ -143,8 +143,7 @@ We check detail web service on port 8080, which is running with Java Spring Boot
 
 ## Whatweb
 ```sh
-┌──(kali㉿kali)-[~/Workspace/labs-htb/RedPanda]
-└─$ whatweb http://$IP:8080                     
+whatweb http://$IP:8080                     
 http://10.10.11.170:8080 [200 OK] Content-Language[en-US], Country[RESERVED][ZZ], HTML5, IP[10.10.11.170], Title[Red Panda Search | Made with Spring Boot]
 ```
 ```
@@ -589,8 +588,7 @@ OK. I think that enough. We have write access to `redpanda.log` file, and this f
 - We create image with `Artist` tag. Cause we don't have write permission on `/credits/` to update the value of xml. We need to use directory travesal to another directory that we can write the data. We can use `/home/woodenk/` or `/tmp`. I will chose `/tmp`.
 - We using `exiftool` for write tags to our payload image.
 ```sh
-┌──(kali㉿kali)-[~/Workspace/labs-htb/RedPanda]
-└─$ exiftool -Artist="../tmp/pe" pe.jpg
+exiftool -Artist="../tmp/pe" pe.jpg
 perl: warning: Setting locale failed.
 perl: warning: Please check that your locale settings:
         LANGUAGE = (unset),
@@ -687,8 +685,7 @@ change the `pe_creds.xml` to this one to get private key for `root` user:
 We save the private key and get the root `flag`.
 
 ```sh
-┌──(bop㉿Matrix)-[~/Workspace/hackthebox/RedPanda]
-└─$ ssh -i id_rsa root@10.10.11.170
+ssh -i id_rsa root@10.10.11.170
 Welcome to Ubuntu 20.04.4 LTS (GNU/Linux 5.4.0-121-generic x86_64)
 
  * Documentation:  https://help.ubuntu.com
