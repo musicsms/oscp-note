@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.92 scan initiated Wed Oct 12 20:47:57 2022 as: nmap -vv -&#45;reason -Pn -T4 -sV -p 80 &quot;-&#45;script=banner,(http* or ssl*) and not (brute or broadcast or dos or external or http-slowloris* or fuzzer)&quot; -oN /mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Photobomb/results/photobomb.htb/scans/tcp80/tcp_80_http_nmap.txt -oX /mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Photobomb/results/photobomb.htb/scans/tcp80/xml/tcp_80_http_nmap.xml photobomb.htb -->
+<nmaprun scanner="nmap" args="nmap -vv -&#45;reason -Pn -T4 -sV -p 80 &quot;-&#45;script=banner,(http* or ssl*) and not (brute or broadcast or dos or external or http-slowloris* or fuzzer)&quot; -oN /mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Photobomb/results/photobomb.htb/scans/tcp80/tcp_80_http_nmap.txt -oX /mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Photobomb/results/photobomb.htb/scans/tcp80/xml/tcp_80_http_nmap.xml photobomb.htb" start="1665582477" startstr="Wed Oct 12 20:47:57 2022" version="7.92" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="1" services="80"/>
+<verbose level="2"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1665582478"/>
+<taskend task="NSE" time="1665582478"/>
+<taskbegin task="NSE" time="1665582478"/>
+<taskend task="NSE" time="1665582478"/>
+<taskbegin task="NSE" time="1665582478"/>
+<taskend task="NSE" time="1665582478"/>
+<taskbegin task="SYN Stealth Scan" time="1665582478"/>
+<taskend task="SYN Stealth Scan" time="1665582479" extrainfo="1 total ports"/>
+<taskbegin task="Service scan" time="1665582479"/>
+<taskend task="Service scan" time="1665582486" extrainfo="1 service on 1 host"/>
+<taskbegin task="NSE" time="1665582486"/>
+<taskprogress task="NSE" time="1665582517" percent="99.68" remaining="1" etc="1665582517"/>
+<taskprogress task="NSE" time="1665582547" percent="99.68" remaining="1" etc="1665582547"/>
+<taskprogress task="NSE" time="1665582577" percent="99.68" remaining="1" etc="1665582577"/>
+<taskprogress task="NSE" time="1665582607" percent="99.68" remaining="1" etc="1665582607"/>
+<taskprogress task="NSE" time="1665582637" percent="99.68" remaining="1" etc="1665582637"/>
+<taskprogress task="NSE" time="1665582667" percent="99.68" remaining="1" etc="1665582668"/>
+<taskprogress task="NSE" time="1665582697" percent="99.68" remaining="1" etc="1665582698"/>
+<taskprogress task="NSE" time="1665582727" percent="99.68" remaining="1" etc="1665582728"/>
+<taskprogress task="NSE" time="1665582757" percent="99.68" remaining="1" etc="1665582758"/>
+<taskprogress task="NSE" time="1665582787" percent="99.68" remaining="1" etc="1665582788"/>
+<taskprogress task="NSE" time="1665582817" percent="99.68" remaining="2" etc="1665582818"/>
+<taskprogress task="NSE" time="1665582847" percent="99.68" remaining="2" etc="1665582848"/>
+<taskprogress task="NSE" time="1665582877" percent="99.68" remaining="2" etc="1665582878"/>
+<taskprogress task="NSE" time="1665582907" percent="99.68" remaining="2" etc="1665582908"/>
+<taskprogress task="NSE" time="1665582937" percent="99.68" remaining="2" etc="1665582938"/>
+<taskprogress task="NSE" time="1665582967" percent="99.68" remaining="2" etc="1665582969"/>
+<taskprogress task="NSE" time="1665582997" percent="99.68" remaining="2" etc="1665582999"/>
+<taskprogress task="NSE" time="1665583027" percent="99.68" remaining="2" etc="1665583029"/>
+<taskprogress task="NSE" time="1665583057" percent="99.68" remaining="2" etc="1665583059"/>
+<taskprogress task="NSE" time="1665583087" percent="99.68" remaining="2" etc="1665583089"/>
+<taskprogress task="NSE" time="1665583117" percent="99.68" remaining="3" etc="1665583119"/>
+<taskprogress task="NSE" time="1665583147" percent="99.68" remaining="3" etc="1665583149"/>
+<taskend task="NSE" time="1665583167"/>
+<taskbegin task="NSE" time="1665583167"/>
+<taskend task="NSE" time="1665583168"/>
+<taskbegin task="NSE" time="1665583168"/>
+<taskend task="NSE" time="1665583168"/>
+<host starttime="1665582478" endtime="1665583168"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="10.129.227.188" addrtype="ipv4"/>
+<hostnames>
+<hostname name="photobomb.htb" type="user"/>
+<hostname name="photobomb.htb" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="63"/><service name="http" product="nginx" version="1.18.0" extrainfo="Ubuntu" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:igor_sysoev:nginx:1.18.0</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service><script id="http-errors" output="&#xa;Spidering limited to: maxpagecount=40; withinhost=photobomb.htb&#xa;  Found the following error pages: &#xa;  &#xa;  Error Code: 401&#xa;  &#x9;http://photobomb.htb:80/printer&#xa;"/><script id="http-comments-displayer" output="&#xa;Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=photobomb.htb&#xa;    &#xa;    Path: http://photobomb.htb:80/photobomb.js&#xa;    Line number: 2&#xa;    Comment: &#xa;         // Jameson: pre-populate creds for tech support as they keep forgetting them and emailing me&#xa;"/><script id="http-auth-finder" output="&#xa;Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=photobomb.htb&#xa;  url                              method&#xa;  http://photobomb.htb:80/printer  HTTP: Basic&#xa;"/><script id="http-chrono" output="Request times for /; avg: 674.98ms; min: 617.84ms; max: 761.80ms"/><script id="http-drupal-enum" output="Nothing found amongst the top 100 resources,use -&#45;script-args number=&lt;number|all&gt; for deeper analysis)"/><script id="http-dombased-xss" output="Couldn&apos;t find any DOM based XSS."/><script id="http-feed" output="Couldn&apos;t find any feeds."/><script id="http-server-header" output="nginx/1.18.0 (Ubuntu)"><elem>nginx/1.18.0 (Ubuntu)</elem>
+</script><script id="http-favicon" output="Unknown favicon MD5: 622B9ED3F0195B2D1811DF6F278518C2"/><script id="http-useragent-tester" output="&#xa;  Status for browser useragent: 200&#xa;  Allowed User Agents: &#xa;    Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)&#xa;    libwww&#xa;    lwp-trivial&#xa;    libcurl-agent/1.0&#xa;    PHP/&#xa;    Python-urllib/2.5&#xa;    GT::WWW&#xa;    Snoopy&#xa;    MFC_Tear_Sample&#xa;    HTTP::Lite&#xa;    PHPCrawl&#xa;    URI::Fetch&#xa;    Zend_Http_Client&#xa;    http client&#xa;    PECL::HTTP&#xa;    Wget/1.13.4 (linux-gnu)&#xa;    WWW-Mechanize/1.34"><elem key="Status for browser useragent">200</elem>
+<table key="Allowed User Agents">
+<elem>Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)</elem>
+<elem>libwww</elem>
+<elem>lwp-trivial</elem>
+<elem>libcurl-agent/1.0</elem>
+<elem>PHP/</elem>
+<elem>Python-urllib/2.5</elem>
+<elem>GT::WWW</elem>
+<elem>Snoopy</elem>
+<elem>MFC_Tear_Sample</elem>
+<elem>HTTP::Lite</elem>
+<elem>PHPCrawl</elem>
+<elem>URI::Fetch</elem>
+<elem>Zend_Http_Client</elem>
+<elem>http client</elem>
+<elem>PECL::HTTP</elem>
+<elem>Wget/1.13.4 (linux-gnu)</elem>
+<elem>WWW-Mechanize/1.34</elem>
+</table>
+</script><script id="http-stored-xss" output="Couldn&apos;t find any stored XSS vulnerabilities."/><script id="http-fetch" output="Please enter the complete path of the directory to save data in."><elem key="ERROR">Please enter the complete path of the directory to save data in.</elem>
+</script><script id="http-referer-checker" output="Couldn&apos;t find any cross-domain scripts."/><script id="http-jsonp-detection" output="Couldn&apos;t find any JSONP endpoints."/><script id="http-vhosts" output="&#xa;128 names had status 302"/><script id="http-enum" output="&#xa;  /printer/image: Lexmark Printer (401 Unauthorized)&#xa;  /printer/: Potentially interesting folder (401 Unauthorized)&#xa;  /printers/: Potentially interesting folder (401 Unauthorized)&#xa;"/><script id="http-mobileversion-checker" output="No mobile version detected."/><script id="http-wordpress-enum" output="Nothing found amongst the top 100 resources,use -&#45;script-args search-limit=&lt;number|all&gt; for deeper analysis)"/><script id="http-title" output="Photobomb"><elem key="title">Photobomb</elem>
+</script><script id="http-csrf" output="Couldn&apos;t find any CSRF vulnerabilities."/><script id="http-litespeed-sourcecode-download" output="Request with null byte did not work. This web server might not be vulnerable"/><script id="http-wordpress-users" output="[Error] Wordpress installation was not found. We couldn&apos;t find wp-login.php"/><script id="http-security-headers" output="&#xa;  X_Frame_Options: &#xa;    Header: X-Frame-Options: SAMEORIGIN&#xa;    Description: The browser must not display this content in any frame from a page of different origin than the content itself.&#xa;  X_XSS_Protection: &#xa;    Header: X-XSS-Protection: 1; mode=block&#xa;    Description: The browser will prevent the rendering of the page when XSS is detected.&#xa;  X_Content_Type_Options: &#xa;    Header: X-Content-Type-Options: nosniff&#xa;    Description: Will prevent the browser from MIME-sniffing a response away from the declared content-type. "><table key="X_Frame_Options">
+<elem>Header: X-Frame-Options: SAMEORIGIN</elem>
+<elem>Description: The browser must not display this content in any frame from a page of different origin than the content itself.</elem>
+</table>
+<table key="X_XSS_Protection">
+<elem>Header: X-XSS-Protection: 1; mode=block</elem>
+<elem>Description: The browser will prevent the rendering of the page when XSS is detected.</elem>
+</table>
+<table key="X_Content_Type_Options">
+<elem>Header: X-Content-Type-Options: nosniff</elem>
+<elem>Description: Will prevent the browser from MIME-sniffing a response away from the declared content-type. </elem>
+</table>
+</script><script id="http-php-version" output="Logo query returned unknown hash ed7a2ffc4af7ec7577f2b6ff8d80b613&#xa;Credits query returned unknown hash ed7a2ffc4af7ec7577f2b6ff8d80b613"/><script id="http-sitemap-generator" output="&#xa;  Directory structure:&#xa;    /&#xa;      Other: 1; css: 1; js: 1&#xa;  Longest directory structure:&#xa;    Depth: 0&#xa;    Dir: /&#xa;  Total files found (by extension):&#xa;    Other: 1; css: 1; js: 1&#xa;"/><script id="http-custom-title" output="Photobomb"></script><script id="http-malware-host" output="Host appears to be clean"/><script id="http-devframework" output="Couldn&apos;t determine the underlying framework or CMS. Try increasing &apos;httpspider.maxpagecount&apos; value to spider more pages."/><script id="http-config-backup" output="ERROR: Script execution failed (use -d to debug)"/><script id="http-methods" output="&#xa;  Supported Methods: GET HEAD"><table key="Supported Methods">
+<elem>GET</elem>
+<elem>HEAD</elem>
+</table>
+</script><script id="http-headers" output="&#xa;  Server: nginx/1.18.0 (Ubuntu)&#xa;  Date: Wed, 12 Oct 2022 13:48:10 GMT&#xa;  Content-Type: text/html;charset=utf-8&#xa;  Content-Length: 843&#xa;  Connection: close&#xa;  X-Xss-Protection: 1; mode=block&#xa;  X-Content-Type-Options: nosniff&#xa;  X-Frame-Options: SAMEORIGIN&#xa;  &#xa;  (Request type: HEAD)&#xa;"/><script id="http-date" output="Wed, 12 Oct 2022 13:48:11 GMT; -1s from local time."><elem key="date">2022-10-12T13:48:11+00:00</elem>
+<elem key="delta">-1.0</elem>
+</script></port>
+</ports>
+<times srtt="388737" rttvar="388737" to="1250000"/>
+</host>
+<taskbegin task="NSE" time="1665583168"/>
+<taskend task="NSE" time="1665583168"/>
+<taskbegin task="NSE" time="1665583168"/>
+<taskend task="NSE" time="1665583168"/>
+<taskbegin task="NSE" time="1665583168"/>
+<taskend task="NSE" time="1665583168"/>
+<runstats><finished time="1665583168" timestr="Wed Oct 12 20:59:28 2022" summary="Nmap done at Wed Oct 12 20:59:28 2022; 1 IP address (1 host up) scanned in 690.38 seconds" elapsed="690.38" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

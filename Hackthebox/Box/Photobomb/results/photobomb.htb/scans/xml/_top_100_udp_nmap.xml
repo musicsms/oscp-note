@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.92 scan initiated Wed Oct 12 20:46:45 2022 as: nmap -vv -&#45;reason -Pn -T4 -sU -A -&#45;top-ports 100 -oN /mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Photobomb/results/photobomb.htb/scans/_top_100_udp_nmap.txt -oX /mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Photobomb/results/photobomb.htb/scans/xml/_top_100_udp_nmap.xml photobomb.htb -->
+<nmaprun scanner="nmap" args="nmap -vv -&#45;reason -Pn -T4 -sU -A -&#45;top-ports 100 -oN /mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Photobomb/results/photobomb.htb/scans/_top_100_udp_nmap.txt -oX /mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Photobomb/results/photobomb.htb/scans/xml/_top_100_udp_nmap.xml photobomb.htb" start="1665582405" startstr="Wed Oct 12 20:46:45 2022" version="7.92" xmloutputversion="1.05">
+<scaninfo type="udp" protocol="udp" numservices="100" services="7,9,17,19,49,53,67-69,80,88,111,120,123,135-139,158,161-162,177,427,443,445,497,500,514-515,518,520,593,623,626,631,996-999,1022-1023,1025-1030,1433-1434,1645-1646,1701,1718-1719,1812-1813,1900,2000,2048-2049,2222-2223,3283,3456,3703,4444,4500,5000,5060,5353,5632,9200,10000,17185,20031,30718,31337,32768-32769,32771,32815,33281,49152-49154,49156,49181-49182,49185-49186,49188,49190-49194,49200-49201,65024"/>
+<verbose level="2"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1665582406"/>
+<taskend task="NSE" time="1665582406"/>
+<taskbegin task="NSE" time="1665582406"/>
+<taskend task="NSE" time="1665582406"/>
+<taskbegin task="NSE" time="1665582406"/>
+<taskend task="NSE" time="1665582406"/>
+<taskbegin task="UDP Scan" time="1665582406"/>
+<taskend task="UDP Scan" time="1665582504" extrainfo="100 total ports"/>
+<taskbegin task="Service scan" time="1665582504"/>
+<taskend task="Service scan" time="1665582601" extrainfo="3 services on 1 host"/>
+<taskbegin task="Traceroute" time="1665582608"/>
+<taskend task="Traceroute" time="1665582609"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1665582609"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1665582610"/>
+<taskbegin task="NSE" time="1665582610"/>
+<taskend task="NSE" time="1665582632"/>
+<taskbegin task="NSE" time="1665582632"/>
+<taskend task="NSE" time="1665582634"/>
+<taskbegin task="NSE" time="1665582634"/>
+<taskend task="NSE" time="1665582634"/>
+<host starttime="1665582406" endtime="1665582634"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="10.129.227.188" addrtype="ipv4"/>
+<hostnames>
+<hostname name="photobomb.htb" type="user"/>
+<hostname name="photobomb.htb" type="PTR"/>
+</hostnames>
+<ports><extraports state="closed" count="97">
+<extrareasons reason="port-unreach" count="97" proto="udp" ports="7,9,17,19,49,53,67,69,80,88,111,120,123,135-139,158,161-162,177,427,443,445,497,500,514-515,518,520,593,623,626,631,996-999,1022,1025-1030,1433-1434,1645-1646,1701,1718-1719,1812,1900,2000,2048-2049,2222-2223,3283,3456,3703,4444,4500,5000,5060,5353,5632,9200,10000,17185,20031,30718,31337,32768-32769,32771,32815,33281,49152-49154,49156,49181-49182,49185-49186,49188,49190-49194,49200-49201,65024"/>
+</extraports>
+<port protocol="udp" portid="68"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="dhcpc" method="table" conf="3"/></port>
+<port protocol="udp" portid="1023"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="unknown" method="table" conf="3"/></port>
+<port protocol="udp" portid="1813"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="radacct" method="table" conf="3"/></port>
+</ports>
+<os><portused state="closed" proto="udp" portid="7"/>
+<osfingerprint fingerprint="SCAN(V=7.92%E=4%D=10/12%OT=%CT=%CU=7%PV=Y%DS=2%DC=T%G=N%TM=6346C62A%P=x86_64-pc-linux-gnu)&#xa;SEQ(CI=Z%II=I)&#xa;T5(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)&#xa;T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)&#xa;U1(R=Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)&#xa;IE(R=Y%DFI=N%T=40%CD=S)&#xa;"/>
+</os>
+<distance value="2"/>
+<trace port="443" proto="udp">
+<hop ttl="1" ipaddr="10.10.16.1" rtt="263.78"/>
+<hop ttl="2" ipaddr="10.129.227.188" rtt="275.40" host="photobomb.htb"/>
+</trace>
+<times srtt="336133" rttvar="64128" to="592645"/>
+</host>
+<taskbegin task="NSE" time="1665582634"/>
+<taskend task="NSE" time="1665582634"/>
+<taskbegin task="NSE" time="1665582634"/>
+<taskend task="NSE" time="1665582634"/>
+<taskbegin task="NSE" time="1665582634"/>
+<taskend task="NSE" time="1665582634"/>
+<runstats><finished time="1665582634" timestr="Wed Oct 12 20:50:34 2022" summary="Nmap done at Wed Oct 12 20:50:34 2022; 1 IP address (1 host up) scanned in 228.87 seconds" elapsed="228.87" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

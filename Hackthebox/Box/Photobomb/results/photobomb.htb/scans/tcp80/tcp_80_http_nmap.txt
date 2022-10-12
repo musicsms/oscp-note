@@ -1,0 +1,110 @@
+# Nmap 7.92 scan initiated Wed Oct 12 20:47:57 2022 as: nmap -vv --reason -Pn -T4 -sV -p 80 "--script=banner,(http* or ssl*) and not (brute or broadcast or dos or external or http-slowloris* or fuzzer)" -oN /mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Photobomb/results/photobomb.htb/scans/tcp80/tcp_80_http_nmap.txt -oX /mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Photobomb/results/photobomb.htb/scans/tcp80/xml/tcp_80_http_nmap.xml photobomb.htb
+Nmap scan report for photobomb.htb (10.129.227.188)
+Host is up, received user-set (0.39s latency).
+Scanned at 2022-10-12 20:47:58 +07 for 690s
+
+PORT   STATE SERVICE REASON         VERSION
+80/tcp open  http    syn-ack ttl 63 nginx 1.18.0 (Ubuntu)
+| http-errors: 
+| Spidering limited to: maxpagecount=40; withinhost=photobomb.htb
+|   Found the following error pages: 
+|   
+|   Error Code: 401
+|_  	http://photobomb.htb:80/printer
+| http-comments-displayer: 
+| Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=photobomb.htb
+|     
+|     Path: http://photobomb.htb:80/photobomb.js
+|     Line number: 2
+|     Comment: 
+|_         // Jameson: pre-populate creds for tech support as they keep forgetting them and emailing me
+| http-auth-finder: 
+| Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=photobomb.htb
+|   url                              method
+|_  http://photobomb.htb:80/printer  HTTP: Basic
+|_http-chrono: Request times for /; avg: 674.98ms; min: 617.84ms; max: 761.80ms
+|_http-drupal-enum: Nothing found amongst the top 100 resources,use --script-args number=<number|all> for deeper analysis)
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+|_http-feed: Couldn't find any feeds.
+|_http-server-header: nginx/1.18.0 (Ubuntu)
+|_http-favicon: Unknown favicon MD5: 622B9ED3F0195B2D1811DF6F278518C2
+| http-useragent-tester: 
+|   Status for browser useragent: 200
+|   Allowed User Agents: 
+|     Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)
+|     libwww
+|     lwp-trivial
+|     libcurl-agent/1.0
+|     PHP/
+|     Python-urllib/2.5
+|     GT::WWW
+|     Snoopy
+|     MFC_Tear_Sample
+|     HTTP::Lite
+|     PHPCrawl
+|     URI::Fetch
+|     Zend_Http_Client
+|     http client
+|     PECL::HTTP
+|     Wget/1.13.4 (linux-gnu)
+|_    WWW-Mechanize/1.34
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-fetch: Please enter the complete path of the directory to save data in.
+|_http-referer-checker: Couldn't find any cross-domain scripts.
+|_http-jsonp-detection: Couldn't find any JSONP endpoints.
+| http-vhosts: 
+|_128 names had status 302
+| http-enum: 
+|   /printer/image: Lexmark Printer (401 Unauthorized)
+|   /printer/: Potentially interesting folder (401 Unauthorized)
+|_  /printers/: Potentially interesting folder (401 Unauthorized)
+|_http-mobileversion-checker: No mobile version detected.
+|_http-wordpress-enum: Nothing found amongst the top 100 resources,use --script-args search-limit=<number|all> for deeper analysis)
+|_http-title: Photobomb
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-litespeed-sourcecode-download: Request with null byte did not work. This web server might not be vulnerable
+|_http-wordpress-users: [Error] Wordpress installation was not found. We couldn't find wp-login.php
+| http-security-headers: 
+|   X_Frame_Options: 
+|     Header: X-Frame-Options: SAMEORIGIN
+|     Description: The browser must not display this content in any frame from a page of different origin than the content itself.
+|   X_XSS_Protection: 
+|     Header: X-XSS-Protection: 1; mode=block
+|     Description: The browser will prevent the rendering of the page when XSS is detected.
+|   X_Content_Type_Options: 
+|     Header: X-Content-Type-Options: nosniff
+|_    Description: Will prevent the browser from MIME-sniffing a response away from the declared content-type. 
+| http-php-version: Logo query returned unknown hash ed7a2ffc4af7ec7577f2b6ff8d80b613
+|_Credits query returned unknown hash ed7a2ffc4af7ec7577f2b6ff8d80b613
+| http-sitemap-generator: 
+|   Directory structure:
+|     /
+|       Other: 1; css: 1; js: 1
+|   Longest directory structure:
+|     Depth: 0
+|     Dir: /
+|   Total files found (by extension):
+|_    Other: 1; css: 1; js: 1
+|_http-custom-title: Photobomb
+|_http-malware-host: Host appears to be clean
+|_http-devframework: Couldn't determine the underlying framework or CMS. Try increasing 'httpspider.maxpagecount' value to spider more pages.
+|_http-config-backup: ERROR: Script execution failed (use -d to debug)
+| http-methods: 
+|_  Supported Methods: GET HEAD
+| http-headers: 
+|   Server: nginx/1.18.0 (Ubuntu)
+|   Date: Wed, 12 Oct 2022 13:48:10 GMT
+|   Content-Type: text/html;charset=utf-8
+|   Content-Length: 843
+|   Connection: close
+|   X-Xss-Protection: 1; mode=block
+|   X-Content-Type-Options: nosniff
+|   X-Frame-Options: SAMEORIGIN
+|   
+|_  (Request type: HEAD)
+|_http-date: Wed, 12 Oct 2022 13:48:11 GMT; -1s from local time.
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed Oct 12 20:59:28 2022 -- 1 IP address (1 host up) scanned in 690.38 seconds

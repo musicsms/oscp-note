@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.92 scan initiated Wed Oct 12 20:46:45 2022 as: nmap -vv -&#45;reason -Pn -T4 -sV -sC -&#45;version-all -A -&#45;osscan-guess -p- -oN /mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Photobomb/results/photobomb.htb/scans/_full_tcp_nmap.txt -oX /mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Photobomb/results/photobomb.htb/scans/xml/_full_tcp_nmap.xml photobomb.htb -->
+<nmaprun scanner="nmap" args="nmap -vv -&#45;reason -Pn -T4 -sV -sC -&#45;version-all -A -&#45;osscan-guess -p- -oN /mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Photobomb/results/photobomb.htb/scans/_full_tcp_nmap.txt -oX /mnt/e/OneDrive/Workspace/oscp-note/Hackthebox/Photobomb/results/photobomb.htb/scans/xml/_full_tcp_nmap.xml photobomb.htb" start="1665582405" startstr="Wed Oct 12 20:46:45 2022" version="7.92" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="2"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1665582406"/>
+<taskend task="NSE" time="1665582406"/>
+<taskbegin task="NSE" time="1665582406"/>
+<taskend task="NSE" time="1665582406"/>
+<taskbegin task="NSE" time="1665582406"/>
+<taskend task="NSE" time="1665582406"/>
+<taskbegin task="SYN Stealth Scan" time="1665582406"/>
+<taskprogress task="SYN Stealth Scan" time="1665582437" percent="5.54" remaining="529" etc="1665582966"/>
+<taskprogress task="SYN Stealth Scan" time="1665582467" percent="6.77" remaining="840" etc="1665583307"/>
+<taskprogress task="SYN Stealth Scan" time="1665582497" percent="8.03" remaining="1043" etc="1665583539"/>
+<taskprogress task="SYN Stealth Scan" time="1665582527" percent="9.41" remaining="1165" etc="1665583692"/>
+<taskprogress task="SYN Stealth Scan" time="1665582557" percent="10.45" remaining="1294" etc="1665583850"/>
+<taskprogress task="SYN Stealth Scan" time="1665582587" percent="13.09" remaining="1202" etc="1665583788"/>
+<taskprogress task="SYN Stealth Scan" time="1665582617" percent="15.85" remaining="1120" etc="1665583737"/>
+<taskprogress task="SYN Stealth Scan" time="1665582647" percent="18.90" remaining="1035" etc="1665583681"/>
+<taskprogress task="SYN Stealth Scan" time="1665582725" percent="24.76" remaining="970" etc="1665583695"/>
+<taskprogress task="SYN Stealth Scan" time="1665582791" percent="29.89" remaining="903" etc="1665583694"/>
+<taskprogress task="SYN Stealth Scan" time="1665582839" percent="34.12" remaining="837" etc="1665583675"/>
+<taskprogress task="SYN Stealth Scan" time="1665582929" percent="40.41" remaining="772" etc="1665583700"/>
+<taskprogress task="SYN Stealth Scan" time="1665582983" percent="44.97" remaining="707" etc="1665583689"/>
+<taskprogress task="SYN Stealth Scan" time="1665583058" percent="50.51" remaining="639" etc="1665583697"/>
+<taskprogress task="SYN Stealth Scan" time="1665583124" percent="55.65" remaining="573" etc="1665583696"/>
+<taskprogress task="SYN Stealth Scan" time="1665583187" percent="60.77" remaining="505" etc="1665583691"/>
+<taskprogress task="SYN Stealth Scan" time="1665583268" percent="66.26" remaining="440" etc="1665583707"/>
+<taskprogress task="SYN Stealth Scan" time="1665583334" percent="71.32" remaining="374" etc="1665583707"/>
+<taskprogress task="SYN Stealth Scan" time="1665583400" percent="76.45" remaining="307" etc="1665583706"/>
+<taskprogress task="SYN Stealth Scan" time="1665583469" percent="81.85" remaining="236" etc="1665583705"/>
+<taskprogress task="SYN Stealth Scan" time="1665583538" percent="86.88" remaining="172" etc="1665583709"/>
+<taskprogress task="SYN Stealth Scan" time="1665583604" percent="92.01" remaining="105" etc="1665583708"/>
+<taskprogress task="SYN Stealth Scan" time="1665583676" percent="97.13" remaining="38" etc="1665583713"/>
+<taskend task="SYN Stealth Scan" time="1665583751" extrainfo="65535 total ports"/>
+<taskbegin task="Service scan" time="1665583751"/>
+<taskend task="Service scan" time="1665583757" extrainfo="2 services on 1 host"/>
+<taskbegin task="Traceroute" time="1665583786"/>
+<taskend task="Traceroute" time="1665583786"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1665583786"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1665583787"/>
+<taskbegin task="NSE" time="1665583787"/>
+<taskend task="NSE" time="1665583797"/>
+<taskbegin task="NSE" time="1665583797"/>
+<taskend task="NSE" time="1665583798"/>
+<taskbegin task="NSE" time="1665583798"/>
+<taskend task="NSE" time="1665583798"/>
+<host starttime="1665582406" endtime="1665583798"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="10.129.227.188" addrtype="ipv4"/>
+<hostnames>
+<hostname name="photobomb.htb" type="user"/>
+<hostname name="photobomb.htb" type="PTR"/>
+</hostnames>
+<ports><extraports state="closed" count="65533">
+<extrareasons reason="reset" count="65533" proto="tcp" ports="1-21,23-79,81-65535"/>
+</extraports>
+<port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="63"/><service name="ssh" product="OpenSSH" version="8.2p1 Ubuntu 4ubuntu0.5" extrainfo="Ubuntu Linux; protocol 2.0" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:openbsd:openssh:8.2p1</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service><script id="ssh-hostkey" output="&#xa;  3072 e2:24:73:bb:fb:df:5c:b5:20:b6:68:76:74:8a:b5:8d (RSA)&#xa;ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCwlzrcH3g6+RJ9JSdH4fFJPibAIpAZXAl7vCJA+98jmlaLCsANWQXth3UsQ+TCEf9YydmNXO2QAIocVR8y1NUEYBlN2xG4/7txjoXr9QShFwd10HNbULQyrGzPaFEN2O/7R90uP6lxQIDsoKJu2Ihs/4YFit79oSsCPMDPn8XS1fX/BRRhz1BDqKlLPdRIzvbkauo6QEhOiaOG1pxqOj50JVWO3XNpnzPxB01fo1GiaE4q5laGbktQagtqhz87SX7vWBwJXXKA/IennJIBPcyD1G6YUK0k6lDow+OUdXlmoxw+n370Knl6PYxyDwuDnvkPabPhkCnSvlgGKkjxvqks9axnQYxkieDqIgOmIrMheEqF6GXO5zz6WtN62UAIKAgxRPgIW0SjRw2sWBnT9GnLag74cmhpGaIoWunklT2c94J7t+kpLAcsES6+yFp9Wzbk1vsqThAss0BkVsyxzvL0U9HvcyyDKLGFlFPbsiFH7br/PuxGbqdO9Jbrrs9nx60=&#xa;  256 04:e3:ac:6e:18:4e:1b:7e:ff:ac:4f:e3:9d:d2:1b:ae (ECDSA)&#xa;ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBBrVE9flXamwUY+wiBc9IhaQJRE40YpDsbOGPxLWCKKjNAnSBYA9CPsdgZhoV8rtORq/4n+SO0T80x1wW3g19Ew=&#xa;  256 20:e0:5d:8c:ba:71:f0:8c:3a:18:19:f2:40:11:d2:9e (ED25519)&#xa;ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEp8nHKD5peyVy3X3MsJCmH/HIUvJT+MONekDg5xYZ6D"><table>
+<elem key="key">AAAAB3NzaC1yc2EAAAADAQABAAABgQCwlzrcH3g6+RJ9JSdH4fFJPibAIpAZXAl7vCJA+98jmlaLCsANWQXth3UsQ+TCEf9YydmNXO2QAIocVR8y1NUEYBlN2xG4/7txjoXr9QShFwd10HNbULQyrGzPaFEN2O/7R90uP6lxQIDsoKJu2Ihs/4YFit79oSsCPMDPn8XS1fX/BRRhz1BDqKlLPdRIzvbkauo6QEhOiaOG1pxqOj50JVWO3XNpnzPxB01fo1GiaE4q5laGbktQagtqhz87SX7vWBwJXXKA/IennJIBPcyD1G6YUK0k6lDow+OUdXlmoxw+n370Knl6PYxyDwuDnvkPabPhkCnSvlgGKkjxvqks9axnQYxkieDqIgOmIrMheEqF6GXO5zz6WtN62UAIKAgxRPgIW0SjRw2sWBnT9GnLag74cmhpGaIoWunklT2c94J7t+kpLAcsES6+yFp9Wzbk1vsqThAss0BkVsyxzvL0U9HvcyyDKLGFlFPbsiFH7br/PuxGbqdO9Jbrrs9nx60=</elem>
+<elem key="bits">3072</elem>
+<elem key="fingerprint">e22473bbfbdf5cb520b66876748ab58d</elem>
+<elem key="type">ssh-rsa</elem>
+</table>
+<table>
+<elem key="key">AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBBrVE9flXamwUY+wiBc9IhaQJRE40YpDsbOGPxLWCKKjNAnSBYA9CPsdgZhoV8rtORq/4n+SO0T80x1wW3g19Ew=</elem>
+<elem key="bits">256</elem>
+<elem key="fingerprint">04e3ac6e184e1b7effac4fe39dd21bae</elem>
+<elem key="type">ecdsa-sha2-nistp256</elem>
+</table>
+<table>
+<elem key="key">AAAAC3NzaC1lZDI1NTE5AAAAIEp8nHKD5peyVy3X3MsJCmH/HIUvJT+MONekDg5xYZ6D</elem>
+<elem key="bits">256</elem>
+<elem key="fingerprint">20e05d8cba71f08c3a1819f24011d29e</elem>
+<elem key="type">ssh-ed25519</elem>
+</table>
+</script></port>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="63"/><service name="http" product="nginx" version="1.18.0" extrainfo="Ubuntu" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:igor_sysoev:nginx:1.18.0</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service><script id="http-title" output="Photobomb"><elem key="title">Photobomb</elem>
+</script><script id="http-custom-title" output="Photobomb"></script><script id="http-favicon" output="Unknown favicon MD5: 622B9ED3F0195B2D1811DF6F278518C2"/><script id="http-methods" output="&#xa;  Supported Methods: GET HEAD"><table key="Supported Methods">
+<elem>GET</elem>
+<elem>HEAD</elem>
+</table>
+</script><script id="http-server-header" output="nginx/1.18.0 (Ubuntu)"><elem>nginx/1.18.0 (Ubuntu)</elem>
+</script></port>
+</ports>
+<os><portused state="open" proto="tcp" portid="22"/>
+<portused state="closed" proto="tcp" portid="1"/>
+<portused state="closed" proto="udp" portid="40731"/>
+<osmatch name="Linux 5.0" accuracy="94" line="68045">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="5.X" accuracy="94"><cpe>cpe:/o:linux:linux_kernel:5.0</cpe></osclass>
+</osmatch>
+<osmatch name="Linux 5.0 - 5.4" accuracy="94" line="68106">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="5.X" accuracy="94"><cpe>cpe:/o:linux:linux_kernel:5</cpe></osclass>
+</osmatch>
+<osmatch name="Linux 5.4" accuracy="94" line="68179">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="5.X" accuracy="94"><cpe>cpe:/o:linux:linux_kernel:5.4</cpe></osclass>
+</osmatch>
+<osmatch name="HP P2000 G3 NAS device" accuracy="93" line="35040">
+<osclass type="storage-misc" vendor="HP" osfamily="embedded" accuracy="93"><cpe>cpe:/h:hp:p2000_g3</cpe></osclass>
+</osmatch>
+<osmatch name="Linux 4.15 - 5.6" accuracy="93" line="67241">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="4.X" accuracy="93"><cpe>cpe:/o:linux:linux_kernel:4</cpe></osclass>
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="5.X" accuracy="93"><cpe>cpe:/o:linux:linux_kernel:5</cpe></osclass>
+</osmatch>
+<osmatch name="Linux 5.3 - 5.4" accuracy="93" line="68143">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="5.X" accuracy="93"><cpe>cpe:/o:linux:linux_kernel:5</cpe></osclass>
+</osmatch>
+<osmatch name="Linux 2.6.32" accuracy="92" line="55602">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="2.6.X" accuracy="92"><cpe>cpe:/o:linux:linux_kernel:2.6.32</cpe></osclass>
+</osmatch>
+<osmatch name="Linux 2.6.32 - 3.1" accuracy="92" line="56508">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="2.6.X" accuracy="92"><cpe>cpe:/o:linux:linux_kernel:2.6</cpe></osclass>
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="3.X" accuracy="92"><cpe>cpe:/o:linux:linux_kernel:3</cpe></osclass>
+</osmatch>
+<osmatch name="Ubiquiti AirMax NanoStation WAP (Linux 2.6.32)" accuracy="92" line="61700">
+<osclass type="WAP" vendor="Linux" osfamily="Linux" osgen="2.6.X" accuracy="92"><cpe>cpe:/o:linux:linux_kernel:2.6.32</cpe></osclass>
+<osclass type="WAP" vendor="Ubiquiti" osfamily="embedded" accuracy="92"><cpe>cpe:/h:ubnt:airmax_nanostation</cpe></osclass>
+</osmatch>
+<osmatch name="Linux 3.7" accuracy="92" line="65888">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="3.X" accuracy="92"><cpe>cpe:/o:linux:linux_kernel:3.7</cpe></osclass>
+</osmatch>
+<osfingerprint fingerprint="OS:SCAN(V=7.92%E=4%D=10/12%OT=22%CT=1%CU=40731%PV=Y%DS=2%DC=T%G=Y%TM=6346CA&#xa;OS:B6%P=x86_64-pc-linux-gnu)SEQ(SP=106%GCD=1%ISR=105%TI=Z%CI=Z%II=I%TS=A)SE&#xa;OS:Q(SP=106%GCD=1%ISR=105%TI=Z%CI=Z%TS=A)OPS(O1=M537ST11NW7%O2=M537ST11NW7%&#xa;OS:O3=M537NNT11NW7%O4=M537ST11NW7%O5=M537ST11NW7%O6=M537ST11)WIN(W1=FE88%W2&#xa;OS:=FE88%W3=FE88%W4=FE88%W5=FE88%W6=FE88)ECN(R=Y%DF=Y%T=40%W=FAF0%O=M537NNS&#xa;OS:NW7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%&#xa;OS:DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%&#xa;OS:O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T7(R=N)U1(R=Y%DF=&#xa;OS:N%T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%&#xa;OS:CD=S)&#xa;"/>
+</os>
+<uptime seconds="1105428" lastboot="Fri Sep 30 02:06:10 2022"/>
+<distance value="2"/>
+<tcpsequence index="262" difficulty="Good luck!" values="198196BE,581B8528,7007F6A6,72F55D75,9914BC4,45F3B63"/>
+<ipidsequence class="All zeros" values="0,0,0,0,0,0"/>
+<tcptssequence class="1000HZ" values="41E32C2C,41E32C93,41E32D4F,41E32D4F,41E32D9A,41E32E57"/>
+<trace port="8080" proto="tcp">
+<hop ttl="1" ipaddr="10.10.16.1" rtt="262.46"/>
+<hop ttl="2" ipaddr="10.129.227.188" rtt="262.54" host="photobomb.htb"/>
+</trace>
+<times srtt="314298" rttvar="57413" to="543950"/>
+</host>
+<taskbegin task="NSE" time="1665583798"/>
+<taskend task="NSE" time="1665583798"/>
+<taskbegin task="NSE" time="1665583798"/>
+<taskend task="NSE" time="1665583798"/>
+<taskbegin task="NSE" time="1665583798"/>
+<taskend task="NSE" time="1665583798"/>
+<runstats><finished time="1665583798" timestr="Wed Oct 12 21:09:58 2022" summary="Nmap done at Wed Oct 12 21:09:58 2022; 1 IP address (1 host up) scanned in 1393.31 seconds" elapsed="1393.31" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

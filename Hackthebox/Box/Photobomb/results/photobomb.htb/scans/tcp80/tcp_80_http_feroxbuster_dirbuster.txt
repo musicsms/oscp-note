@@ -1,0 +1,17 @@
+401      GET        7l       12w      188c http://photobomb.htb/printer
+200      GET        7l       27w      339c http://photobomb.htb/photobomb.js
+200      GET       22l       95w      843c http://photobomb.htb/
+200      GET        3l       22w    10990c http://photobomb.htb/favicon.ico
+401      GET        7l       12w      188c http://photobomb.htb/printers
+401      GET        7l       12w      188c http://photobomb.htb/printer.txt
+401      GET        7l       12w      188c http://photobomb.htb/printers.txt
+401      GET        7l       12w      188c http://photobomb.htb/printer.html
+401      GET        7l       12w      188c http://photobomb.htb/printers.html
+401      GET        7l       12w      188c http://photobomb.htb/printer.php
+401      GET        7l       12w      188c http://photobomb.htb/printers.php
+401      GET        7l       12w      188c http://photobomb.htb/printer.asp
+401      GET        7l       12w      188c http://photobomb.htb/printers.asp
+401      GET        7l       12w      188c http://photobomb.htb/printer.aspx
+401      GET        7l       12w      188c http://photobomb.htb/printers.aspx
+401      GET        7l       12w      188c http://photobomb.htb/printer.jsp
+401      GET        7l       12w      188c http://photobomb.htb/printers.jsp
