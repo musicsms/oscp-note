@@ -4,12 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "a6eb187a1faf50c1",
-        "type": "leaf",
-        "state": {
-          "type": "empty",
-          "state": {}
-        }
+        "id": "bf2e5a0ee07e1da9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f5f7c090217985c3",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ]
       }
     ],
     "direction": "vertical"
@@ -27,7 +33,9 @@
             "type": "leaf",
             "state": {
               "type": "file-explorer",
-              "state": {}
+              "state": {
+                "sortOrder": "alphabetical"
+              }
             }
           },
           {
@@ -120,17 +128,20 @@
     "direction": "horizontal",
     "width": 300
   },
-  "active": "2cf3859e5ed2a705",
+  "ribbon": {
+    "mostRecentAction": ""
+  },
+  "active": "f5f7c090217985c3",
   "lastOpenFiles": [
+    "Cheatsheet/PHP/Bypassing-the-PHP-function-addslashes.md",
+    "Cheatsheet/SQL/SQLi-Cheatsheet.md",
+    "Cheatsheet/SQL/SQL-Bypass-Login-Cheatsheet.md",
+    "Hackthebox/Challenge/LoveTok/Readme.md",
+    "Cheatsheet/PHP.md",
+    "Hackthebox/Box/Photobomb/Readme.md",
     "Hackthebox/Photobomb/Readme.md",
     "Hackthebox/Photobomb/img/Untitled.md",
     "Hackthebox/Photobomb/img/burp_repeater.png",
-    "Hackthebox/Photobomb/img/downloaded_image.png",
-    "Hackthebox/Box/Trick/Readme.md",
-    "Hackthebox/Box/OpenSource/Readme.md",
-    "Hackthebox/Box/OpenSource/img/source-code.png",
-    "Hackthebox/Box/OpenSource/img/home-page.png",
-    "Hackthebox/Box/OpenSource/Untitled.md",
-    "Hackthebox/Box/Redpanda/Readme.md"
+    "Hackthebox/Photobomb/img/downloaded_image.png"
   ]
 }
