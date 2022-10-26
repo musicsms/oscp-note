@@ -50,3 +50,6 @@ drwxr-xr-x 1 root root 4.0K Oct 10 17:28 ..
 drwxr-xr-x 3 root root 4.0K Oct 10 17:27 src
 drwxr-xr-x 1 root root 4.0K Oct 10 17:28 target
 ```
+
+We get the `base64` encode but in rev state.
+Just `rev` again to get the `base64` flag and decode it
