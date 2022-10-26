@@ -1,0 +1,49 @@
+[*] Port scan Top TCP Ports (top-tcp-ports) ran a command which returned a non-zero exit code (139).
+[-] Command: nmap -vv --reason -Pn -T4 -sV -sC --version-all -A --osscan-guess -oN "/mnt/e/OneDrive/Workspace/oscp-note/Tryhackme/dailybugle/results/10.10.27.34/scans/_quick_tcp_nmap.txt" -oX "/mnt/e/OneDrive/Workspace/oscp-note/Tryhackme/dailybugle/results/10.10.27.34/scans/xml/_quick_tcp_nmap.xml" 10.10.27.34
+[-] Error Output:
+Host discovery disabled (-Pn). All addresses will be marked 'up' and scan times may be slower.
+Segmentation fault
+
+
+[*] Service scan Nmap MYSQL (tcp/3306/mysql/nmap-mysql) ran a command which returned a non-zero exit code (139).
+[-] Command: nmap -vv --reason -Pn -T4 -sV -p 3306 --script="banner,(mysql* or ssl*) and not (brute or broadcast or dos or external or fuzzer)" -oN "/mnt/e/OneDrive/Workspace/oscp-note/Tryhackme/dailybugle/results/10.10.27.34/scans/tcp3306/tcp_3306_mysql_nmap.txt" -oX "/mnt/e/OneDrive/Workspace/oscp-note/Tryhackme/dailybugle/results/10.10.27.34/scans/tcp3306/xml/tcp_3306_mysql_nmap.xml" 10.10.27.34
+[-] Error Output:
+Host discovery disabled (-Pn). All addresses will be marked 'up' and scan times may be slower.
+Segmentation fault
+
+
+[*] Service scan Nmap SSH (tcp/22/ssh/nmap-ssh) ran a command which returned a non-zero exit code (139).
+[-] Command: nmap -vv --reason -Pn -T4 -sV -p 22 --script="banner,ssh2-enum-algos,ssh-hostkey,ssh-auth-methods" -oN "/mnt/e/OneDrive/Workspace/oscp-note/Tryhackme/dailybugle/results/10.10.27.34/scans/tcp22/tcp_22_ssh_nmap.txt" -oX "/mnt/e/OneDrive/Workspace/oscp-note/Tryhackme/dailybugle/results/10.10.27.34/scans/tcp22/xml/tcp_22_ssh_nmap.xml" 10.10.27.34
+[-] Error Output:
+Host discovery disabled (-Pn). All addresses will be marked 'up' and scan times may be slower.
+Segmentation fault
+
+
+[*] Service scan Curl (tcp/80/http/curl) ran a command which returned a non-zero exit code (56).
+[-] Command: curl -sSik http://10.10.27.34:80/
+[-] Error Output:
+curl: (56) Recv failure: Connection timed out
+
+
+[*] Service scan Nmap HTTP (tcp/80/http/nmap-http) ran a command which returned a non-zero exit code (139).
+[-] Command: nmap -vv --reason -Pn -T4 -sV -p 80 --script="banner,(http* or ssl*) and not (brute or broadcast or dos or external or http-slowloris* or fuzzer)" -oN "/mnt/e/OneDrive/Workspace/oscp-note/Tryhackme/dailybugle/results/10.10.27.34/scans/tcp80/tcp_80_http_nmap.txt" -oX "/mnt/e/OneDrive/Workspace/oscp-note/Tryhackme/dailybugle/results/10.10.27.34/scans/tcp80/xml/tcp_80_http_nmap.xml" 10.10.27.34
+[-] Error Output:
+Host discovery disabled (-Pn). All addresses will be marked 'up' and scan times may be slower.
+Bug in http-security-headers: no string output.
+Segmentation fault
+
+
+[*] Service scan wkhtmltoimage (tcp/80/http/wkhtmltoimage) ran a command which returned a non-zero exit code (1).
+[-] Command: wkhtmltoimage --format png http://10.10.27.34:80/ /mnt/e/OneDrive/Workspace/oscp-note/Tryhackme/dailybugle/results/10.10.27.34/scans/tcp80/tcp_80_http_screenshot.png
+[-] Error Output:
+Loading page (1/2)
+[>                                                           ] 0%[==================>                                         ] 30%[===================>                                        ] 32%[===================>                                        ] 33%[===================>                                        ] 33%[===================>                                        ] 33%[===================>                                        ] 33%[===================>                                        ] 33%[====================>                                       ] 34%[====================>                                       ] 34%[====================>                                       ] 34%[====================>                                       ] 34%[=====================>                                      ] 35%[=====================>                                      ] 36%[=====================>                                      ] 36%Warning: Failed to load http://10.10.27.34/templates/protostar/css/template.css?787ff2be3d28e0eefd8e0930f878dbca (ignore)
+Error: Failed to load http://10.10.27.34/media/jui/js/bootstrap.min.js?787ff2be3d28e0eefd8e0930f878dbca, with network status code 4 and http status code 0 - Socket operation timed out
+Error: Failed to load http://10.10.27.34/media/jui/js/jquery.min.js?787ff2be3d28e0eefd8e0930f878dbca, with network status code 4 and http status code 0 - Socket operation timed out
+[=========================>                                  ] 43%Warning: Failed to load http://10.10.27.34/images/logo.png (ignore)
+Warning: Failed to load http://10.10.27.34/images/spiderman_robbery.jpeg (ignore)
+[============================================================] 100%Rendering (2/2)
+[>                                                           ] 0%[===============>                                            ] 25%[============================================================] 100%Done
+Exit with code 1 due to network error: TimeoutError
+
+

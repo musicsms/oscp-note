@@ -1,0 +1,21 @@
+[*] Port scan Top TCP Ports (top-tcp-ports) ran a command which returned a non-zero exit code (139).
+[-] Command: nmap -vv --reason -Pn -T4 -sV -sC --version-all -A --osscan-guess -oN "/mnt/e/OneDrive/Workspace/oscp-note/Tryhackme/dailybugle/results/10.10.108.209/scans/_quick_tcp_nmap.txt" -oX "/mnt/e/OneDrive/Workspace/oscp-note/Tryhackme/dailybugle/results/10.10.108.209/scans/xml/_quick_tcp_nmap.xml" 10.10.108.209
+[-] Error Output:
+Host discovery disabled (-Pn). All addresses will be marked 'up' and scan times may be slower.
+Segmentation fault
+
+
+[*] Service scan Nmap SSH (tcp/22/ssh/nmap-ssh) ran a command which returned a non-zero exit code (139).
+[-] Command: nmap -vv --reason -Pn -T4 -sV -p 22 --script="banner,ssh2-enum-algos,ssh-hostkey,ssh-auth-methods" -oN "/mnt/e/OneDrive/Workspace/oscp-note/Tryhackme/dailybugle/results/10.10.108.209/scans/tcp22/tcp_22_ssh_nmap.txt" -oX "/mnt/e/OneDrive/Workspace/oscp-note/Tryhackme/dailybugle/results/10.10.108.209/scans/tcp22/xml/tcp_22_ssh_nmap.xml" 10.10.108.209
+[-] Error Output:
+Host discovery disabled (-Pn). All addresses will be marked 'up' and scan times may be slower.
+Segmentation fault
+
+
+[*] Service scan Nmap MYSQL (tcp/3306/mysql/nmap-mysql) ran a command which returned a non-zero exit code (139).
+[-] Command: nmap -vv --reason -Pn -T4 -sV -p 3306 --script="banner,(mysql* or ssl*) and not (brute or broadcast or dos or external or fuzzer)" -oN "/mnt/e/OneDrive/Workspace/oscp-note/Tryhackme/dailybugle/results/10.10.108.209/scans/tcp3306/tcp_3306_mysql_nmap.txt" -oX "/mnt/e/OneDrive/Workspace/oscp-note/Tryhackme/dailybugle/results/10.10.108.209/scans/tcp3306/xml/tcp_3306_mysql_nmap.xml" 10.10.108.209
+[-] Error Output:
+Host discovery disabled (-Pn). All addresses will be marked 'up' and scan times may be slower.
+Segmentation fault
+
+

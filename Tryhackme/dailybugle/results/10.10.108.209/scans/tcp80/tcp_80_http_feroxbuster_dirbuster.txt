@@ -1,0 +1,53 @@
+200      GET      259l      683w        0c http://10.10.108.209/index.php/2-uncategorised
+200      GET        4l       17w      491c http://10.10.108.209/media/system/js/caption.js
+200      GET        1l        1w       21c http://10.10.108.209/media/jui/js/jquery-noconflict.js
+403      GET        8l       22w      206c http://10.10.108.209/.hta
+403      GET        8l       22w      211c http://10.10.108.209/.htaccess
+403      GET        8l       22w      210c http://10.10.108.209/.hta.txt
+403      GET        8l       22w      215c http://10.10.108.209/.htaccess.txt
+403      GET        8l       22w      211c http://10.10.108.209/.hta.html
+403      GET        8l       22w      211c http://10.10.108.209/.htpasswd
+403      GET        8l       22w      216c http://10.10.108.209/.htaccess.html
+403      GET        8l       22w      210c http://10.10.108.209/.hta.php
+403      GET        8l       22w      215c http://10.10.108.209/.htpasswd.txt
+403      GET        8l       22w      215c http://10.10.108.209/.htaccess.php
+403      GET        8l       22w      210c http://10.10.108.209/.hta.asp
+403      GET        8l       22w      216c http://10.10.108.209/.htpasswd.html
+403      GET        8l       22w      215c http://10.10.108.209/.htaccess.asp
+403      GET        8l       22w      211c http://10.10.108.209/.hta.aspx
+403      GET        8l       22w      215c http://10.10.108.209/.htpasswd.php
+403      GET        8l       22w      216c http://10.10.108.209/.htaccess.aspx
+403      GET        8l       22w      210c http://10.10.108.209/.hta.jsp
+403      GET        8l       22w      215c http://10.10.108.209/.htpasswd.asp
+403      GET        8l       22w      215c http://10.10.108.209/.htaccess.jsp
+403      GET        8l       22w      216c http://10.10.108.209/.htpasswd.aspx
+403      GET        8l       22w      215c http://10.10.108.209/.htpasswd.jsp
+200      GET      242l      687w        0c http://10.10.108.209/index.php/2-uncategorised/1-spider-man-robs-bank
+200      GET        8l      321w    29156c http://10.10.108.209/media/jui/js/bootstrap.min.js
+200      GET       27l       56w     2019c http://10.10.108.209/templates/protostar/favicon.ico
+200      GET        1l      178w     6470c http://10.10.108.209/media/system/js/polyfill.event.js
+200      GET        1l        3w      345c http://10.10.108.209/media/system/js/keepalive.js
+200      GET        1l       94w     7512c http://10.10.108.209/media/system/js/core.js
+200      GET       60l      170w     1783c http://10.10.108.209/templates/protostar/js/template.js
+200      GET        2l      281w    10056c http://10.10.108.209/media/jui/js/jquery-migrate.min.js
+200      GET     7727l    17395w   163282c http://10.10.108.209/templates/protostar/css/template.css
+200      GET      242l      659w        0c http://10.10.108.209/
+403      GET        8l       22w      207c http://10.10.108.209/.html
+301      GET        7l       20w      243c http://10.10.108.209/administrator => http://10.10.108.209/administrator/
+301      GET        7l       20w      233c http://10.10.108.209/bin => http://10.10.108.209/bin/
+301      GET        7l       20w      235c http://10.10.108.209/cache => http://10.10.108.209/cache/
+403      GET        8l       22w      210c http://10.10.108.209/cgi-bin/
+403      GET        8l       22w      215c http://10.10.108.209/cgi-bin/.html
+301      GET        7l       20w      240c http://10.10.108.209/components => http://10.10.108.209/components/
+200      GET        0l        0w        0c http://10.10.108.209/configuration.php
+301      GET        7l       20w      236c http://10.10.108.209/images => http://10.10.108.209/images/
+301      GET        7l       20w      238c http://10.10.108.209/includes => http://10.10.108.209/includes/
+301      GET        7l       20w      238c http://10.10.108.209/language => http://10.10.108.209/language/
+301      GET        7l       20w      237c http://10.10.108.209/layouts => http://10.10.108.209/layouts/
+301      GET        7l       20w      239c http://10.10.108.209/libraries => http://10.10.108.209/libraries/
+301      GET        7l       20w      235c http://10.10.108.209/media => http://10.10.108.209/media/
+301      GET        7l       20w      237c http://10.10.108.209/modules => http://10.10.108.209/modules/
+301      GET        7l       20w      237c http://10.10.108.209/plugins => http://10.10.108.209/plugins/
+200      GET       32l      111w      836c http://10.10.108.209/robots.txt
+301      GET        7l       20w      239c http://10.10.108.209/templates => http://10.10.108.209/templates/
+301      GET        7l       20w      233c http://10.10.108.209/tmp => http://10.10.108.209/tmp/

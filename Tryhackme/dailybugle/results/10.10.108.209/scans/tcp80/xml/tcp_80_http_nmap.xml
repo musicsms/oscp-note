@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.92 scan initiated Sat Oct 22 19:08:40 2022 as: nmap -vv -&#45;reason -Pn -T4 -sV -p 80 &quot;-&#45;script=banner,(http* or ssl*) and not (brute or broadcast or dos or external or http-slowloris* or fuzzer)&quot; -oN /mnt/e/OneDrive/Workspace/oscp-note/Tryhackme/dailybugle/results/10.10.108.209/scans/tcp80/tcp_80_http_nmap.txt -oX /mnt/e/OneDrive/Workspace/oscp-note/Tryhackme/dailybugle/results/10.10.108.209/scans/tcp80/xml/tcp_80_http_nmap.xml 10.10.108.209 -->
+<nmaprun scanner="nmap" args="nmap -vv -&#45;reason -Pn -T4 -sV -p 80 &quot;-&#45;script=banner,(http* or ssl*) and not (brute or broadcast or dos or external or http-slowloris* or fuzzer)&quot; -oN /mnt/e/OneDrive/Workspace/oscp-note/Tryhackme/dailybugle/results/10.10.108.209/scans/tcp80/tcp_80_http_nmap.txt -oX /mnt/e/OneDrive/Workspace/oscp-note/Tryhackme/dailybugle/results/10.10.108.209/scans/tcp80/xml/tcp_80_http_nmap.xml 10.10.108.209" start="1666440520" startstr="Sat Oct 22 19:08:40 2022" version="7.92" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="1" services="80"/>
+<verbose level="2"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1666440520"/>
+<taskend task="NSE" time="1666440520"/>
+<taskbegin task="NSE" time="1666440520"/>
+<taskend task="NSE" time="1666440520"/>
+<taskbegin task="NSE" time="1666440520"/>
+<taskend task="NSE" time="1666440520"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1666440520"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1666440522"/>
+<taskbegin task="Connect Scan" time="1666440522"/>
+<taskend task="Connect Scan" time="1666440522" extrainfo="1 total ports"/>
+<taskbegin task="Service scan" time="1666440522"/>
+<taskend task="Service scan" time="1666440528" extrainfo="1 service on 1 host"/>
+<taskbegin task="NSE" time="1666440528"/>
+<taskprogress task="NSE" time="1666440559" percent="83.99" remaining="6" etc="1666440565"/>
+<taskprogress task="NSE" time="1666440589" percent="86.27" remaining="10" etc="1666440599"/>
+<taskprogress task="NSE" time="1666440619" percent="86.93" remaining="14" etc="1666440633"/>
+<taskprogress task="NSE" time="1666440649" percent="89.54" remaining="15" etc="1666440663"/>
+<taskprogress task="NSE" time="1666440679" percent="90.52" remaining="16" etc="1666440695"/>
+<taskprogress task="NSE" time="1666440709" percent="92.16" remaining="16" etc="1666440724"/>
+<taskprogress task="NSE" time="1666440739" percent="92.48" remaining="18" etc="1666440756"/>
+<taskprogress task="NSE" time="1666440769" percent="93.46" remaining="17" etc="1666440786"/>
+<taskprogress task="NSE" time="1666440799" percent="94.12" remaining="17" etc="1666440816"/>
+<taskprogress task="NSE" time="1666440829" percent="94.44" remaining="18" etc="1666440847"/>
+<taskprogress task="NSE" time="1666440859" percent="95.75" remaining="15" etc="1666440874"/>
+<taskprogress task="NSE" time="1666440889" percent="95.75" remaining="17" etc="1666440905"/>
+<taskprogress task="NSE" time="1666440919" percent="96.41" remaining="15" etc="1666440934"/>
+<taskprogress task="NSE" time="1666440949" percent="96.41" remaining="16" etc="1666440965"/>
+<taskprogress task="NSE" time="1666440979" percent="97.72" remaining="11" etc="1666440990"/>
+<taskprogress task="NSE" time="1666441009" percent="99.35" remaining="4" etc="1666441012"/>
+<taskprogress task="NSE" time="1666441039" percent="99.35" remaining="4" etc="1666441042"/>
+<taskprogress task="NSE" time="1666441069" percent="99.35" remaining="4" etc="1666441073"/>
+<taskprogress task="NSE" time="1666441099" percent="99.35" remaining="4" etc="1666441103"/>
+<taskprogress task="NSE" time="1666441129" percent="99.67" remaining="2" etc="1666441131"/>
+<taskprogress task="NSE" time="1666441159" percent="99.67" remaining="3" etc="1666441161"/>
+<taskprogress task="NSE" time="1666441189" percent="99.67" remaining="3" etc="1666441191"/>
+<taskprogress task="NSE" time="1666441219" percent="99.67" remaining="3" etc="1666441221"/>
