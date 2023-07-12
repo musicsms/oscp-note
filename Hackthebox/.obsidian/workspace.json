@@ -13,26 +13,25 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Box/Pilgrimage/README.md",
+                "file": "Box/Sandworm/README.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "b28dd5e7c5768575",
+            "id": "82dbd7f6db526f5c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Box/Inject/README.md",
+                "file": "Command and Tools/FFUF.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -98,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Box/Inject/README.md",
+                "file": "Box/Sandworm/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Box/Inject/README.md",
+                "file": "Box/Sandworm/README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Box/Inject/README.md"
+                "file": "Box/Sandworm/README.md"
               }
             }
           }
@@ -159,10 +158,19 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b28dd5e7c5768575",
+  "active": "e7133e0767adf9f3",
   "lastOpenFiles": [
-    "Box/MonitorTwo/README.md",
+    "Box/Sau/README.md",
+    "Box/Sandworm/README.md",
+    "Box/Sandworm",
+    "Command and Tools/FFUF.md",
+    "Box/Sau",
+    "Box/Agile ( cont)/README.md",
+    "Box/Pilgrimage/README.md",
+    "Command and Tools",
     "Box/Inject/README.md",
+    "Box/Agile ( cont)",
+    "Box/MonitorTwo/README.md",
     "Box/Inject",
     "Box/MonitorTwo/Screenshot 2023-07-04 at 11.52.09 PM.png",
     "Box/Intentions/README.md",
@@ -173,7 +181,6 @@
     "Box/Busqueda/README.md",
     "Box/Busqueda/Pasted image 20230704085531.png",
     "Box/Busqueda",
-    "Box/Pilgrimage/README.md",
     "Box/Intentions",
     "Box/Pilgrimage/box-info.png",
     "Box/Pilgrimage/root.png",
