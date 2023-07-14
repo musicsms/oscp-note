@@ -20,18 +20,31 @@
             }
           },
           {
+            "id": "3f02527a5e6d3820",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "OffSec/Lampiao/README.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "82dbd7f6db526f5c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Command and Tools/FFUF.md",
+                "file": "OffSec/Lampiao/README.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -97,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Box/Sandworm/README.md",
+                "file": "OffSec/Lampiao/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Box/Sandworm/README.md",
+                "file": "OffSec/Lampiao/README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Box/Sandworm/README.md"
+                "file": "OffSec/Lampiao/README.md"
               }
             }
           }
@@ -158,12 +171,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "e7133e0767adf9f3",
+  "active": "82dbd7f6db526f5c",
   "lastOpenFiles": [
-    "Box/Sau/README.md",
-    "Box/Sandworm/README.md",
-    "Box/Sandworm",
     "Command and Tools/FFUF.md",
+    "OffSec/Lampiao/README.md",
+    "Box/Sandworm/README.md",
+    "OffSec/Lampiao",
+    "OffSec",
+    "Box/Sau/README.md",
+    "Box/Sandworm",
     "Box/Sau",
     "Box/Agile ( cont)/README.md",
     "Box/Pilgrimage/README.md",
@@ -181,10 +197,8 @@
     "Box/Busqueda/README.md",
     "Box/Busqueda/Pasted image 20230704085531.png",
     "Box/Busqueda",
-    "Box/Intentions",
     "Box/Pilgrimage/box-info.png",
     "Box/Pilgrimage/root.png",
-    "Box/Pilgrimage/Summary.md",
-    "Box/Pilgrimage"
+    "Box/Pilgrimage/Summary.md"
   ]
 }
