@@ -11,12 +11,8 @@
             "id": "db781433a1799b48",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TryHackMe/Attacking Kerberos.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -85,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "TryHackMe/Attacking Kerberos.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "TryHackMe/Attacking Kerberos.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "TryHackMe/Attacking Kerberos.md"
-              }
+              "state": {}
             }
           }
         ],
@@ -146,7 +138,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "db781433a1799b48",
+  "active": "30106a9ad1c94651",
   "lastOpenFiles": [
     "Command and Tools/Kerberos.md",
     "TryHackMe/Attacking Kerberos.md",
