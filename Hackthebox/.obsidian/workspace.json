@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "8938176fa7742e48",
+        "id": "8f4849ce11e2f81a",
         "type": "tabs",
         "children": [
           {
-            "id": "db781433a1799b48",
+            "id": "f5ec77a5ccb3e917",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -65,7 +65,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "bbd6681ff7b8e8e3",
