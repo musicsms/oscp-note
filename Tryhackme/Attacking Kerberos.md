@@ -245,7 +245,11 @@ During pre-authentication, the users hash will be used to encrypt a timestamp th
 
 1.) Transfer the hash from the target machine over to your attacker machine and put the hash into a txt file
 
-2.) Insert 23$ after $krb5asrep$ so that the first line will be $krb5asrep$23$User.....
+2.) Insert 23$ after $krb5asrep$ so that the first line will be ```
+
+```
+$krb5asrep$23$User.....
+```
 
 Use the same wordlist that you downloaded in task 4
 

